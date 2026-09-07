@@ -1,6 +1,6 @@
 # Product Backlog – WeatherCLI
 
-Stand: Auftrag 4.1, Sprint 0. Quelle: [Story Map](../doc/StoryBoard.png).
+Stand: Auftrag 4.1, Sprint 0. Quelle: [Story Map](images/StoryBoard.png).
 
 Die folgenden fünf Einträge sind für das Refinement und anschliessende Sprint-1-Planning vorbereitet. Die Reihenfolge ist ein Vorschlag nach MoSCoW und Nutzwert: zuerst eine vollständige Wetterabfrage, danach zusätzliche Informationen und Bedienhilfe. Schätzung, Kapazitätsabgleich und Zuteilung erfolgen im Planning. Der Umfang jeder Story ist auf höchstens zwei Modultage ausgelegt; das Team prüft dies bei der Schätzung.
 

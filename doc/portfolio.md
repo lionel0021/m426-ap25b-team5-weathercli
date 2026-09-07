@@ -28,17 +28,17 @@ Die Zielgruppe umfasst Terminalnutzerinnen und Terminalnutzer, insbesondere Entw
 
 Die dokumentierten Projektziele sind: Projektanforderungen erfüllen, Scrum-Zusammenarbeit üben, wartbaren Code entwickeln und das Projekt termingerecht abschliessen.
 
-**Originalnachweis:** [Product Vision – WeatherCLI](../doc/Product%20Vision%20%E2%80%93%20WeatherCLI.png)
+**Originalnachweis:** [Product Vision – WeatherCLI](images/Product%20Vision%20%E2%80%93%20WeatherCLI.png)
 
-![Product Vision – WeatherCLI](../doc/Product%20Vision%20%E2%80%93%20WeatherCLI.png)
+![Product Vision – WeatherCLI](images/Product%20Vision%20%E2%80%93%20WeatherCLI.png)
 
-**Vorhandene Reflexion:** [Bewertung der Product Vision](../doc/ki-bewertung.md). Darin sind unter anderem präzisere Zielgruppen und messbare Projektziele als Verbesserung genannt.
+**Vorhandene Reflexion:** [Bewertung der Product Vision](ki-bewertung.md). Darin sind unter anderem präzisere Zielgruppen und messbare Projektziele als Verbesserung genannt.
 
 ## 3. Product Backlog
 
-**Story Map aus Auftrag 3.1:** [Originalbild](../doc/StoryBoard.png)
+**Story Map aus Auftrag 3.1:** [Originalbild](images/StoryBoard.png)
 
-![Story Map – Wetter-Terminal](../doc/StoryBoard.png)
+![Story Map – Wetter-Terminal](images/StoryBoard.png)
 
 **Verfeinerte Einträge:** [Product Backlog mit fünf ausgearbeiteten Stories](product-backlog.md)
 
@@ -68,9 +68,9 @@ Die ursprünglichen technischen Teilschritte der Map wurden in sichtbare Nutzere
 
 **Nachweis:** Retro Harbour, 07.09.2026. Der bereitgestellte Screenshot enthält die Erkenntnisse unter Start, Stop und Continue sowie eine Massnahme unter Actions.
 
-[Screenshot der Sprint-0-Retrospective](../doc/retrospective-sprint0.png)
+[Screenshot der Sprint-0-Retrospective](images/retrospective-sprint0.png)
 
-![Sprint-0-Retrospective in Retro Harbour vom 07.09.2026](../doc/retrospective-sprint0.png)
+![Sprint-0-Retrospective in Retro Harbour vom 07.09.2026](images/retrospective-sprint0.png)
 
 - **Was hat funktioniert (Continue)?** Die Arbeit parallel aufteilen: Vision, Bewertung und Story Map konnten gleichzeitig bearbeitet werden. Gemeinsam an einem Board arbeiten, statt dass jede Person für sich arbeitet.
 - **Was hat gebremst (Stop)?** Stories entlang technischer Schritte schneiden: Die einzelnen Teile waren nicht schätzbar. Entscheidungen nur mündlich treffen.
