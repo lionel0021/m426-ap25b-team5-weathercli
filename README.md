@@ -12,9 +12,8 @@ python -m weathercli "Zürich"
 python -m weathercli "New York"
 ```
 
-Hilfe und Eingabeprüfung funktionieren. Die API-Funktionen sind lokal noch
-Platzhalter: Wetteraufrufe enden derzeit mit einer deutlichen Fehlermeldung und
-Exit-Code 1. Nico integriert die echten Abfragen.
+Ausgabe zum Beispiel `Zürich, Schweiz: 17.2 °C`. Ortssuche und Temperatur kommen
+live von Open-Meteo (kein API-Schlüssel); dafür ist eine Internetverbindung nötig.
 
 Optional unter Windows:
 
@@ -42,8 +41,13 @@ Die bestehende Ortsnamen-Verarbeitung inklusive Tests wird Nico zur Prüfung
 
 ## Schnittstelle für Sprint 1
 
-- Nico: `client.resolve_city(city) -> Location`, Geocoding mit `count=5`,
-  `language=de`. Dazu `errors.request_json` und `errors.unique_location` nutzen.
+- Nico: `client.resolve_city(city) -> Location`, Geocoding mit `count=20`,
+  `language=de`, geprüft über `errors.request_json` und `errors.unique_location`.
+  `count=20`, weil bei `count=5` für "New York" New York City fehlt.
+  Vor der Prüfung bleiben nur passende Orte: Name gleich der Eingabe oder mit ihr
+  als ganzem Wort beginnend, ohne Stadtteile; Gross/Klein und Akzente zählen nicht.
+  Hat ein Ort mindestens zehnmal mehr Einwohner als jeder andere, gilt er als
+  gemeint ("Zürich"), sonst ist die Eingabe mehrdeutig ("Springfield").
 - Nico: `client.current_temperature(location) -> float`, Forecast mit
   `current=temperature_2m`, `temperature_unit=celsius`. Antwort über
   `errors.temperature_from_response` prüfen; fehlende Temperatur ist ein Fehler.
@@ -66,8 +70,8 @@ API-Dokumentation: [Geocoding](https://open-meteo.com/en/docs/geocoding-api),
 python -m unittest discover -s tests -v
 ```
 
-20 Tests erfolgreich, ohne Live-API. Die End-to-End-Abnahme erfolgt nach Nicos
-Integration. Review, Commit/Integration in den gemeinsamen Hauptbranch und
-Startprüfungen bei allen Teammitgliedern fehlen noch.
+33 Tests erfolgreich, ohne Live-API. Die Live-Abnahme von US-01 und US-04 steht
+in [us-01-validation.md](doc/us-01-validation.md). Review und Startprüfungen bei
+allen Teammitgliedern fehlen noch.
 Siehe [Sprintplan und Prüfnachweis](doc/sprint-1.md) und
 [Definition of Done](doc/definition-of-done.md).

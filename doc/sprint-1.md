@@ -26,7 +26,7 @@ API-Arbeit wird höher gewichtet als einzelne CLI-Tasks; eine genaue
 
 ## Aktueller Nachweis
 
-`python -m unittest discover -s tests -v`: **20 Tests erfolgreich**.
+`python -m unittest discover -s tests -v`: **33 Tests erfolgreich**.
 
 - Projekt, CLI und Ausgabe: Name, Land, Celsius, Null/negative Werte, Exit-Codes.
 - WEA-18: Timeout, DNS, HTTP 503, unvollständige HTTP-Antwort, ungültiges JSON,
@@ -35,10 +35,13 @@ API-Arbeit wird höher gewichtet als einzelne CLI-Tasks; eine genaue
   vorhandene Umsetzung zur Prüfung an Nico übergeben.
 - US-05: Zweck, Syntax und Beispiele, Offline-Hilfe, unbekannte Option,
   Prozess-Exit-Codes.
+- WEA-15, WEA-16 (Nico): Abfrageparameter, Auswahl des gemeinten Orts
+  (Zürich, New York, Frankfurt), mehrdeutige und fehlende Orte, ungültige
+  Ortsdaten, Temperatur inklusive 0 und negativ, fehlende Temperatur/Einheit.
 
-Keine Wind- oder Wetterzustandsfunktion ist enthalten. Die API ist weiterhin
-Nicos offener Teil. Netzwerkfehler werden mit simulierten Antworten getestet;
-Live-Abnahmen des vollständigen Nutzerablaufs sind noch offen.
+Keine Wind- oder Wetterzustandsfunktion ist enthalten. Netzwerkfehler werden
+mit simulierten Antworten getestet. Die Live-Abnahme des vollständigen
+Nutzerablaufs vom 21.09.2026 steht in [us-01-validation.md](us-01-validation.md).
 Die Schnittstelle für seine Integration steht in der README.
 
 ## Vorgehen und Status
