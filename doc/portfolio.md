@@ -183,7 +183,31 @@ durch Eduart am 07.09.2026 und am 21.09.2026.
 - Die vorgeschlagene Priorisierung nach Value/Effort. Wir arbeiten mit MoSCoW.
 - Die von der KI angelegten GitHub Issues #1 bis #5. Unser Board ist YouTrack; zwei parallele Backlogs wären schlechter als eines.
 - Die KI-Fassung von Product Backlog, Definition of Done und Portfolio vom 07.09.2026. Wir haben unsere eigene Fassung behalten; der zugehörige Branch wurde gelöscht.
-- Schätzungen haben wir bewusst nicht von der KI erzeugen lassen. Story Points entstehen im Planning Poker des Teams.
+- Ursprünglich wollten wir die Schätzung ohne KI machen. Am 21.09.2026 haben wir das geändert und die KI einen Ausgangswert setzen lassen, weil bis dahin kein Planning Poker stattgefunden hatte und die Stories sonst ungeschätzt in den Review gegangen wären. Die Werte stehen als Kommentar an jedem Ticket ausdrücklich als KI-Vorschlag und sind vom Team zu bestätigen oder zu korrigieren.
+
+**Schätzung durch die KI am 21.09.2026**
+
+Die KI hat Story Points für US-01 bis US-05 und eine Aufwandschätzung in Stunden
+(Original estimation) für die Tasks WEA-13 bis WEA-28 gesetzt, dazu die Priorität je
+Ticket nach der MoSCoW-Rangfolge aus dem Product Backlog.
+
+| Story | Ticket | Story Points | Priorität |
+| --- | --- | --- | --- |
+| US-01 Aktuelle Temperatur für eine Stadt | WEA-8 | 8 | Critical |
+| US-02 Aktuellen Wetterzustand erkennen | WEA-9 | 3 | Major |
+| US-03 Aktuelle Windgeschwindigkeit | WEA-10 | 2 | Normal |
+| US-04 Mehrteilige Stadtnamen | WEA-11 | 3 | Normal |
+| US-05 Bedienung ohne externe Anleitung | WEA-12 | 2 | Minor |
+
+Die Tasks sind mit insgesamt 28 Stunden geschätzt, je Task höchstens drei Stunden.
+US-01 ist mit 8 Punkten die grösste Story, weil sie den vollständigen Weg von der
+Eingabe über zwei API-Aufrufe bis zur Ausgabe samt vier Fehlerfällen enthält; die
+übrigen Stories bauen darauf auf und sind deshalb deutlich kleiner.
+
+**Diese Zahlen ersetzen kein Planning Poker.** Sie sind ein Ausgangswert für die
+Schätzrunde des Teams. Der Ertrag einer Schätzrunde ist die Diskussion über das
+Verständnis der Story, und die kann eine KI nicht für uns führen. Vor Sprint 2 schätzt
+das Team selbst und korrigiert die Werte.
 
 **Was wir dabei gelernt haben**
 
