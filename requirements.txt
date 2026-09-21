@@ -1,0 +1,1 @@
+# Keine externen Laufzeit-Abhängigkeiten; Python-Standardbibliothek genügt.

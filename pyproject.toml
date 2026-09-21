@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weathercli"
+version = "0.1.0"
+description = "Aktuelle Temperatur im Terminal mit Open-Meteo"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+weather = "weathercli.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["weathercli*"]

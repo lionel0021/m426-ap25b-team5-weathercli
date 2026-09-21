@@ -2,6 +2,10 @@
 
 Stand: Auftrag 4.1, Sprint 0. Quelle: [Story Map](images/StoryBoard.png).
 
+**Aktualisierte Sprintplanung:** Sprint 1 umfasst US-01, US-04 und US-05;
+Sprint 2 umfasst US-02 und US-03. Diese aktuelle Zuordnung ersetzt die
+ursprünglichen Sprint-1-Vorschläge unten. Siehe [Sprintplan](sprint-1.md).
+
 Die folgenden fünf Einträge sind für das Refinement und anschliessende Sprint-1-Planning vorbereitet. Die Reihenfolge ist ein Vorschlag nach MoSCoW und Nutzwert: zuerst eine vollständige Wetterabfrage, danach zusätzliche Informationen und Bedienhilfe. Schätzung, Kapazitätsabgleich und Zuteilung erfolgen im Planning. Der Umfang jeder Story ist auf höchstens zwei Modultage ausgelegt; das Team prüft dies bei der Schätzung.
 
 **Aufgabenverwaltung:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/). Gemäss Rückmeldung von Lionel am 07.09.2026 sind die fünf Stories dort erfasst. Eine unabhängige Prüfung der Board-Einträge fand nicht statt. Im Repository ist wie gewünscht nur der YouTrack-Link hinterlegt.

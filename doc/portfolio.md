@@ -58,6 +58,11 @@ Die ursprünglichen technischen Teilschritte der Map wurden in sichtbare Nutzere
 
 ## 4. Sprint-Dokumentation
 
+**Aktualisierte Arbeitsplanung:** Sprint 1: US-01, US-04, US-05;
+Sprint 2: US-02, US-03. Verantwortliche, Schnittstellen, Tests und offene
+Abnahme sind im [aktuellen Sprintplan](sprint-1.md) dokumentiert.
+Die nachfolgenden Sprint-0-Angaben bleiben als historischer Stand erhalten.
+
 ### Sprint 0 – Produktgrundlage und Zusammenarbeit
 
 **Ziel:** Vision und Backlog vorbereiten und gemeinsame Arbeitsregeln für Sprint 1 festlegen.

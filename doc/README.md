@@ -4,6 +4,7 @@ Alle Projektunterlagen liegen in diesem Ordner. Bilder und Screenshots sind unte
 
 ## Dokumente
 
+- [Sprint 1: Aufteilung und Prüfnachweis](sprint-1.md): Aktueller Umfang für Lionel und Nico, Schnittstelle und Tests.
 - [Scrum-Portfolio](portfolio.md): Team, Produktvision, Sprint-Dokumentation und Nachweise.
 - [Product Backlog](product-backlog.md): User Stories, Prioritäten und Akzeptanzkriterien.
 - [Definition of Done](definition-of-done.md): Gemeinsame Kriterien für abgeschlossene Stories.
