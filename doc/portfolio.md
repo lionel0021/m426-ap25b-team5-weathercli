@@ -98,6 +98,48 @@ Die ursprünglichen technischen Teilschritte der Map wurden in sichtbare Nutzere
 - DoD gemeinsam prüfen und Änderungen dokumentieren.
 - Übrige Felder des Sprint-0-Blocks anhand der offiziellen Portfolio-Vorlage ergänzen.
 
+### Sprint 1 (Modultag 4 bis 21.09.2026)
+
+**Sprintziel (Vorschlag des Product Owners, im Team noch nicht bestaetigt):** Eine Person
+kann im Terminal `weather "Zuerich"` eingeben und erhaelt Ort, Land und die aktuelle
+Temperatur - oder eine verstaendliche Meldung, wenn die Stadt nicht gefunden wird.
+
+**Sprint Backlog:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/)
+
+| Story | Ticket | Story Points | Bearbeiter | Status am 21.09.2026 |
+| --- | --- | --- | --- | --- |
+| US-01 Aktuelle Temperatur fuer eine Stadt | WEA-8 | nicht geschaetzt | nicht zugewiesen | Open |
+| US-02 Aktuellen Wetterzustand erkennen | WEA-9 | nicht geschaetzt | nicht zugewiesen | Open |
+| US-03 Aktuelle Windgeschwindigkeit | WEA-10 | nicht geschaetzt | nicht zugewiesen | Open |
+| US-04 Mehrteilige Stadtnamen | WEA-11 | nicht geschaetzt | nicht zugewiesen | Open |
+| US-05 Bedienung ohne externe Anleitung | WEA-12 | nicht geschaetzt | nicht zugewiesen | Open |
+
+Unter jeder Story liegen die Arbeitsschritte als Tasks (WEA-13 bis WEA-28).
+
+**Aufraeumen des Boards am 21.09.2026.** Die fuenf verfeinerten Stories waren zunaechst
+als Aufgaben unterhalb der alten Story-Map-Karten erfasst, also unterhalb genau jener
+technischen Scheiben, die das Refinement aufgeloest hatte. Sie sind jetzt als User Stories
+unter dem Epic WEA-7 gefuehrt und tragen Story-Text und Akzeptanzkriterien aus dem
+Product Backlog. Die Karten WEA-2 bis WEA-6 sind als Duplikate geschlossen und mit einem
+Verweis auf die Nachfolge-Story kommentiert.
+
+**Sprintergebnis.** Im Sprint wurde kein Produktinkrement erstellt. Im Repository liegt seit
+dem 07.09.2026 kein Quellcode; kein Ticket wurde aus dem Status Open bewegt. Das Sprintziel
+ist damit nicht erreicht. Planning Poker hat nicht stattgefunden, deshalb tragen die Stories
+keine Schaetzung, und die fuenf Erkenntnisse zum Schaetzen aus Auftrag 4.2 koennen noch
+nicht festgehalten werden.
+
+**Offen und an Modultag 5 nachzuholen:**
+
+- Stories im Team schaetzen und die Story Points in YouTrack eintragen
+- Die fuenf Erkenntnisse zum Schaetzen festhalten
+- Sprintziel im Team bestaetigen und im Board hinterlegen
+- Sprint-1-Retrospective; die Verbesserungsmassnahme aus Sprint 0 ist zu pruefen:
+  Die Stories existierten vor Sprintbeginn als Tickets, wurden aber bei Statuswechseln
+  nicht bewegt, weil keine Arbeit stattfand. Die Massnahme gilt damit als nicht erfuellt.
+- Technische Entscheide des Teams sind festgehalten: Python und Open-Meteo
+  (kein API-Schluessel noetig, Temperatur in Grad Celsius, Wind in km/h)
+
 ## 5. Nachweise und offene Abschlussarbeiten
 
 | Anforderung aus Auftrag 4.1 | Stand / Nachweis |
