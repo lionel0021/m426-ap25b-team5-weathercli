@@ -152,3 +152,44 @@ nicht festgehalten werden.
 | Portfolio Abschnitte 1–3 gefüllt | Team mit Rollen, Produkt, Vision, Backlog und YouTrack-Link erfasst |
 | Offizielle Portfolio-Vorlage übernommen | Offen: Vorlage/Modulrepo bislang nicht verfügbar; vorliegende Gliederung folgt dem Auftrag |
 | Story-Map-Bild verlinkt | In Abschnitt 3 enthalten |
+
+## 7. KI-Nutzungsnachweis
+
+### Sprint 1
+
+In diesem Sprint wurde KI verwendet: Claude (Anthropic), eingesetzt über Claude Code
+durch Eduart am 07.09.2026 und am 21.09.2026.
+
+**Wofür eingesetzt**
+
+| Bereich | Was die KI beigetragen hat |
+| --- | --- |
+| Refinement | Erster Entwurf von fünf verfeinerten Stories mit Rolle, Nutzen und Akzeptanzkriterien; Hinweis, dass die Story-Map-Karten entlang technischer Schichten geschnitten und deshalb einzeln nicht schätzbar waren |
+| Task-Schnitt | Vorschlag der Arbeitsschritte je Story, zugeschnitten auf je einen Modultag |
+| Recherche | Prüfung der Open-Meteo-Endpunkte durch echte Testaufrufe: kein API-Schlüssel nötig, Temperatur in Grad Celsius, Wind bereits in km/h, `country` auf Deutsch bei `language=de` |
+| Board | Umbau des YouTrack-Boards über die REST-API: WEA-8 bis WEA-12 von Task auf User Story, Umhängen unter Epic WEA-7, Anlegen der Tasks WEA-13 bis WEA-28, Schliessen der Karten WEA-2 bis WEA-6 als Duplikate |
+| Dokumentation | Erster Entwurf von Product Backlog, Definition of Done und Retrospective-Notizen; Sprint-1-Block in diesem Portfolio |
+
+**Was wir übernommen haben**
+
+- Den Befund, dass unsere Stories technisch statt entlang der Benutzeraktion geschnitten waren. Das war der Auslöser für das Refinement an Modultag 4.
+- Den Vorschlag, die Arbeitsschritte als Tasks unter die Stories zu hängen statt als eigene Stories zu führen.
+- Python und Open-Meteo als technische Entscheidung, nachdem die Testaufrufe gezeigt haben, dass kein API-Schlüssel und keine Einheitenumrechnung nötig sind.
+- Den Hinweis, bei der Ortssuche `count=5` statt `count=1` zu verwenden, weil sich das Akzeptanzkriterium zu mehrdeutigen Orten sonst nicht erfüllen lässt.
+
+**Was wir verworfen haben**
+
+- Den Story-Zuschnitt der KI (WCLI-1 bis WCLI-5). Wir haben stattdessen unsere eigene Fassung US-01 bis US-05 geschrieben, mit mehr Fehlerfällen und engerem Umfang je Story.
+- Die vorgeschlagene Priorisierung nach Value/Effort. Wir arbeiten mit MoSCoW.
+- Die von der KI angelegten GitHub Issues #1 bis #5. Unser Board ist YouTrack; zwei parallele Backlogs wären schlechter als eines.
+- Die KI-Fassung von Product Backlog, Definition of Done und Portfolio vom 07.09.2026. Wir haben unsere eigene Fassung behalten; der zugehörige Branch wurde gelöscht.
+- Schätzungen haben wir bewusst nicht von der KI erzeugen lassen. Story Points entstehen im Planning Poker des Teams.
+
+**Was wir dabei gelernt haben**
+
+Die KI war dort nützlich, wo es um Struktur und um das Prüfen von Fakten ging: Sie hat
+den falschen Story-Schnitt erkannt und die API-Angaben durch echte Aufrufe belegt statt
+sie zu behaupten. Inhaltliche Entscheidungen — Priorisierung, Zuschnitt, Schätzung,
+Werkzeugwahl — haben wir selbst getroffen und ihre Vorschläge dabei mehrfach verworfen.
+Ein aufgeräumtes Board ersetzt kein Produktinkrement: Die KI konnte die Dokumentation
+vorbereiten, den Code für Sprint 1 musste das Team schreiben.
