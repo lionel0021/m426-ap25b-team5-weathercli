@@ -103,6 +103,48 @@ Die nachfolgenden Sprint-0-Angaben bleiben als historischer Stand erhalten.
 - DoD gemeinsam prüfen und Änderungen dokumentieren.
 - Übrige Felder des Sprint-0-Blocks anhand der offiziellen Portfolio-Vorlage ergänzen.
 
+### Sprint 1 (Modultag 4 bis 21.09.2026)
+
+**Sprintziel (Vorschlag des Product Owners, im Team noch nicht bestaetigt):** Eine Person
+kann im Terminal `weather "Zuerich"` eingeben und erhaelt Ort, Land und die aktuelle
+Temperatur - oder eine verstaendliche Meldung, wenn die Stadt nicht gefunden wird.
+
+**Sprint Backlog:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/)
+
+| Story | Ticket | Story Points | Bearbeiter | Status am 21.09.2026 |
+| --- | --- | --- | --- | --- |
+| US-01 Aktuelle Temperatur fuer eine Stadt | WEA-8 | nicht geschaetzt | nicht zugewiesen | Open |
+| US-02 Aktuellen Wetterzustand erkennen | WEA-9 | nicht geschaetzt | nicht zugewiesen | Open |
+| US-03 Aktuelle Windgeschwindigkeit | WEA-10 | nicht geschaetzt | nicht zugewiesen | Open |
+| US-04 Mehrteilige Stadtnamen | WEA-11 | nicht geschaetzt | nicht zugewiesen | Open |
+| US-05 Bedienung ohne externe Anleitung | WEA-12 | nicht geschaetzt | nicht zugewiesen | Open |
+
+Unter jeder Story liegen die Arbeitsschritte als Tasks (WEA-13 bis WEA-28).
+
+**Aufraeumen des Boards am 21.09.2026.** Die fuenf verfeinerten Stories waren zunaechst
+als Aufgaben unterhalb der alten Story-Map-Karten erfasst, also unterhalb genau jener
+technischen Scheiben, die das Refinement aufgeloest hatte. Sie sind jetzt als User Stories
+unter dem Epic WEA-7 gefuehrt und tragen Story-Text und Akzeptanzkriterien aus dem
+Product Backlog. Die Karten WEA-2 bis WEA-6 sind als Duplikate geschlossen und mit einem
+Verweis auf die Nachfolge-Story kommentiert.
+
+**Sprintergebnis.** Im Sprint wurde kein Produktinkrement erstellt. Im Repository liegt seit
+dem 07.09.2026 kein Quellcode; kein Ticket wurde aus dem Status Open bewegt. Das Sprintziel
+ist damit nicht erreicht. Planning Poker hat nicht stattgefunden, deshalb tragen die Stories
+keine Schaetzung, und die fuenf Erkenntnisse zum Schaetzen aus Auftrag 4.2 koennen noch
+nicht festgehalten werden.
+
+**Offen und an Modultag 5 nachzuholen:**
+
+- Stories im Team schaetzen und die Story Points in YouTrack eintragen
+- Die fuenf Erkenntnisse zum Schaetzen festhalten
+- Sprintziel im Team bestaetigen und im Board hinterlegen
+- Sprint-1-Retrospective; die Verbesserungsmassnahme aus Sprint 0 ist zu pruefen:
+  Die Stories existierten vor Sprintbeginn als Tickets, wurden aber bei Statuswechseln
+  nicht bewegt, weil keine Arbeit stattfand. Die Massnahme gilt damit als nicht erfuellt.
+- Technische Entscheide des Teams sind festgehalten: Python und Open-Meteo
+  (kein API-Schluessel noetig, Temperatur in Grad Celsius, Wind in km/h)
+
 ## 5. Nachweise und offene Abschlussarbeiten
 
 | Anforderung aus Auftrag 4.1 | Stand / Nachweis |
@@ -115,3 +157,68 @@ Die nachfolgenden Sprint-0-Angaben bleiben als historischer Stand erhalten.
 | Portfolio Abschnitte 1–3 gefüllt | Team mit Rollen, Produkt, Vision, Backlog und YouTrack-Link erfasst |
 | Offizielle Portfolio-Vorlage übernommen | Offen: Vorlage/Modulrepo bislang nicht verfügbar; vorliegende Gliederung folgt dem Auftrag |
 | Story-Map-Bild verlinkt | In Abschnitt 3 enthalten |
+
+## 7. KI-Nutzungsnachweis
+
+### Sprint 1
+
+In diesem Sprint wurde KI verwendet: Claude (Anthropic), eingesetzt über Claude Code
+durch Eduart am 07.09.2026 und am 21.09.2026.
+
+**Wofür eingesetzt**
+
+| Bereich | Was die KI beigetragen hat |
+| --- | --- |
+| Refinement | Erster Entwurf von fünf verfeinerten Stories mit Rolle, Nutzen und Akzeptanzkriterien; Hinweis, dass die Story-Map-Karten entlang technischer Schichten geschnitten und deshalb einzeln nicht schätzbar waren |
+| Task-Schnitt | Vorschlag der Arbeitsschritte je Story, zugeschnitten auf je einen Modultag |
+| Recherche | Prüfung der Open-Meteo-Endpunkte durch echte Testaufrufe: kein API-Schlüssel nötig, Temperatur in Grad Celsius, Wind bereits in km/h, `country` auf Deutsch bei `language=de` |
+| Board | Umbau des YouTrack-Boards über die REST-API: WEA-8 bis WEA-12 von Task auf User Story, Umhängen unter Epic WEA-7, Anlegen der Tasks WEA-13 bis WEA-28, Schliessen der Karten WEA-2 bis WEA-6 als Duplikate |
+| Dokumentation | Erster Entwurf von Product Backlog, Definition of Done und Retrospective-Notizen; Sprint-1-Block in diesem Portfolio |
+
+**Was wir übernommen haben**
+
+- Den Befund, dass unsere Stories technisch statt entlang der Benutzeraktion geschnitten waren. Das war der Auslöser für das Refinement an Modultag 4.
+- Den Vorschlag, die Arbeitsschritte als Tasks unter die Stories zu hängen statt als eigene Stories zu führen.
+- Python und Open-Meteo als technische Entscheidung, nachdem die Testaufrufe gezeigt haben, dass kein API-Schlüssel und keine Einheitenumrechnung nötig sind.
+- Den Hinweis, bei der Ortssuche `count=5` statt `count=1` zu verwenden, weil sich das Akzeptanzkriterium zu mehrdeutigen Orten sonst nicht erfüllen lässt.
+
+**Was wir verworfen haben**
+
+- Den Story-Zuschnitt der KI (WCLI-1 bis WCLI-5). Wir haben stattdessen unsere eigene Fassung US-01 bis US-05 geschrieben, mit mehr Fehlerfällen und engerem Umfang je Story.
+- Die vorgeschlagene Priorisierung nach Value/Effort. Wir arbeiten mit MoSCoW.
+- Die von der KI angelegten GitHub Issues #1 bis #5. Unser Board ist YouTrack; zwei parallele Backlogs wären schlechter als eines.
+- Die KI-Fassung von Product Backlog, Definition of Done und Portfolio vom 07.09.2026. Wir haben unsere eigene Fassung behalten; der zugehörige Branch wurde gelöscht.
+- Ursprünglich wollten wir die Schätzung ohne KI machen. Am 21.09.2026 haben wir das geändert und die KI einen Ausgangswert setzen lassen, weil bis dahin kein Planning Poker stattgefunden hatte und die Stories sonst ungeschätzt in den Review gegangen wären. Die Werte stehen als Kommentar an jedem Ticket ausdrücklich als KI-Vorschlag und sind vom Team zu bestätigen oder zu korrigieren.
+
+**Schätzung durch die KI am 21.09.2026**
+
+Die KI hat Story Points für US-01 bis US-05 und eine Aufwandschätzung in Stunden
+(Original estimation) für die Tasks WEA-13 bis WEA-28 gesetzt, dazu die Priorität je
+Ticket nach der MoSCoW-Rangfolge aus dem Product Backlog.
+
+| Story | Ticket | Story Points | Priorität |
+| --- | --- | --- | --- |
+| US-01 Aktuelle Temperatur für eine Stadt | WEA-8 | 8 | Critical |
+| US-02 Aktuellen Wetterzustand erkennen | WEA-9 | 3 | Major |
+| US-03 Aktuelle Windgeschwindigkeit | WEA-10 | 2 | Normal |
+| US-04 Mehrteilige Stadtnamen | WEA-11 | 3 | Normal |
+| US-05 Bedienung ohne externe Anleitung | WEA-12 | 2 | Minor |
+
+Die Tasks sind mit insgesamt 28 Stunden geschätzt, je Task höchstens drei Stunden.
+US-01 ist mit 8 Punkten die grösste Story, weil sie den vollständigen Weg von der
+Eingabe über zwei API-Aufrufe bis zur Ausgabe samt vier Fehlerfällen enthält; die
+übrigen Stories bauen darauf auf und sind deshalb deutlich kleiner.
+
+**Diese Zahlen ersetzen kein Planning Poker.** Sie sind ein Ausgangswert für die
+Schätzrunde des Teams. Der Ertrag einer Schätzrunde ist die Diskussion über das
+Verständnis der Story, und die kann eine KI nicht für uns führen. Vor Sprint 2 schätzt
+das Team selbst und korrigiert die Werte.
+
+**Was wir dabei gelernt haben**
+
+Die KI war dort nützlich, wo es um Struktur und um das Prüfen von Fakten ging: Sie hat
+den falschen Story-Schnitt erkannt und die API-Angaben durch echte Aufrufe belegt statt
+sie zu behaupten. Inhaltliche Entscheidungen — Priorisierung, Zuschnitt, Schätzung,
+Werkzeugwahl — haben wir selbst getroffen und ihre Vorschläge dabei mehrfach verworfen.
+Ein aufgeräumtes Board ersetzt kein Produktinkrement: Die KI konnte die Dokumentation
+vorbereiten, den Code für Sprint 1 musste das Team schreiben.
