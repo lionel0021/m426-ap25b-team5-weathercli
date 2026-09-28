@@ -76,7 +76,7 @@ python -m unittest discover -s tests -v
 
 Der Sprint-1-Prüfnachweis mit 33 Tests und ohne Live-API steht in
 [us-01-validation.md](doc/us-01-validation.md). Für die aktuelle Sprint-2-
-Windänderung wurden in diesem Arbeitsgang keine Tests ausgeführt. Review und
+Windänderung laufen jetzt 38 Tests erfolgreich, ohne Live-API. Review und
 Startprüfungen bei allen Teammitgliedern stehen noch aus.
 Siehe [Sprintplan und Prüfnachweis](doc/sprint-1.md) und
 [Definition of Done](doc/definition-of-done.md).

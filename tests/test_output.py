@@ -14,7 +14,27 @@ class OutputTests(unittest.TestCase):
         for value in (0, 20.5, -8):
             with self.subTest(value=value):
                 self.assertEqual(format_weather(self.place, self.payload(value)),
-                                 f"New York, USA: {value:g} °C")
+                                 f"New York, USA: {value:g} °C, Wind nicht verfügbar")
+
+    def test_wind_is_formatted_in_kmh_including_zero(self):
+        data = {"current": {"temperature_2m": 20, "wind_speed_10m": 0},
+                "current_units": {"temperature_2m": "°C", "wind_speed_10m": "km/h"}}
+        self.assertEqual(format_weather(self.place, data),
+                         "New York, USA: 20 °C, Wind: 0 km/h")
+
+    def test_missing_or_invalid_wind_keeps_temperature_visible(self):
+        invalid = [
+            {"current": {"temperature_2m": 20},
+             "current_units": {"temperature_2m": "°C"}},
+            {"current": {"temperature_2m": 20, "wind_speed_10m": "12"},
+             "current_units": {"temperature_2m": "°C", "wind_speed_10m": "km/h"}},
+            {"current": {"temperature_2m": 20, "wind_speed_10m": 12},
+             "current_units": {"temperature_2m": "°C", "wind_speed_10m": "m/s"}},
+        ]
+        for data in invalid:
+            with self.subTest(data=data):
+                self.assertEqual(format_weather(self.place, data),
+                                 "New York, USA: 20 °C, Wind nicht verfügbar")
 
     def test_invalid_temperature_rejects_success_output(self):
         for value in (None, "20", True, float("nan"), float("inf")):

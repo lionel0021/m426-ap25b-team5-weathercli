@@ -15,10 +15,12 @@ PLACE = Location("Zürich", "Schweiz", 47.37, 8.55)
 
 
 class CliTests(unittest.TestCase):
-    def run_cli(self, args, temperature=21.5, error=None):
+    def run_cli(self, args, temperature=21.5, wind=8.2, error=None):
         out, err = io.StringIO(), io.StringIO()
         with patch("weathercli.cli.resolve_city", return_value=PLACE, side_effect=error) as resolve:
-            with patch("weathercli.cli.current_weather", return_value={"current": {"temperature_2m": temperature}, "current_units": {"temperature_2m": "°C"}}) as weather:
+            with patch("weathercli.cli.current_weather", return_value={
+                    "current": {"temperature_2m": temperature, "wind_speed_10m": wind},
+                    "current_units": {"temperature_2m": "°C", "wind_speed_10m": "km/h"}}) as weather:
                 with redirect_stdout(out), redirect_stderr(err):
                     try:
                         code = main(args)
@@ -31,7 +33,7 @@ class CliTests(unittest.TestCase):
             with self.subTest(value=value):
                 code, out, err, resolve, weather = self.run_cli([" Zürich "], value)
                 self.assertEqual(code, 0)
-                self.assertEqual(out, f"Zürich, Schweiz: {value:g} °C\n")
+                self.assertEqual(out, f"Zürich, Schweiz: {value:g} °C, Wind: 8.2 km/h\n")
                 self.assertEqual(err, "")
                 resolve.assert_called_once_with("Zürich")
                 weather.assert_called_once_with(PLACE)
@@ -104,7 +106,7 @@ class CliTests(unittest.TestCase):
                 out = io.StringIO()
                 with redirect_stdout(out):
                     self.assertEqual(main(["Zürich"]), 0)
-                self.assertEqual(out.getvalue(), "Zürich, Schweiz: 18 °C\n")
+                self.assertEqual(out.getvalue(), "Zürich, Schweiz: 18 °C, Wind nicht verfügbar\n")
                 weather.assert_called_once_with(PLACE)
 
     def test_module_process_exit_code(self):

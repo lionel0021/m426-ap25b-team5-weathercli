@@ -18,5 +18,7 @@ Open-Meteo-Antwort wie die Temperatur lesen, in km/h ausgeben und den Wert
 
 ## Prüfstand
 
-In diesem Arbeitsgang wurden keine Tests ausgeführt. Der Sprint-1-Nachweis
-deckt die Windänderung nicht ab. Review und Team-Abnahme stehen noch aus.
+`python -m unittest discover -s tests -v`: **38 Tests erfolgreich**, ohne
+Live-API. Die Windänderung wird durch simulierte Antworten auf Abfrageparameter,
+km/h-Einheit, den gültigen Nullwert und fehlende oder ungültige Winddaten
+geprüft. Review und Team-Abnahme stehen noch aus.

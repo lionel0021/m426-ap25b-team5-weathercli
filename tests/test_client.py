@@ -111,6 +111,42 @@ class CurrentTemperatureTests(unittest.TestCase):
             self.assertEqual(current_weather(self.place), {
                 "current": {"temperature_2m": -2}, "current_units": {"temperature_2m": "°C"}})
 
+    def test_current_weather_requests_and_returns_wind_in_kmh(self):
+        response = self.forecast()
+        response["current"]["wind_speed_10m"] = 12.4
+        response["current_units"]["wind_speed_10m"] = "km/h"
+        with patch("weathercli.client.request_json", return_value=response) as request:
+            self.assertEqual(current_weather(self.place), {
+                "current": {"temperature_2m": 16.3, "wind_speed_10m": 12.4},
+                "current_units": {"temperature_2m": "°C", "wind_speed_10m": "km/h"}})
+        request.assert_called_once_with(FORECAST_URL, {
+            "latitude": 47.36667, "longitude": 8.55,
+            "current": "temperature_2m,wind_speed_10m",
+            "temperature_unit": "celsius", "wind_speed_unit": "kmh"})
+
+    def test_zero_wind_is_a_valid_value(self):
+        response = self.forecast()
+        response["current"]["wind_speed_10m"] = 0
+        response["current_units"]["wind_speed_10m"] = "km/h"
+        with patch("weathercli.client.request_json", return_value=response):
+            self.assertEqual(current_weather(self.place)["current"]["wind_speed_10m"], 0)
+
+    def test_missing_or_invalid_wind_does_not_discard_temperature(self):
+        responses = [self.forecast(), self.forecast(unit="°C"),
+                     self.forecast(), self.forecast()]
+        responses[1]["current"]["wind_speed_10m"] = None
+        responses[1]["current_units"]["wind_speed_10m"] = "km/h"
+        responses[2]["current"]["wind_speed_10m"] = "12"
+        responses[2]["current_units"]["wind_speed_10m"] = "km/h"
+        responses[3]["current"]["wind_speed_10m"] = 12
+        responses[3]["current_units"]["wind_speed_10m"] = "m/s"
+        for response in responses:
+            with self.subTest(response=response), patch(
+                    "weathercli.client.request_json", return_value=response):
+                result = current_weather(self.place)
+                self.assertEqual(result["current"]["temperature_2m"], 16.3)
+                self.assertNotIn("wind_speed_10m", result["current"])
+
 
 if __name__ == "__main__":
     unittest.main()
