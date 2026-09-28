@@ -151,9 +151,45 @@ zu Sprint 2 und werden nicht zur Velocity von Sprint 1 addiert.
 
 **Noch offen:**
 
-- Sprint-1-Retrospective durchfuehren und genau eine Verbesserungsmassnahme als
-  Eintrag in das Sprint-2-Backlog aufnehmen.
 - US-02 und US-03 im Board eindeutig Sprint 2 zuordnen.
+
+#### Retrospektive Sprint 1
+
+**Was lief gut?**
+
+- Die Absprachen im Team funktionierten gut.
+- Die ausgewählten Sprint-1-Stories konnten gemäss der Definition of Done
+  abgeschlossen werden.
+- Die automatisierten Tests liefen erfolgreich und gaben dem Team schnelle
+  Rückmeldung zu den umgesetzten Funktionen.
+- Die gegenseitigen Code-Reviews funktionierten und die Ergebnisse wurden auf
+  dem gemeinsamen Hauptbranch integriert.
+
+**Was lief weniger gut?**
+
+- Einzelne Tickets wurden teilweise zu früh oder verspätet auf einen neuen
+  Status gesetzt.
+- Mehrfach traten Berechtigungsprobleme im Board auf. Der Scrum Master klärte
+  diese Hindernisse, damit das Team weiterarbeiten konnte.
+- Im Sprint Review betrachtete das Team vor allem einzelne Aufgaben und
+  Funktionen. Ob die vollständigen User Stories mit ihren Akzeptanzkriterien
+  abgeschlossen waren, stand zu wenig im Mittelpunkt.
+
+**Genau eine Verbesserungsmassnahme für Sprint 2:**
+
+> Im Sprint Review wird jede User Story einzeln anhand ihrer Akzeptanzkriterien
+> und der Definition of Done geprüft. Das Ergebnis wird als «erfüllt» oder
+> «nicht erfüllt» dokumentiert, bevor die Story als Done gilt.
+
+**Vorbereiteter Eintrag für das Sprint-2-Backlog:**
+
+- **Titel:** Sprint Review storyweise anhand Akzeptanzkriterien und DoD
+  durchführen
+- **Verantwortlich für die Durchführung:** Fidan als Scrum Master
+- **Erfüllt, wenn:** Jede Sprint-2-Story wurde einzeln besprochen,
+  Akzeptanzkriterien und DoD wurden geprüft und das Ergebnis wurde im Board
+  dokumentiert.
+- **Issue-Link:** Nach dem Erstellen des Eintrags in YouTrack ergänzen.
 
 ### Sprint 2 – Planungsgrundlage
 
