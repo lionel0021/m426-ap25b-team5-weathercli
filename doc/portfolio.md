@@ -145,6 +145,44 @@ nicht festgehalten werden.
 - Technische Entscheide des Teams sind festgehalten: Python und Open-Meteo
   (kein API-Schluessel noetig, Temperatur in Grad Celsius, Wind in km/h)
 
+### Sprint 2 (28.09.2026 und 19.10.2026, Review und Retro am 26.10.2026)
+
+**Sprintziel:** Eine Person sieht mit `weather "Zürich"` neben der Temperatur auch
+den aktuellen Wetterzustand auf Deutsch und die Windgeschwindigkeit in km/h; fehlt
+ein Wert, erscheint ein klarer Hinweis statt eines Absturzes.
+
+**Richtwert aus Sprint 1:** 13 Story Points (US-01: 8, US-04: 3, US-05: 2, im Board
+auf «Erledigt»). Sprint 2 hat wie Sprint 1 zwei Modultage.
+
+**Sprint Backlog:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/)
+
+| Rang | Eintrag | Ticket | Story Points | Tasks |
+| ---: | --- | --- | ---: | --- |
+| 1 | US-02 Aktuellen Wetterzustand erkennen | WEA-9 | 3 | WEA-19 bis WEA-21 |
+| 2 | US-03 Aktuelle Windgeschwindigkeit sehen | WEA-10 | 2 | WEA-22, WEA-23 |
+| 3 | Retro-Massnahme aus Sprint 1 | im Board anlegen | – | vom Team eintragen |
+
+**Begründung der Auswahl (PO):** US-02 und US-03 vervollständigen die aktuelle
+Wetterabfrage und liefern damit den grössten Nutzwert: Regenschutz und Velofahrt
+lassen sich mit einem Aufruf entscheiden. Mit 5 Story Points bleibt der Sprint
+bewusst unter dem Richtwert von 13. Die Differenz ist für die offenen
+DoD-Punkte aus Sprint 1 (Startprüfung bei allen Teammitgliedern) und die
+Retro-Massnahme reserviert: fertig machen vor neu anfangen. Nächster Kandidat,
+falls Kapazität frei wird, ist die Wettervorhersage (Rang 6); sie muss vorher
+verfeinert und im Planning Poker geschätzt werden.
+
+**Tasks:** Die Tasks werden von den Developers gezogen, nicht verteilt. Die
+Zuordnung im [Sprintplan](sprint-1.md) gilt nur als Vorschlag.
+
+**Startprüfung (DoD 4):**
+
+| Teammitglied | Datum | Ergebnis |
+| --- | --- | --- |
+| Eduart | 28.09.2026 | 34 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 17.7 °C` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 15 °C` (Exit 0), `weather` ohne Stadt → Fehlermeldung (Exit 2) |
+| Fidan | offen | |
+| Lionel | offen | |
+| Nico | offen | |
+
 ## 5. Nachweise und offene Abschlussarbeiten
 
 | Anforderung aus Auftrag 4.1 | Stand / Nachweis |
@@ -222,3 +260,16 @@ sie zu behaupten. Inhaltliche Entscheidungen — Priorisierung, Zuschnitt, Schä
 Werkzeugwahl — haben wir selbst getroffen und ihre Vorschläge dabei mehrfach verworfen.
 Ein aufgeräumtes Board ersetzt kein Produktinkrement: Die KI konnte die Dokumentation
 vorbereiten, den Code für Sprint 1 musste das Team schreiben.
+
+### Sprint 2
+
+Am 28.09.2026 hat Eduart Claude (Anthropic) über Claude Code eingesetzt, um die
+Rollenaufgaben für Auftrag 6.2 zu klären, einen Entwurf für Sprintziel,
+Sprint-2-Block und Refinement-Notizen zu US-02/US-03 zu schreiben und die
+Startprüfung auszuführen.
+
+- **Übernommen:** Sprintziel-Entwurf, Auswahl US-02 und US-03 mit 5 von 13 Story
+  Points, Hinweis «Tasks ziehen statt verteilen», API-Felder `weather_code` und
+  `wind_speed_10m` als Refinement-Notiz.
+- **Verworfen:** Retro-Massnahme und Story-Point-Schätzung durch die KI; beides
+  legt das Team selbst fest.
