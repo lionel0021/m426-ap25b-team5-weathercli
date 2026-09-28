@@ -82,15 +82,17 @@ class CurrentTemperatureTests(unittest.TestCase):
 
     def forecast(self, value=16.3, unit="°C"):
         return {"latitude": 47.36, "longitude": 8.56,
-                "current_units": {"time": "iso8601", "temperature_2m": unit},
-                "current": {"time": "2026-09-21T08:15", "temperature_2m": value}}
+                "current_units": {"time": "iso8601", "temperature_2m": unit,
+                                  "weather_code": "wmo code"},
+                "current": {"time": "2026-09-21T08:15", "temperature_2m": value,
+                            "weather_code": 3}}
 
     def test_query_parameters_and_temperature(self):
         with patch("weathercli.client.request_json", return_value=self.forecast()) as request:
             self.assertEqual(current_temperature(self.place), 16.3)
         request.assert_called_once_with(FORECAST_URL, {
             "latitude": 47.36667, "longitude": 8.55,
-            "current": "temperature_2m", "temperature_unit": "celsius"})
+            "current": "temperature_2m,weather_code", "temperature_unit": "celsius"})
 
     def test_zero_and_negative_are_valid(self):
         for value in (0, -7.5):
@@ -106,10 +108,18 @@ class CurrentTemperatureTests(unittest.TestCase):
                 with patch("weathercli.client.request_json", return_value=data):
                     current_temperature(self.place)
 
-    def test_adapter_returns_checked_temperature_for_output(self):
-        with patch("weathercli.client.request_json", return_value=self.forecast(-2)):
-            self.assertEqual(current_weather(self.place), {
-                "current": {"temperature_2m": -2}, "current_units": {"temperature_2m": "°C"}})
+    def test_one_request_carries_temperature_and_condition(self):
+        with patch("weathercli.client.request_json", return_value=self.forecast(-2)) as request:
+            data = current_weather(self.place)
+        self.assertEqual(request.call_count, 1)
+        self.assertEqual(data["current"]["temperature_2m"], -2)
+        self.assertEqual(data["current"]["weather_code"], 3)
+
+    def test_missing_temperature_is_an_error_even_with_condition(self):
+        data = {"current": {"weather_code": 3}, "current_units": {"weather_code": "wmo code"}}
+        with patch("weathercli.client.request_json", return_value=data):
+            with self.assertRaises(WeatherError):
+                current_weather(self.place)
 
 
 if __name__ == "__main__":

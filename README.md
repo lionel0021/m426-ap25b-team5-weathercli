@@ -1,8 +1,7 @@
 # WeatherCLI
 
-Aktueller Arbeitsumfang: **nur Sprint 1**, US-01, US-04 und US-05.
-Python 3.10+. US-02 (Wetterzustand) und US-03 (Wind) sind für Sprint 2 geplant.
-Windanzeige und zugehörige Tests wurden aus dem aktuellen Stand entfernt.
+Umgesetzt: US-01, US-04 und US-05 aus Sprint 1, dazu US-02 (Wetterzustand) aus
+Sprint 2. Python 3.10+. Offen bleibt US-03 (Wind).
 
 ## Start
 
@@ -12,8 +11,11 @@ python -m weathercli "Zürich"
 python -m weathercli "New York"
 ```
 
-Ausgabe zum Beispiel `Zürich, Schweiz: 17.2 °C`. Ortssuche und Temperatur kommen
-live von Open-Meteo (kein API-Schlüssel); dafür ist eine Internetverbindung nötig.
+Ausgabe zum Beispiel `Zürich, Schweiz: 15.4 °C, Klar`. Ort, Temperatur und
+Wetterzustand stammen aus einer Abfrage bei Open-Meteo (kein API-Schlüssel);
+dafür ist eine Internetverbindung nötig. Fehlt der Wetterzustand oder ist der
+Code unbekannt, steht dort `Wetterzustand nicht verfügbar`, die Temperatur
+bleibt sichtbar.
 
 Optional unter Windows:
 
@@ -57,7 +59,12 @@ Die bestehende Ortsnamen-Verarbeitung inklusive Tests wird Nico zur Prüfung
 - Lionel: `errors.py` behandelt HTTP-/DNS-/Timeoutfehler, ungültiges JSON,
   API-Fehler, unbekannte/mehrdeutige Orte und ungültige Orts-/Temperaturdaten.
   Diese Helfer sind getestet; Nico muss sie in die echten API-Aufrufe einbinden.
-- `output.format_weather` zeigt nur Ort, Land und Temperatur.
+- Nico: `conditions.condition_from_response(data) -> str | None` (WEA-19, WEA-20)
+  liest `weather_code` und übersetzt ihn über `WMO_CONDITIONS` ins Deutsche;
+  fehlender oder unbekannter Code ergibt `None`.
+- `client.current_weather` fragt `current=temperature_2m,weather_code` in einem
+  Aufruf ab, damit Temperatur und Zustand aus derselben Messung stammen.
+- `output.format_weather` zeigt Ort, Land, Temperatur und Wetterzustand (WEA-21).
 - `WeatherError`: CLI schreibt auf stderr und endet mit Code 1. Eingabefehler:
   Code 2. Erfolg/Hilfe: Code 0. Keine erfundenen Wetterwerte.
 
