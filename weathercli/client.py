@@ -71,23 +71,22 @@ def _population(result: dict) -> float:
     return population if finite_number(population) else 0
 
 
-def current_temperature(location: Location) -> float:
-    """WEA-16: Aktuelle Temperatur am Ort in °C, Einheit von der API bestätigt."""
+def current_weather(location: Location) -> dict:
+    """Ein Abruf, ein aktueller Datensatz für den Ort (WEA-16, WEA-19).
+
+    Fragt Temperatur und Wetterzustand gemeinsam ab, damit beide Werte aus
+    derselben Messung stammen, und prüft die Temperatur samt Einheit sofort.
+    Eine fehlende Temperatur ist ein Fehler; ein fehlender Wetterzustand nicht,
+    darüber entscheidet conditions.condition_from_response.
+    """
     data = request_json(FORECAST_URL, {
         "latitude": location.latitude, "longitude": location.longitude,
-        "current": "temperature_2m", "temperature_unit": "celsius",
+        "current": "temperature_2m,weather_code", "temperature_unit": "celsius",
     })
-    return temperature_from_response(data)
+    temperature_from_response(data)
+    return data
 
 
-def current_weather(location: Location) -> dict:
-    """Kompatibler Adapter für Sprint 1: ausschliesslich Temperatur.
-
-    current_temperature muss die Celsius-Einheit zuvor mit
-    errors.temperature_from_response geprüft haben. Nico kann alternativ
-    hier direkt die geprüfte API-Antwort zurückgeben.
-    """
-    return {
-        "current": {"temperature_2m": current_temperature(location)},
-        "current_units": {"temperature_2m": "°C"},
-    }
+def current_temperature(location: Location) -> float:
+    """WEA-16: Aktuelle Temperatur am Ort in °C, Einheit von der API bestätigt."""
+    return temperature_from_response(current_weather(location))

@@ -38,8 +38,12 @@ API-Arbeit wird höher gewichtet als einzelne CLI-Tasks; eine genaue
 - WEA-15, WEA-16 (Nico): Abfrageparameter, Auswahl des gemeinten Orts
   (Zürich, New York, Frankfurt), mehrdeutige und fehlende Orte, ungültige
   Ortsdaten, Temperatur inklusive 0 und negativ, fehlende Temperatur/Einheit.
+- WEA-19 bis WEA-21 (Nico, US-02): bekannte WMO-Codes auf Deutsch, unbekannter
+  und fehlender Code, Temperatur und Zustand aus einer Abfrage, Ausgabeformat.
 
-Keine Wind- oder Wetterzustandsfunktion ist enthalten. Netzwerkfehler werden
+Der Wetterzustand (US-02) ist seit 28.09.2026 umgesetzt, siehe
+[us-02-validation.md](us-02-validation.md); eine Windfunktion (US-03) enthält der
+Stand nicht. Netzwerkfehler werden
 mit simulierten Antworten getestet. Die Live-Abnahme des vollständigen
 Nutzerablaufs vom 21.09.2026 steht in [us-01-validation.md](us-01-validation.md).
 Die Schnittstelle für seine Integration steht in der README.
