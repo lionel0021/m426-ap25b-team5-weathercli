@@ -51,12 +51,15 @@ gesetzt. Lionels lokal umgesetzte Tasks gehen zur Prüfung auf To Verify.
 Nicos API-Arbeit wird nicht als erledigt markiert. Die verschobenen Wind-Tasks
 werden auf Open zurückgesetzt. Die DoD gilt weiterhin: gegenseitiges Review,
 gemeinsamer Hauptbranch, Team-Startprüfung und verlinkte Nachweise vor Done.
-Der Code liegt lokal vor und ist noch nicht committed oder gepusht.
+Stand 28.09.2026: Lionels Tasks sind über 50f2e05 und Nicos API-Anbindung über
+PR #8 auf main; Nico hat Lionels Tasks geprüft, Eduart Nicos PR freigegeben.
 
 ## Grenze der YouTrack-Zuordnung
 
 Die Sprintplanung wird in den Ticketbeschreibungen und hier festgehalten.
-Das Erstellen eines tatsächlichen Board-Sprints wurde zuvor mit HTTP 403
-abgewiesen. Eine echte Board-Sprint-Zuordnung wird deshalb nicht behauptet.
+Das Erstellen eines Board-Sprints war zuerst mit HTTP 403 blockiert; seit
+21.09.2026 besteht der Sprint "Sprint 1" auf beiden Boards. Dort liegen aber
+auch US-02 und US-03, die nach dieser Planung erst zu Sprint 2 gehören - solange
+das so bleibt, erreicht der Sprint-1-Burndown nie null. Das klärt der PO.
 Sprint-2-Termine sind noch nicht festgelegt. Die früher blockierten Admin-Punkte
 (Boardkopie löschen, Zugriffsnachweis nicolai.fricker) bleiben offen.
