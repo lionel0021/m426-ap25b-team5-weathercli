@@ -160,7 +160,7 @@ auf «Erledigt»). Sprint 2 hat wie Sprint 1 zwei Modultage.
 | ---: | --- | --- | ---: | --- |
 | 1 | US-02 Aktuellen Wetterzustand erkennen | WEA-9 | 3 | WEA-19 bis WEA-21 |
 | 2 | US-03 Aktuelle Windgeschwindigkeit sehen | WEA-10 | 2 | WEA-22, WEA-23 |
-| 3 | Retro-Massnahme aus Sprint 1 | im Board anlegen | – | vom Team eintragen |
+| 3 | Retro-Massnahme: Story erst auf Done, wenn alle vier die Startprüfung im Ticket bestätigt haben (Vorschlag PO, im Team bestätigen) | WEA-29 | – | Prüfung in der Retro am 26.10.2026 |
 
 **Begründung der Auswahl (PO):** US-02 und US-03 vervollständigen die aktuelle
 Wetterabfrage und liefern damit den grössten Nutzwert: Regenschutz und Velofahrt
@@ -170,6 +170,12 @@ DoD-Punkte aus Sprint 1 (Startprüfung bei allen Teammitgliedern) und die
 Retro-Massnahme reserviert: fertig machen vor neu anfangen. Nächster Kandidat,
 falls Kapazität frei wird, ist die Wettervorhersage (Rang 6); sie muss vorher
 verfeinert und im Planning Poker geschätzt werden.
+
+**Board:** Sprintziel und Auswahl sind als Kommentar an WEA-9 und WEA-10 festgehalten.
+Den Board-Sprint «Sprint 2» konnte Eduart nicht anlegen: YouTrack antwortet mit
+HTTP 403, beide Boards gehören dem User admin. Das ist als Impediment WEA-30
+erfasst. Sobald Sprint 2 existiert, werden WEA-9, WEA-10, WEA-19 bis WEA-23 und
+WEA-29 von Sprint 1 nach Sprint 2 verschoben.
 
 **Tasks:** Die Tasks werden von den Developers gezogen, nicht verteilt. Die
 Zuordnung im [Sprintplan](sprint-1.md) gilt nur als Vorschlag.
