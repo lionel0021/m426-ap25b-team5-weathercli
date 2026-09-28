@@ -1,4 +1,4 @@
-"""Open-Meteo-Anbindung für Sprint 1: Ortssuche (WEA-15) und Temperatur (WEA-16)."""
+"""Open-Meteo-Anbindung für Ortssuche, Temperatur und Sprint-2-Winddaten."""
 
 import unicodedata
 from dataclasses import dataclass
@@ -81,13 +81,26 @@ def current_temperature(location: Location) -> float:
 
 
 def current_weather(location: Location) -> dict:
-    """Kompatibler Adapter für Sprint 1: ausschliesslich Temperatur.
+    """WEA-22/23: Holt Temperatur und Wind aus derselben aktuellen Antwort.
 
-    current_temperature muss die Celsius-Einheit zuvor mit
-    errors.temperature_from_response geprüft haben. Nico kann alternativ
-    hier direkt die geprüfte API-Antwort zurückgeben.
+    Eine fehlende oder ungültige Windangabe bleibt optional, damit die
+    Temperatur weiterhin ausgegeben werden kann. Die Ausgabe kennzeichnet
+    den Wind dann als nicht verfügbar.
     """
-    return {
-        "current": {"temperature_2m": current_temperature(location)},
+    data = request_json(FORECAST_URL, {
+        "latitude": location.latitude, "longitude": location.longitude,
+        "current": "temperature_2m,wind_speed_10m",
+        "temperature_unit": "celsius", "wind_speed_unit": "kmh",
+    })
+    temperature = temperature_from_response(data)
+    current = data["current"]
+    units = data["current_units"]
+    result = {
+        "current": {"temperature_2m": temperature},
         "current_units": {"temperature_2m": "°C"},
     }
+    wind_speed = current.get("wind_speed_10m")
+    if finite_number(wind_speed) and units.get("wind_speed_10m") == "km/h":
+        result["current"]["wind_speed_10m"] = wind_speed
+        result["current_units"]["wind_speed_10m"] = "km/h"
+    return result

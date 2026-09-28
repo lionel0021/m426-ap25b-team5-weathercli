@@ -1,4 +1,4 @@
-"""Ein Aufruf, eine Stadt, eine aktuelle Temperatur."""
+"""Ein Aufruf, eine Stadt, aktueller Temperatur- und Windwert."""
 
 import argparse
 import sys
@@ -21,7 +21,7 @@ class WeatherParser(argparse.ArgumentParser):
 def main(argv=None):
     parser = WeatherParser(
         prog="weather", usage='weather "STADT"', add_help=False,
-        description="Zeigt die aktuelle Temperatur einer Stadt.",
+        description="Zeigt die aktuelle Temperatur und Windgeschwindigkeit einer Stadt.",
         epilog='Beispiele: weather "Zürich" | weather "New York"',
     )
     parser.add_argument("-h", "--help", action="help", help="Hilfe anzeigen und beenden")

@@ -1,4 +1,4 @@
-# Zwei Sprints – aktueller Arbeitsumfang nur Sprint 1
+# Sprint 1 – Arbeitsumfang und damaliger Prüfnachweis
 
 ## Verbindliche Arbeitsaufteilung dieses Auftrags
 
@@ -7,9 +7,10 @@
 | 1 | US-01 (WEA-8), US-04 (WEA-11), US-05 (WEA-12) | Temperaturabfrage, Ortsnamen und Hilfe |
 | 2 | US-02 (WEA-9), US-03 (WEA-10) | Wetterzustand und Wind |
 
-Diese Aufteilung ersetzt den früheren Vorschlag, alle fünf Stories in Sprint 1
-umzusetzen. Sprint 2 wird jetzt nur geplant, nicht implementiert.
-Die Windfunktion wurde aus dem lokalen Code entfernt.
+Diese Aufteilung ersetzte den früheren Vorschlag, alle fünf Stories in Sprint 1
+umzusetzen. Dieser Bericht hält den damaligen Sprint-1-Stand fest. Die spätere
+Umsetzung der Sprint-2-Windaufgaben ist in [sprint-2.md](sprint-2.md)
+dokumentiert.
 
 ## Verantwortliche
 
