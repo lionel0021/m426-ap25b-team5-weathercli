@@ -8,9 +8,9 @@ Stand: 28.09.2026, nach Abschluss der Umsetzung von Sprint 1. Quelle:
 | Rang | Story | Priorität | Story Points | Sprint | Board-Status |
 | ---: | --- | --- | ---: | --- | --- |
 | 1 | US-01 – Aktuelle Temperatur für eine Stadt | Must | 8 | Sprint 1 | Erledigt |
-| 2 | US-04 – Mehrteilige Stadtnamen | Should | 3 | Sprint 1 | Erledigt |
-| 3 | US-05 – Bedienung ohne externe Anleitung | Should | 2 | Sprint 1 | Erledigt |
-| 4 | US-02 – Aktuellen Wetterzustand erkennen | Must | 3 | Sprint 2 | Offen |
+| 2 | US-02 – Aktuellen Wetterzustand erkennen | Must | 3 | Sprint 2 | Offen |
+| 3 | US-04 – Mehrteilige Stadtnamen | Should | 3 | Sprint 1 | Erledigt |
+| 4 | US-05 – Bedienung ohne externe Anleitung | Should | 2 | Sprint 1 | Erledigt |
 | 5 | US-03 – Aktuelle Windgeschwindigkeit sehen | Should | 2 | Sprint 2 | Offen |
 
 Sprint 1 umfasst US-01, US-04 und US-05. Die zugehörigen Tasks WEA-13 bis
@@ -18,8 +18,8 @@ WEA-18 sowie WEA-24 bis WEA-28 stehen im Board auf «Erledigt». Die Umsetzung
 ist auf `main`; der aktuelle Testnachweis und noch offene DoD-Prüfungen stehen
 im [Sprintplan](sprint-1.md).
 
-Für Sprint 2 ist US-02 trotz tieferer ursprünglicher Reihenfolge vor US-03
-einzuplanen, da sie als Must priorisiert ist. WEA-19 bis WEA-21 gehören zu
+Die Reihenfolge folgt MoSCoW: zuerst die beiden Must-Stories US-01 und US-02,
+danach die Should-Stories. In Sprint 2 kommt US-02 deshalb vor US-03. WEA-19 bis WEA-21 gehören zu
 US-02, WEA-22 und WEA-23 zu US-03 und sind aktuell offen. US-02 und US-03
 sollen aus Sprint 1 entfernt werden, damit der Sprint-1-Burndown den wirklich
 vereinbarten Umfang zeigt. Termine und Kapazität für Sprint 2 werden im
@@ -51,7 +51,7 @@ Als Person, die im Terminal arbeitet, möchte ich die aktuelle Temperatur einer 
 
 ## US-02 – Aktuellen Wetterzustand erkennen
 
-**Priorität:** 4 · Must · **Status:** Sprint 2 ausgewählt · **Schätzung:** 3 Story Points · **Sprint:** 2
+**Priorität:** 2 · Must · **Status:** Sprint 2 ausgewählt · **Schätzung:** 3 Story Points · **Sprint:** 2
 
 Als Person, die einen kurzen Weg im Freien plant, möchte ich zusätzlich zur Temperatur den aktuellen Wetterzustand lesen, damit ich entscheiden kann, ob ich einen Regenschutz mitnehme.
 
@@ -79,7 +79,7 @@ Als Person, die mit dem Velo unterwegs ist, möchte ich die aktuelle Windgeschwi
 
 ## US-04 – Wetter für eine Stadt mit mehrteiligem Namen abrufen
 
-**Priorität:** 2 · Should · **Status:** Erledigt · **Schätzung:** 3 Story Points · **Sprint:** 1
+**Priorität:** 3 · Should · **Status:** Erledigt · **Schätzung:** 3 Story Points · **Sprint:** 1
 
 Als reisende Terminalnutzerin möchte ich Wetter für eine Stadt mit Leerzeichen im Namen abrufen, damit ich auch für solche Reiseziele passende Wetterinformationen erhalte.
 
@@ -94,7 +94,7 @@ Als reisende Terminalnutzerin möchte ich Wetter für eine Stadt mit Leerzeichen
 
 ## US-05 – Wetterbefehl ohne externe Anleitung bedienen
 
-**Priorität:** 3 · Should · **Status:** Erledigt · **Schätzung:** 2 Story Points · **Sprint:** 1
+**Priorität:** 4 · Should · **Status:** Erledigt · **Schätzung:** 2 Story Points · **Sprint:** 1
 
 Als neue Terminalnutzerin möchte ich die gültige Syntax und konkrete Beispiele direkt im Terminal sehen, damit ich meine erste Wetterabfrage ohne externe Anleitung ausführen kann.
 
