@@ -189,29 +189,50 @@ zu Sprint 2 und werden nicht zur Velocity von Sprint 1 addiert.
 
 ### Sprint 2 (28.09. bis 26.10.2026)
 
-Die bestaetigte Velocity von Sprint 1 betraegt 13 Story Points und dient als
-Richtwert fuer Sprint 2.
+Modultage sind der 28.09. und 19.10.2026; Review und Retrospektive finden am
+26.10.2026 statt.
 
-**Sprintziel:** Eine Person sieht mit `weather "Zuerich"` neben der Temperatur
-auch den aktuellen Wetterzustand auf Deutsch und die Windgeschwindigkeit in
-km/h; fehlt ein Wert, erscheint ein klarer Hinweis statt eines Absturzes.
+**Sprintziel:** Eine Person sieht mit `weather "Zürich"` neben der Temperatur auch
+den aktuellen Wetterzustand auf Deutsch und die Windgeschwindigkeit in km/h; fehlt
+ein Wert, erscheint ein klarer Hinweis statt eines Absturzes.
 
-**Sprint Backlog:**
+**Richtwert aus Sprint 1:** 13 Story Points (US-01: 8, US-04: 3, US-05: 2, im Board
+auf «Erledigt»). Sprint 2 hat wie Sprint 1 zwei Modultage.
 
-| Story | Story Points | Tasks | Stand beim Sprintstart |
-| --- | ---: | --- | --- |
-| US-02 / WEA-9: Wetterzustand | 3 | WEA-19 bis WEA-21 | To Verify |
-| US-03 / WEA-10: Windgeschwindigkeit | 2 | WEA-22 und WEA-23 | Open |
+**Sprint Backlog:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/)
 
-Die Story Points sind die vorhandenen Planungswerte. Das Team bestaetigt oder
-korrigiert sie im Planning Poker. Die Developers ziehen ihre Tasks selbst und
-halten Status und Bearbeiter im Board aktuell.
+| Rang | Eintrag | Ticket | Story Points | Tasks |
+| ---: | --- | --- | ---: | --- |
+| 1 | US-02 Aktuellen Wetterzustand erkennen | WEA-9 | 3 | WEA-19 bis WEA-21 |
+| 2 | US-03 Aktuelle Windgeschwindigkeit sehen | WEA-10 | 2 | WEA-22, WEA-23 |
+| 3 | Sprint Review storyweise anhand Akzeptanzkriterien und DoD durchführen | [WEA-29](https://weathercli.youtrack.cloud/issue/WEA-29) | – | Fidan prüft US-02 und US-03 im Review |
 
-Die Verbesserungsmassnahme aus der Sprint-1-Retrospektive ist als
-[WEA-29](https://weathercli.youtrack.cloud/issue/WEA-29) im Sprint Backlog
-erfasst. Das Berechtigungs-Impediment
-[WEA-30](https://weathercli.youtrack.cloud/issue/WEA-30) wurde nach dem
-erfolgreichen Anlegen und Starten von Sprint 2 auf Done gesetzt.
+**Begründung der Auswahl (PO):** US-02 und US-03 vervollständigen die aktuelle
+Wetterabfrage und liefern damit den grössten Nutzwert: Regenschutz und Velofahrt
+lassen sich mit einem Aufruf entscheiden. Mit 5 Story Points bleibt der Sprint
+bewusst unter dem Richtwert von 13. Die Differenz schafft Raum für Review,
+Team-Abnahme und die Retro-Massnahme. Nächster Kandidat,
+falls Kapazität frei wird, ist die Wettervorhersage (Rang 6); sie muss vorher
+verfeinert und im Planning Poker geschätzt werden.
+
+**Tasks:** Die Tasks werden von den Developers gezogen, nicht verteilt. Die
+Zuordnung im [Sprintplan](sprint-1.md) gilt nur als Vorschlag.
+
+**Board und Umsetzungsstand:** Sprint 1 ist auf beiden Boards archiviert und
+Sprint 2 aktiv. WEA-9, WEA-10 und WEA-19 bis WEA-23 sind Sprint 2 zugeordnet.
+US-02 und US-03 sind umgesetzt und auf `main` integriert; 43 automatisierte
+Tests sind erfolgreich. Review und Team-Abnahme des vollständigen
+Sprint-2-Inkrements stehen noch aus. Das frühere Berechtigungs-Impediment
+[WEA-30](https://weathercli.youtrack.cloud/issue/WEA-30) ist behoben und Done.
+
+**Startprüfung (DoD 4):**
+
+| Teammitglied | Datum | Ergebnis |
+| --- | --- | --- |
+| Eduart | 28.09.2026 | 34 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 17.7 °C` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 15 °C` (Exit 0), `weather` ohne Stadt → Fehlermeldung (Exit 2) |
+| Fidan | offen | |
+| Lionel | offen | |
+| Nico | offen | |
 
 ## 5. Nachweise und offene Abschlussarbeiten
 
@@ -290,3 +311,16 @@ sie zu behaupten. Inhaltliche Entscheidungen — Priorisierung, Zuschnitt, Schä
 Werkzeugwahl — haben wir selbst getroffen und ihre Vorschläge dabei mehrfach verworfen.
 Ein aufgeräumtes Board ersetzt kein Produktinkrement: Die KI konnte die Dokumentation
 vorbereiten, den Code für Sprint 1 musste das Team schreiben.
+
+### Sprint 2
+
+Am 28.09.2026 hat Eduart Claude (Anthropic) über Claude Code eingesetzt, um die
+Rollenaufgaben für Auftrag 6.2 zu klären, einen Entwurf für Sprintziel,
+Sprint-2-Block und Refinement-Notizen zu US-02/US-03 zu schreiben und die
+Startprüfung auszuführen.
+
+- **Übernommen:** Sprintziel-Entwurf, Auswahl US-02 und US-03 mit 5 von 13 Story
+  Points, Hinweis «Tasks ziehen statt verteilen», API-Felder `weather_code` und
+  `wind_speed_10m` als Refinement-Notiz.
+- **Verworfen:** Retro-Massnahme und Story-Point-Schätzung durch die KI; beides
+  legt das Team selbst fest.

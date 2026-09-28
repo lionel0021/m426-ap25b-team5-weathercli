@@ -1,4 +1,4 @@
-# Zwei Sprints – Sprint 1 abgeschlossen, Sprint 2 gestartet
+# Sprint 1 – Arbeitsumfang und damaliger Prüfnachweis
 
 ## Verbindliche Arbeitsaufteilung dieses Auftrags
 
@@ -7,10 +7,10 @@
 | 1 | US-01 (WEA-8), US-04 (WEA-11), US-05 (WEA-12) | Temperaturabfrage, Ortsnamen und Hilfe |
 | 2 | US-02 (WEA-9), US-03 (WEA-10) | Wetterzustand und Wind |
 
-Diese Aufteilung ersetzt den früheren Vorschlag, alle fünf Stories in Sprint 1
-umzusetzen. Sprint 1 ist abgeschlossen. Sprint 2 wurde am 28.09.2026 gestartet;
-Wetterzustand und Wind werden auf eigenen Feature-Branches umgesetzt und erst
-nach Review in den gemeinsamen Hauptbranch integriert.
+Diese Aufteilung ersetzte den früheren Vorschlag, alle fünf Stories in Sprint 1
+umzusetzen. Dieser Bericht hält den damaligen Sprint-1-Stand fest. Die spätere
+Umsetzung von US-02 und US-03 ist in [sprint-2.md](sprint-2.md)
+dokumentiert.
 
 ## Verantwortliche
 
@@ -39,9 +39,7 @@ API-Arbeit wird höher gewichtet als einzelne CLI-Tasks; eine genaue
 - WEA-15, WEA-16 (Nico): Abfrageparameter, Auswahl des gemeinten Orts
   (Zürich, New York, Frankfurt), mehrdeutige und fehlende Orte, ungültige
   Ortsdaten, Temperatur inklusive 0 und negativ, fehlende Temperatur/Einheit.
-
-Keine Wind- oder Wetterzustandsfunktion ist enthalten. Netzwerkfehler werden
-mit simulierten Antworten getestet. Die Live-Abnahme des vollständigen
+Netzwerkfehler werden mit simulierten Antworten getestet. Die Live-Abnahme des vollständigen
 Nutzerablaufs vom 21.09.2026 steht in [us-01-validation.md](us-01-validation.md).
 Die Schnittstelle für seine Integration steht in der README.
 
@@ -85,3 +83,6 @@ WEA-30 zur fehlenden Berechtigung für das Anlegen des Sprints ist behoben und
 steht auf Done. Die Sprintplanung wird in den Ticketbeschreibungen und hier
 festgehalten. Weitere Zugriffs- oder Boardprobleme werden als eigene
 Impediments dokumentiert.
+
+Der aktuelle Umsetzungs- und Prüfstand von Sprint 2 steht in
+[sprint-2.md](sprint-2.md).

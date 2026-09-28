@@ -51,7 +51,7 @@ Als Person, die im Terminal arbeitet, möchte ich die aktuelle Temperatur einer 
 
 ## US-02 – Aktuellen Wetterzustand erkennen
 
-**Priorität:** 4 · Must · **Status:** Offen · **Schätzung:** 3 Story Points · **Sprint:** 2
+**Priorität:** 4 · Must · **Status:** Sprint 2 ausgewählt · **Schätzung:** 3 Story Points · **Sprint:** 2
 
 Als Person, die einen kurzen Weg im Freien plant, möchte ich zusätzlich zur Temperatur den aktuellen Wetterzustand lesen, damit ich entscheiden kann, ob ich einen Regenschutz mitnehme.
 
@@ -65,7 +65,7 @@ Als Person, die einen kurzen Weg im Freien plant, möchte ich zusätzlich zur Te
 
 ## US-03 – Aktuelle Windgeschwindigkeit sehen
 
-**Priorität:** 5 · Should · **Status:** Offen · **Schätzung:** 2 Story Points · **Sprint:** 2
+**Priorität:** 5 · Should · **Status:** Sprint 2 ausgewählt · **Schätzung:** 2 Story Points · **Sprint:** 2
 
 Als Person, die mit dem Velo unterwegs ist, möchte ich die aktuelle Windgeschwindigkeit am abgefragten Ort sehen, damit ich vor der Abfahrt die Bedingungen einschätzen kann.
 
@@ -125,10 +125,17 @@ keine ausgewählten Sprint-2-Stories.
 
 «Stadt eingeben», «Wetter laden» und «Wetter anzeigen» bilden gemeinsam US-01. Sie werden nicht als technische Teil-Stories geplant. Ungültige Städte, fehlende Eingaben und Verbindungsfehler sind prüfbare Fehlerfälle der betreffenden Stories. Ein separater Beenden-Befehl entfällt beim vorgeschlagenen Einmalaufruf. Technische Aufgaben wie CLI-Verarbeitung, API-Anbindung und Ausgabeformatierung werden im Planning unter den jeweiligen Stories erfasst.
 
-### Vor dem Sprint-2-Planning prüfen
+### Refinement für Sprint 2 (28.09.2026, PO)
 
-- US-02 und US-03 aus Sprint 1 entfernen und dem neuen Sprint 2 zuordnen.
-- Sprint-2-Zeitraum und Teamkapazität festlegen.
-- Prüfen, ob die bestehenden Schätzungen von 3 und 2 Story Points weiterhin
-  zum bekannten Aufwand passen.
-- Verantwortliche und Abnahmetermine für WEA-19 bis WEA-23 bestätigen.
+- US-02 und US-03 sind für Sprint 2 ausgewählt; Schätzungen von 3 und 2 Story
+  Points bleiben bestehen. Beide Stories sind kleiner als zwei Modultage und
+  müssen nicht weiter gesplittet werden.
+- US-02: Open-Meteo liefert den Zustand als WMO-Wettercode (`current=weather_code`).
+  Die Übersetzung in deutschen Text (z. B. 0 → «Klar», 61 → «Regen») gehört zur
+  Story; unbekannte Codes ergeben «Wetterzustand nicht verfügbar».
+- US-03: Wind über `current=wind_speed_10m` mit `wind_speed_unit=kmh`; ein Wert
+  von 0 ist gültig und wird als `0 km/h` angezeigt.
+- Wetterzustand, Wind und Temperatur kommen aus demselben Forecast-Aufruf, damit
+  alle Werte zum selben Ort und Zeitpunkt gehören.
+- Offen im Board: US-02 und US-03 aus Sprint 1 entfernen und Sprint 2 zuordnen;
+  Retro-Massnahme aus Sprint 1 als Eintrag im Sprint Backlog anlegen.
