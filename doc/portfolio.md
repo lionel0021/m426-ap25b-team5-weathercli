@@ -91,7 +91,16 @@ Die nachfolgenden Sprint-0-Angaben bleiben als historischer Stand erhalten.
 
 | Story / Issue-Link | Issue vor erstem Code-Commit angelegt | Statuswechsel sofort dokumentiert | Prüfergebnis an Modultag 6 |
 | --- | --- | --- | --- |
-| Bei Prüfung ergänzen | offen | offen | offen |
+| [US-01 / WEA-8](https://weathercli.youtrack.cloud/issue/WEA-8) | Ja | Ja | Erfüllt |
+| [US-04 / WEA-11](https://weathercli.youtrack.cloud/issue/WEA-11) | Ja | Ja | Erfüllt |
+| [US-05 / WEA-12](https://weathercli.youtrack.cloud/issue/WEA-12) | Ja | Teilweise | Teilweise erfüllt |
+
+**Prüfnachweis vom 28.09.2026:** Die drei Issues wurden am 07.09.2026
+erstellt und damit vor dem ersten zugehörigen Code-Commit `50f2e05` vom
+21.09.2026. Bei WEA-8 und WEA-11 bildet die Statushistorie den Arbeitsablauf
+nachvollziehbar ab. WEA-12 wurde am 21.09.2026 um 10:43 Uhr auf `To Verify`
+gesetzt, der erste zugehörige Code-Commit folgte um 10:55 Uhr. Ohne weiteren
+Teamnachweis gilt der zeitnahe Statuswechsel deshalb nur als teilweise erfüllt.
 
 #### Definition of Done
 
@@ -144,7 +153,6 @@ zu Sprint 2 und werden nicht zur Velocity von Sprint 1 addiert.
 
 - Sprint-1-Retrospective durchfuehren und genau eine Verbesserungsmassnahme als
   Eintrag in das Sprint-2-Backlog aufnehmen.
-- Die Verbesserungsmassnahme aus Sprint 0 in der vorgesehenen Tabelle pruefen.
 - US-02 und US-03 im Board eindeutig Sprint 2 zuordnen.
 
 ### Sprint 2 – Planungsgrundlage
@@ -161,7 +169,7 @@ werden im Planning gemeinsam bestaetigt und danach hier ergaenzt.
 | Fünf Stories mit Rolle, Nutzen und 2–4 prüfbaren Kriterien | In [product-backlog.md](product-backlog.md) vorbereitet |
 | Keine der fünf Stories ist ein Epic | Enger Umfang beschrieben; Team-Schätzung auf höchstens zwei Modultage ausstehend |
 | Fünf Stories im Board | Erfassung in YouTrack durch Lionel bestätigt; nicht unabhängig geprüft |
-| Eine nachprüfbare Verbesserungsmassnahme | Im Sprint-0-Block mit Prüfung an Modultag 6 dokumentiert; YouTrack als Board bestätigt; Retro-Screenshot verlinkt |
+| Eine nachprüfbare Verbesserungsmassnahme | Im Sprint-0-Block geprüft: WEA-8 und WEA-11 erfüllt, WEA-12 teilweise erfüllt; YouTrack-Historie und Git-Commit dokumentiert |
 | DoD mit 4–6 Kriterien schriftlich abgelegt | [Sechs Kriterien](definition-of-done.md); für Sprint 1 bestätigt |
 | Portfolio Abschnitte 1–3 gefüllt | Team mit Rollen, Produkt, Vision, Backlog und YouTrack-Link erfasst |
 | Offizielle Portfolio-Vorlage übernommen | Offen: Vorlage/Modulrepo bislang nicht verfügbar; vorliegende Gliederung folgt dem Auftrag |
