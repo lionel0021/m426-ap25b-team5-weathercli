@@ -107,6 +107,19 @@ class CliTests(unittest.TestCase):
                 self.assertEqual(out.getvalue(), "Zürich, Schweiz: 18 °C\n")
                 weather.assert_called_once_with(PLACE)
 
+    def test_output_survives_characters_the_target_cannot_encode(self):
+        lodz = Location("Łódź", "Polen", 51.77, 19.46)
+        stream = io.TextIOWrapper(io.BytesIO(), encoding="cp1252")
+        with patch("weathercli.cli.resolve_city", return_value=lodz):
+            with patch("weathercli.cli.current_weather", return_value={
+                "current": {"temperature_2m": 11},
+                "current_units": {"temperature_2m": "°C"},
+            }):
+                with redirect_stdout(stream):
+                    self.assertEqual(main(["Łódź"]), 0)
+                stream.flush()
+        self.assertIn(b"Polen: 11 ", stream.buffer.getvalue())
+
     def test_module_process_exit_code(self):
         result = subprocess.run([sys.executable, "-m", "weathercli"], capture_output=True)
         self.assertEqual(result.returncode, 2)

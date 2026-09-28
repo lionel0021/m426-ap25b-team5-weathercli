@@ -18,7 +18,21 @@ class WeatherParser(argparse.ArgumentParser):
         self.exit(2, f'Fehler: {message}\nBeispiel: weather "Zürich". Hilfe: weather --help\n')
 
 
+def allow_unmappable_characters():
+    """Ortsnamen sollen die Ausgabe nicht abbrechen lassen.
+
+    Kennt die Konsole oder die Zieldatei einer Umleitung ein Zeichen nicht
+    (unter Windows z. B. das Ł von Łódź in cp1252), wird es ersetzt statt einen
+    UnicodeEncodeError auszuloesen.
+    """
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            reconfigure(errors="replace")
+
+
 def main(argv=None):
+    allow_unmappable_characters()
     parser = WeatherParser(
         prog="weather", usage='weather "STADT"', add_help=False,
         description="Zeigt die aktuelle Temperatur einer Stadt.",
