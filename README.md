@@ -1,8 +1,9 @@
 # WeatherCLI
 
-Aktueller Arbeitsumfang: **nur Sprint 1**, US-01, US-04 und US-05.
-Python 3.10+. US-02 (Wetterzustand) und US-03 (Wind) sind für Sprint 2 geplant.
-Windanzeige und zugehörige Tests wurden aus dem aktuellen Stand entfernt.
+Sprint 1 mit US-01, US-04 und US-05 ist abgeschlossen. Sprint 2 läuft vom
+28.09. bis 26.10.2026 mit US-02 (Wetterzustand) und US-03 (Wind).
+Python 3.10+. Der gemeinsame Hauptbranch enthält weiterhin das abgeschlossene
+Sprint-1-Inkrement; Sprint-2-Funktionen werden erst nach Review integriert.
 
 ## Start
 

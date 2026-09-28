@@ -149,10 +149,6 @@ Definition of Done erfuellt.
 Stories US-01 (8 SP), US-04 (3 SP) und US-05 (2 SP). US-02 und US-03 gehoeren
 zu Sprint 2 und werden nicht zur Velocity von Sprint 1 addiert.
 
-**Noch offen:**
-
-- US-02 und US-03 im Board eindeutig Sprint 2 zuordnen.
-
 #### Retrospektive Sprint 1
 
 **Was lief gut?**
@@ -189,14 +185,33 @@ zu Sprint 2 und werden nicht zur Velocity von Sprint 1 addiert.
 - **Erfüllt, wenn:** Jede Sprint-2-Story wurde einzeln besprochen,
   Akzeptanzkriterien und DoD wurden geprüft und das Ergebnis wurde im Board
   dokumentiert.
-- **Issue-Link:** Nach dem Erstellen des Eintrags in YouTrack ergänzen.
+- **Issue-Link:** [WEA-29](https://weathercli.youtrack.cloud/issue/WEA-29)
 
-### Sprint 2 – Planungsgrundlage
+### Sprint 2 (28.09. bis 26.10.2026)
 
 Die bestaetigte Velocity von Sprint 1 betraegt 13 Story Points und dient als
-Richtwert fuer die Sprint-2-Planung. Vorgesehen sind US-02 (Wetterzustand) und
-US-03 (Windgeschwindigkeit). Sprintziel, endgueltiger Umfang und Schaetzungen
-werden im Planning gemeinsam bestaetigt und danach hier ergaenzt.
+Richtwert fuer Sprint 2.
+
+**Sprintziel:** Eine Person sieht mit `weather "Zuerich"` neben der Temperatur
+auch den aktuellen Wetterzustand auf Deutsch und die Windgeschwindigkeit in
+km/h; fehlt ein Wert, erscheint ein klarer Hinweis statt eines Absturzes.
+
+**Sprint Backlog:**
+
+| Story | Story Points | Tasks | Stand beim Sprintstart |
+| --- | ---: | --- | --- |
+| US-02 / WEA-9: Wetterzustand | 3 | WEA-19 bis WEA-21 | To Verify |
+| US-03 / WEA-10: Windgeschwindigkeit | 2 | WEA-22 und WEA-23 | Open |
+
+Die Story Points sind die vorhandenen Planungswerte. Das Team bestaetigt oder
+korrigiert sie im Planning Poker. Die Developers ziehen ihre Tasks selbst und
+halten Status und Bearbeiter im Board aktuell.
+
+Die Verbesserungsmassnahme aus der Sprint-1-Retrospektive ist als
+[WEA-29](https://weathercli.youtrack.cloud/issue/WEA-29) im Sprint Backlog
+erfasst. Das Berechtigungs-Impediment
+[WEA-30](https://weathercli.youtrack.cloud/issue/WEA-30) wurde nach dem
+erfolgreichen Anlegen und Starten von Sprint 2 auf Done gesetzt.
 
 ## 5. Nachweise und offene Abschlussarbeiten
 

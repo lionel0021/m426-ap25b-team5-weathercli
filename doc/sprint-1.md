@@ -1,4 +1,4 @@
-# Zwei Sprints – aktueller Arbeitsumfang nur Sprint 1
+# Zwei Sprints – Sprint 1 abgeschlossen, Sprint 2 gestartet
 
 ## Verbindliche Arbeitsaufteilung dieses Auftrags
 
@@ -8,8 +8,9 @@
 | 2 | US-02 (WEA-9), US-03 (WEA-10) | Wetterzustand und Wind |
 
 Diese Aufteilung ersetzt den früheren Vorschlag, alle fünf Stories in Sprint 1
-umzusetzen. Sprint 2 wird jetzt nur geplant, nicht implementiert.
-Die Windfunktion wurde aus dem lokalen Code entfernt.
+umzusetzen. Sprint 1 ist abgeschlossen. Sprint 2 wurde am 28.09.2026 gestartet;
+Wetterzustand und Wind werden auf eigenen Feature-Branches umgesetzt und erst
+nach Review in den gemeinsamen Hauptbranch integriert.
 
 ## Verantwortliche
 
@@ -75,12 +76,12 @@ User Stories berechnet:
 | US-05 / WEA-12 | 2 |
 | **Velocity Sprint 1** | **13** |
 
-## Grenze der YouTrack-Zuordnung
+## YouTrack-Zuordnung und Start von Sprint 2
 
-Die Sprintplanung wird in den Ticketbeschreibungen und hier festgehalten.
-Das Erstellen eines Board-Sprints war zuerst mit HTTP 403 blockiert; seit
-21.09.2026 besteht der Sprint "Sprint 1" auf beiden Boards. Dort liegen aber
-auch US-02 und US-03, die nach dieser Planung erst zu Sprint 2 gehören - solange
-das so bleibt, erreicht der Sprint-1-Burndown nie null. Das klärt der PO.
-Sprint-2-Termine sind noch nicht festgelegt. Die früher blockierten Admin-Punkte
-(Boardkopie löschen, Zugriffsnachweis nicolai.fricker) bleiben offen.
+Sprint 1 wurde am 28.09.2026 auf beiden Boards archiviert. Sprint 2 läuft vom
+28.09. bis 26.10.2026 und enthält US-02 (WEA-9), US-03 (WEA-10), die Tasks
+WEA-19 bis WEA-23 sowie die Retro-Massnahme WEA-29. Das frühere Impediment
+WEA-30 zur fehlenden Berechtigung für das Anlegen des Sprints ist behoben und
+steht auf Done. Die Sprintplanung wird in den Ticketbeschreibungen und hier
+festgehalten. Weitere Zugriffs- oder Boardprobleme werden als eigene
+Impediments dokumentiert.
