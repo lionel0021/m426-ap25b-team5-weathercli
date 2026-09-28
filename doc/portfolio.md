@@ -103,7 +103,7 @@ Die nachfolgenden Sprint-0-Angaben bleiben als historischer Stand erhalten.
 - DoD gemeinsam prüfen und Änderungen dokumentieren.
 - Übrige Felder des Sprint-0-Blocks anhand der offiziellen Portfolio-Vorlage ergänzen.
 
-### Sprint 1 (Modultag 4 bis 21.09.2026)
+### Sprint 1 (Boardzeitraum 15.09. bis 28.09.2026)
 
 **Sprintziel (Vorschlag des Product Owners, im Team noch nicht bestaetigt):** Eine Person
 kann im Terminal `weather "Zuerich"` eingeben und erhaelt Ort, Land und die aktuelle
@@ -111,13 +111,13 @@ Temperatur - oder eine verstaendliche Meldung, wenn die Stadt nicht gefunden wir
 
 **Sprint Backlog:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/)
 
-| Story | Ticket | Story Points | Bearbeiter | Status am 21.09.2026 |
-| --- | --- | --- | --- | --- |
-| US-01 Aktuelle Temperatur fuer eine Stadt | WEA-8 | nicht geschaetzt | nicht zugewiesen | Open |
-| US-02 Aktuellen Wetterzustand erkennen | WEA-9 | nicht geschaetzt | nicht zugewiesen | Open |
-| US-03 Aktuelle Windgeschwindigkeit | WEA-10 | nicht geschaetzt | nicht zugewiesen | Open |
-| US-04 Mehrteilige Stadtnamen | WEA-11 | nicht geschaetzt | nicht zugewiesen | Open |
-| US-05 Bedienung ohne externe Anleitung | WEA-12 | nicht geschaetzt | nicht zugewiesen | Open |
+| Story | Ticket | Story Points | Bearbeiter | Status am 28.09.2026 |
+| --- | --- | ---: | --- | --- |
+| US-01 Aktuelle Temperatur fuer eine Stadt | WEA-8 | 8 | Lionel | Done |
+| US-02 Aktuellen Wetterzustand erkennen | WEA-9 | 3 | Nico | To Verify; für Sprint 2 vorgesehen |
+| US-03 Aktuelle Windgeschwindigkeit | WEA-10 | 2 | Lionel | Open; für Sprint 2 vorgesehen |
+| US-04 Mehrteilige Stadtnamen | WEA-11 | 3 | Nico | Done |
+| US-05 Bedienung ohne externe Anleitung | WEA-12 | 2 | Lionel | Done |
 
 Unter jeder Story liegen die Arbeitsschritte als Tasks (WEA-13 bis WEA-28).
 
@@ -128,22 +128,31 @@ unter dem Epic WEA-7 gefuehrt und tragen Story-Text und Akzeptanzkriterien aus d
 Product Backlog. Die Karten WEA-2 bis WEA-6 sind als Duplikate geschlossen und mit einem
 Verweis auf die Nachfolge-Story kommentiert.
 
-**Sprintergebnis.** Im Sprint wurde kein Produktinkrement erstellt. Im Repository liegt seit
-dem 07.09.2026 kein Quellcode; kein Ticket wurde aus dem Status Open bewegt. Das Sprintziel
-ist damit nicht erreicht. Planning Poker hat nicht stattgefunden, deshalb tragen die Stories
-keine Schaetzung, und die fuenf Erkenntnisse zum Schaetzen aus Auftrag 4.2 koennen noch
-nicht festgehalten werden.
+**Sprintergebnis.** Mit US-01, US-04 und US-05 liegt ein lauffaehiges
+Produktinkrement auf dem gemeinsamen Hauptbranch vor. Die automatisierte
+Testsuite umfasst 34 erfolgreiche Tests; die Live-Abnahme ist verlinkt. Review
+und Integration sind abgeschlossen. Am 28.09.2026 haben Eduart, Fidan, Lionel
+und Nico bestaetigt, dass sie WeatherCLI anhand der Startanleitung erfolgreich
+starten und ausfuehren koennen. Damit ist auch die Team-Startpruefung aus der
+Definition of Done erfuellt.
 
-**Offen und an Modultag 5 nachzuholen:**
+**Velocity Sprint 1:** 13 Story Points. Gezaehlt werden nur die abgeschlossenen
+Stories US-01 (8 SP), US-04 (3 SP) und US-05 (2 SP). US-02 und US-03 gehoeren
+zu Sprint 2 und werden nicht zur Velocity von Sprint 1 addiert.
 
-- Stories im Team schaetzen und die Story Points in YouTrack eintragen
-- Die fuenf Erkenntnisse zum Schaetzen festhalten
-- Sprintziel im Team bestaetigen und im Board hinterlegen
-- Sprint-1-Retrospective; die Verbesserungsmassnahme aus Sprint 0 ist zu pruefen:
-  Die Stories existierten vor Sprintbeginn als Tickets, wurden aber bei Statuswechseln
-  nicht bewegt, weil keine Arbeit stattfand. Die Massnahme gilt damit als nicht erfuellt.
-- Technische Entscheide des Teams sind festgehalten: Python und Open-Meteo
-  (kein API-Schluessel noetig, Temperatur in Grad Celsius, Wind in km/h)
+**Noch offen:**
+
+- Sprint-1-Retrospective durchfuehren und genau eine Verbesserungsmassnahme als
+  Eintrag in das Sprint-2-Backlog aufnehmen.
+- Die Verbesserungsmassnahme aus Sprint 0 in der vorgesehenen Tabelle pruefen.
+- US-02 und US-03 im Board eindeutig Sprint 2 zuordnen.
+
+### Sprint 2 – Planungsgrundlage
+
+Die bestaetigte Velocity von Sprint 1 betraegt 13 Story Points und dient als
+Richtwert fuer die Sprint-2-Planung. Vorgesehen sind US-02 (Wetterzustand) und
+US-03 (Windgeschwindigkeit). Sprintziel, endgueltiger Umfang und Schaetzungen
+werden im Planning gemeinsam bestaetigt und danach hier ergaenzt.
 
 ## 5. Nachweise und offene Abschlussarbeiten
 

@@ -70,8 +70,10 @@ API-Dokumentation: [Geocoding](https://open-meteo.com/en/docs/geocoding-api),
 python -m unittest discover -s tests -v
 ```
 
-33 Tests erfolgreich, ohne Live-API. Die Live-Abnahme von US-01 und US-04 steht
-in [us-01-validation.md](doc/us-01-validation.md). Review und Startprüfungen bei
-allen Teammitgliedern fehlen noch.
+34 Tests erfolgreich, ohne Live-API. Die Live-Abnahme von US-01 und US-04 steht
+in [us-01-validation.md](doc/us-01-validation.md). Review und Integration sind
+abgeschlossen. Am 28.09.2026 haben Eduart, Fidan, Lionel und Nico bestätigt,
+dass sie WeatherCLI anhand der Startanleitung erfolgreich starten und ausführen
+können. Die bestätigte Velocity von Sprint 1 beträgt 13 Story Points.
 Siehe [Sprintplan und Prüfnachweis](doc/sprint-1.md) und
 [Definition of Done](doc/definition-of-done.md).

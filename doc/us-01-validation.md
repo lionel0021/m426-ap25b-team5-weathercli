@@ -3,14 +3,14 @@
 Der aktuelle Plan steht in [sprint-1.md](sprint-1.md). Sprint 1 enthält US-01,
 US-04 und US-05; Wind und Wetterzustand gehören in Sprint 2.
 
-US-01 / WEA-8 bleibt in Bearbeitung:
+US-01 / WEA-8 ist abgeschlossen:
 
-- Lionel: WEA-13, WEA-14, WEA-17 und neu WEA-18.
-- Nico (nico.schult): WEA-15 und WEA-16, zur Prüfung.
+- Lionel: WEA-13, WEA-14, WEA-17 und WEA-18.
+- Nico (nico.schult): WEA-15 und WEA-16.
 
 Lionels Implementierung umfasst Projektstruktur, CLI, Temperaturausgabe und
 getestete Fehlerbehandlung. `errors.py` stellt die Helfer bereit, die Nico in
-seine API-Funktionen integriert. Die gesamte Testsuite enthält 33 erfolgreiche
+seine API-Funktionen integriert. Die gesamte Testsuite enthält 34 erfolgreiche
 Tests mit simulierten Daten. Frühere Live-Ergebnisse des verworfenen
 Gesamtentwurfs gelten nicht als Nachweis für den aktuellen Stand.
 
@@ -36,5 +36,8 @@ Temperaturen sind Momentwerte.
 Fehlende Temperatur (US-01 AK 4) lässt sich live nicht erzwingen und ist in
 `tests/test_client.py` mit simulierten Antworten abgedeckt.
 
-Review, Integration in den gemeinsamen Hauptbranch und Startprüfung aller
-Teammitglieder stehen noch aus. Siehe [Definition of Done](definition-of-done.md).
+Review und Integration in den gemeinsamen Hauptbranch sind abgeschlossen. Am
+28.09.2026 haben Eduart, Fidan, Lionel und Nico bestätigt, dass sie WeatherCLI
+anhand der Startanleitung erfolgreich starten und ausführen können. Damit ist
+auch die Team-Startprüfung aus der
+[Definition of Done](definition-of-done.md) erfüllt.

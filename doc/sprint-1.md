@@ -26,7 +26,7 @@ API-Arbeit wird höher gewichtet als einzelne CLI-Tasks; eine genaue
 
 ## Aktueller Nachweis
 
-`python -m unittest discover -s tests -v`: **33 Tests erfolgreich**.
+`python -m unittest discover -s tests -v`: **34 Tests erfolgreich**.
 
 - Projekt, CLI und Ausgabe: Name, Land, Celsius, Null/negative Werte, Exit-Codes.
 - WEA-18: Timeout, DNS, HTTP 503, unvollständige HTTP-Antwort, ungültiges JSON,
@@ -46,13 +46,34 @@ Die Schnittstelle für seine Integration steht in der README.
 
 ## Vorgehen und Status
 
-Issues existieren vor der Umsetzung; WEA-18 wurde bei Übernahme auf In Progress
-gesetzt. Lionels lokal umgesetzte Tasks gehen zur Prüfung auf To Verify.
-Nicos API-Arbeit wird nicht als erledigt markiert. Die verschobenen Wind-Tasks
-werden auf Open zurückgesetzt. Die DoD gilt weiterhin: gegenseitiges Review,
-gemeinsamer Hauptbranch, Team-Startprüfung und verlinkte Nachweise vor Done.
-Stand 28.09.2026: Lionels Tasks sind über 50f2e05 und Nicos API-Anbindung über
-PR #8 auf main; Nico hat Lionels Tasks geprüft, Eduart Nicos PR freigegeben.
+Die Issues existierten vor der Umsetzung. Lionels Tasks sind über 50f2e05 und
+Nicos API-Anbindung über PR #8 auf `main`; Nico hat Lionels Tasks geprüft,
+Eduart hat Nicos PR freigegeben. US-01, US-04 und US-05 stehen in YouTrack auf
+Done. Die verschobenen Wetterzustands- und Wind-Tasks gehören zu Sprint 2.
+
+## Team-Startprüfung und Velocity vom 28.09.2026
+
+Alle vier Teammitglieder haben bestätigt, dass sie WeatherCLI anhand der
+dokumentierten Startanleitung auf ihrem Gerät starten und einen erfolgreichen
+Beispielaufruf ausführen können.
+
+| Teammitglied | Startprüfung |
+| --- | --- |
+| Eduart | erfolgreich |
+| Fidan | erfolgreich |
+| Lionel | erfolgreich |
+| Nico | erfolgreich |
+
+Damit ist Punkt 4 der Definition of Done für die abgeschlossenen
+Sprint-1-Stories erfüllt. Die Velocity wird nur aus vollständig abgeschlossenen
+User Stories berechnet:
+
+| Abgeschlossene Story | Story Points |
+| --- | ---: |
+| US-01 / WEA-8 | 8 |
+| US-04 / WEA-11 | 3 |
+| US-05 / WEA-12 | 2 |
+| **Velocity Sprint 1** | **13** |
 
 ## Grenze der YouTrack-Zuordnung
 
