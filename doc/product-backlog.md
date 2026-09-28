@@ -1,14 +1,34 @@
 # Product Backlog – WeatherCLI
 
-Stand: Auftrag 4.1, Sprint 0. Quelle: [Story Map](images/StoryBoard.png).
+Stand: 28.09.2026, nach Abschluss der Umsetzung von Sprint 1. Quelle:
+[Story Map](images/StoryBoard.png), Sprintplanung und aktuelles YouTrack-Board.
 
-**Aktualisierte Sprintplanung:** Sprint 1 umfasst US-01, US-04 und US-05;
-Sprint 2 umfasst US-02 und US-03. Diese aktuelle Zuordnung ersetzt die
-ursprünglichen Sprint-1-Vorschläge unten. Siehe [Sprintplan](sprint-1.md).
+## Aktuelle Reihenfolge und Planung
 
-Die folgenden fünf Einträge sind für das Refinement und anschliessende Sprint-1-Planning vorbereitet. Die Reihenfolge ist ein Vorschlag nach MoSCoW und Nutzwert: zuerst eine vollständige Wetterabfrage, danach zusätzliche Informationen und Bedienhilfe. Schätzung, Kapazitätsabgleich und Zuteilung erfolgen im Planning. Der Umfang jeder Story ist auf höchstens zwei Modultage ausgelegt; das Team prüft dies bei der Schätzung.
+| Rang | Story | Priorität | Story Points | Sprint | Board-Status |
+| ---: | --- | --- | ---: | --- | --- |
+| 1 | US-01 – Aktuelle Temperatur für eine Stadt | Must | 8 | Sprint 1 | Erledigt |
+| 2 | US-04 – Mehrteilige Stadtnamen | Should | 3 | Sprint 1 | Erledigt |
+| 3 | US-05 – Bedienung ohne externe Anleitung | Should | 2 | Sprint 1 | Erledigt |
+| 4 | US-02 – Aktuellen Wetterzustand erkennen | Must | 3 | Sprint 2 | Offen |
+| 5 | US-03 – Aktuelle Windgeschwindigkeit sehen | Should | 2 | Sprint 2 | Offen |
 
-**Aufgabenverwaltung:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/). Gemäss Rückmeldung von Lionel am 07.09.2026 sind die fünf Stories dort erfasst. Eine unabhängige Prüfung der Board-Einträge fand nicht statt. Im Repository ist wie gewünscht nur der YouTrack-Link hinterlegt.
+Sprint 1 umfasst US-01, US-04 und US-05. Die zugehörigen Tasks WEA-13 bis
+WEA-18 sowie WEA-24 bis WEA-28 stehen im Board auf «Erledigt». Die Umsetzung
+ist auf `main`; der aktuelle Testnachweis und noch offene DoD-Prüfungen stehen
+im [Sprintplan](sprint-1.md).
+
+Für Sprint 2 ist US-02 trotz tieferer ursprünglicher Reihenfolge vor US-03
+einzuplanen, da sie als Must priorisiert ist. WEA-19 bis WEA-21 gehören zu
+US-02, WEA-22 und WEA-23 zu US-03 und sind aktuell offen. US-02 und US-03
+sollen aus Sprint 1 entfernt werden, damit der Sprint-1-Burndown den wirklich
+vereinbarten Umfang zeigt. Termine und Kapazität für Sprint 2 werden im
+nächsten Planning bestätigt.
+
+**Aufgabenverwaltung:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/).
+Die fünf Stories und ihre Tasks sind dort erfasst. Der oben dokumentierte
+Status wurde am 28.09.2026 mit dem aktuellen Sprint- und Aufgabenboard
+abgeglichen.
 
 ## Vereinbarungen für die fünf Stories
 
@@ -16,7 +36,7 @@ Vorgeschlagene Bedienung: `weather "Zürich"` für aktuelles Wetter, `weather --
 
 ## US-01 – Aktuelle Temperatur für eine Stadt abrufen
 
-**Priorität:** 1 · Must · **Status:** Für Refinement vorbereitet · **Schätzung:** offen
+**Priorität:** 1 · Must · **Status:** Erledigt · **Schätzung:** 8 Story Points · **Sprint:** 1
 
 Als Person, die im Terminal arbeitet, möchte ich die aktuelle Temperatur einer eingegebenen Stadt sehen, damit ich meine Kleidung für den nächsten Weg wählen kann, ohne eine weitere Anwendung zu öffnen.
 
@@ -31,7 +51,7 @@ Als Person, die im Terminal arbeitet, möchte ich die aktuelle Temperatur einer 
 
 ## US-02 – Aktuellen Wetterzustand erkennen
 
-**Priorität:** 2 · Must · **Status:** Für Refinement vorbereitet · **Schätzung:** offen
+**Priorität:** 4 · Must · **Status:** Offen · **Schätzung:** 3 Story Points · **Sprint:** 2
 
 Als Person, die einen kurzen Weg im Freien plant, möchte ich zusätzlich zur Temperatur den aktuellen Wetterzustand lesen, damit ich entscheiden kann, ob ich einen Regenschutz mitnehme.
 
@@ -45,7 +65,7 @@ Als Person, die einen kurzen Weg im Freien plant, möchte ich zusätzlich zur Te
 
 ## US-03 – Aktuelle Windgeschwindigkeit sehen
 
-**Priorität:** 3 · Should · **Status:** Für Refinement vorbereitet · **Schätzung:** offen
+**Priorität:** 5 · Should · **Status:** Offen · **Schätzung:** 2 Story Points · **Sprint:** 2
 
 Als Person, die mit dem Velo unterwegs ist, möchte ich die aktuelle Windgeschwindigkeit am abgefragten Ort sehen, damit ich vor der Abfahrt die Bedingungen einschätzen kann.
 
@@ -59,7 +79,7 @@ Als Person, die mit dem Velo unterwegs ist, möchte ich die aktuelle Windgeschwi
 
 ## US-04 – Wetter für eine Stadt mit mehrteiligem Namen abrufen
 
-**Priorität:** 4 · Should · **Status:** Für Refinement vorbereitet · **Schätzung:** offen
+**Priorität:** 2 · Should · **Status:** Erledigt · **Schätzung:** 3 Story Points · **Sprint:** 1
 
 Als reisende Terminalnutzerin möchte ich Wetter für eine Stadt mit Leerzeichen im Namen abrufen, damit ich auch für solche Reiseziele passende Wetterinformationen erhalte.
 
@@ -74,7 +94,7 @@ Als reisende Terminalnutzerin möchte ich Wetter für eine Stadt mit Leerzeichen
 
 ## US-05 – Wetterbefehl ohne externe Anleitung bedienen
 
-**Priorität:** 5 · Should · **Status:** Für Refinement vorbereitet · **Schätzung:** offen
+**Priorität:** 3 · Should · **Status:** Erledigt · **Schätzung:** 2 Story Points · **Sprint:** 1
 
 Als neue Terminalnutzerin möchte ich die gültige Syntax und konkrete Beispiele direkt im Terminal sehen, damit ich meine erste Wetterabfrage ohne externe Anleitung ausführen kann.
 
@@ -86,9 +106,10 @@ Als neue Terminalnutzerin möchte ich die gültige Syntax und konkrete Beispiele
 
 **Umfang:** Eine Hilfeseite und Rückmeldung zu unbekannten Optionen; keine interaktive Befehlsshell. Eigenständiger sichtbarer Nutzen ohne Abhängigkeit vom Wetterdienst.
 
-## Weitere Einträge – nach Sprint 1 zu verfeinern
+## Weitere Einträge – nach Sprint 2 zu verfeinern
 
-Diese Themen aus der Story Map sind noch nicht schätzbereit und ausdrücklich keine ausgewählten Sprint-1-Stories.
+Diese Themen aus der Story Map sind noch nicht schätzbereit und ausdrücklich
+keine ausgewählten Sprint-2-Stories.
 
 | Reihenfolge | Thema | MoSCoW | Nächster Zuschnitt |
 | --- | --- | --- | --- |
@@ -104,9 +125,10 @@ Diese Themen aus der Story Map sind noch nicht schätzbereit und ausdrücklich k
 
 «Stadt eingeben», «Wetter laden» und «Wetter anzeigen» bilden gemeinsam US-01. Sie werden nicht als technische Teil-Stories geplant. Ungültige Städte, fehlende Eingaben und Verbindungsfehler sind prüfbare Fehlerfälle der betreffenden Stories. Ein separater Beenden-Befehl entfällt beim vorgeschlagenen Einmalaufruf. Technische Aufgaben wie CLI-Verarbeitung, API-Anbindung und Ausgabeformatierung werden im Planning unter den jeweiligen Stories erfasst.
 
-### Vor dem Planning prüfen
+### Vor dem Sprint-2-Planning prüfen
 
-- Die fünf Stories stehen mit diesem Inhalt und dieser Reihenfolge im Team-Board; Links sind ergänzt.
-- Befehlsname, Wetterdienst und Umgang mit mehrdeutigen Ortsnamen sind geklärt.
-- Jede Story wird vom Team geschätzt; bei mehr als zwei Modultagen entlang einer nutzbaren Aktion weiter schneiden.
-- Erst nach Kapazitätsabgleich Sprint-Zuordnung und Verantwortliche setzen.
+- US-02 und US-03 aus Sprint 1 entfernen und dem neuen Sprint 2 zuordnen.
+- Sprint-2-Zeitraum und Teamkapazität festlegen.
+- Prüfen, ob die bestehenden Schätzungen von 3 und 2 Story Points weiterhin
+  zum bekannten Aufwand passen.
+- Verantwortliche und Abnahmetermine für WEA-19 bis WEA-23 bestätigen.
