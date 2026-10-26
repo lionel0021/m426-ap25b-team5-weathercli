@@ -1,0 +1,35 @@
+Demo Sprint 3 - Mitschrieb der fuenf Aufrufe
+Aufgenommen am 26.10.2026, Windows 11, Python 3.13, Stand feature/US-06-morgen (PR #16).
+Ersatz fuer die Live-Demo, falls im Review kein Internet verfuegbar ist.
+
+> weather "Zürich"
+Zürich, Schweiz: 10.2 °C, Bewölkt, Wind: 0.5 km/h
+  (Exit 0)
+
+> weather "New York"
+New York City, Vereinigte Staaten: 5.8 °C, Klar, Wind: 8.5 km/h
+  (Exit 0)
+
+> weather "Zürich" --morgen
+Zürich, Schweiz, morgen: Bewölkt, 8 bis 16.4 °C
+  (Exit 0)
+
+> weather "Springfield"
+Fehler: Der Ort ist mehrdeutig. Bitte eine genauere Ortsangabe eingeben.
+  (Exit 1)
+
+> weather --help
+usage: weather "STADT" [--morgen]
+
+Zeigt Temperatur, Wetterzustand und Wind einer Stadt, mit --morgen die
+Vorhersage für morgen.
+
+Argumente:
+  STADT       genau eine Stadt
+
+Optionen:
+  -h, --help  Hilfe anzeigen und beenden
+  --morgen    Wetter für morgen anzeigen, z. B. weather "Zürich" --morgen
+
+Beispiele: weather "Zürich" | weather "New York" | weather "Zürich" --morgen
+  (Exit 0)
