@@ -1,4 +1,5 @@
-"""Open-Meteo-Anbindung für Ortssuche, Temperatur und Sprint-2-Winddaten."""
+"""Open-Meteo-Anbindung für Ortssuche, Temperatur, Sprint-2-Winddaten und
+die Tagesvorhersage für morgen (Sprint 3, WEA-32)."""
 
 import unicodedata
 from dataclasses import dataclass
@@ -92,3 +93,21 @@ def current_weather(location: Location) -> dict:
 def current_temperature(location: Location) -> float:
     """WEA-16: Aktuelle Temperatur am Ort in °C, Einheit von der API bestätigt."""
     return temperature_from_response(current_weather(location))
+
+
+def tomorrow_forecast(location: Location) -> dict:
+    """WEA-32: Tageswerte für heute und morgen am Ort abfragen.
+
+    `timezone=auto` ist nötig, damit "morgen" nach der Ortszeit des Orts gilt
+    und nicht nach UTC. `forecast_days=2` liefert genau zwei Tage: Index 0 ist
+    heute, Index 1 ist morgen.
+
+    Fehlende Tageswerte sind hier kein Fehler und brechen den Aufruf nicht ab;
+    darüber entscheidet output.format_tomorrow, das dann "Vorhersage nicht
+    verfügbar" meldet (US-06, AK 3).
+    """
+    return request_json(FORECAST_URL, {
+        "latitude": location.latitude, "longitude": location.longitude,
+        "daily": "weather_code,temperature_2m_max,temperature_2m_min",
+        "temperature_unit": "celsius", "timezone": "auto", "forecast_days": 2,
+    })
