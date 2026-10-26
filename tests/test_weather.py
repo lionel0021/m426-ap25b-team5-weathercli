@@ -128,6 +128,22 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result.stdout, b"")
         self.assertIn(b"weather", result.stderr)
 
+    def test_tomorrow_option_uses_daily_forecast(self):
+        forecast = {"daily": {"time": ["2026-10-26", "2026-10-27"],
+                              "temperature_2m_min": [8, 6],
+                              "temperature_2m_max": [15, 13], "weather_code": [0, 3],
+                              "wind_speed_10m_max": [10, 12]}}
+        with patch("weathercli.cli.resolve_city", return_value=PLACE):
+            with patch("weathercli.cli.tomorrow_weather", return_value=forecast) as weather:
+                out, err = io.StringIO(), io.StringIO()
+                with redirect_stdout(out), redirect_stderr(err):
+                    self.assertEqual(main(["Zürich", "--morgen"]), 0)
+        self.assertEqual(out.getvalue(),
+                         "Zürich, Schweiz: Morgen 2026-10-27, Bewölkt, 6–13 °C, "
+                         "Wind bis 12 km/h\n")
+        self.assertEqual(err.getvalue(), "")
+        weather.assert_called_once_with(PLACE)
+
 
 if __name__ == "__main__":
     unittest.main()

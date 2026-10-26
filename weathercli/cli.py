@@ -3,8 +3,8 @@
 import argparse
 import sys
 
-from .client import WeatherError, current_weather, resolve_city
-from .output import format_weather
+from .client import WeatherError, current_weather, resolve_city, tomorrow_weather
+from .output import format_weather, format_tomorrow
 
 
 class WeatherParser(argparse.ArgumentParser):
@@ -34,11 +34,12 @@ def allow_unmappable_characters():
 def main(argv=None):
     allow_unmappable_characters()
     parser = WeatherParser(
-        prog="weather", usage='weather "STADT"', add_help=False,
+        prog="weather", usage='weather "STADT" [--morgen]', add_help=False,
         description="Zeigt Temperatur, Wetterzustand und Wind einer Stadt.",
-        epilog='Beispiele: weather "Zürich" | weather "New York"',
+        epilog='Beispiele: weather "Zürich" | weather "New York" | weather "Zürich" --morgen',
     )
     parser.add_argument("-h", "--help", action="help", help="Hilfe anzeigen und beenden")
+    parser.add_argument("--morgen", action="store_true", help="Vorhersage fuer morgen anzeigen")
     parser.add_argument("city", nargs="*", metavar="STADT", help="genau eine Stadt")
     args = parser.parse_args(argv)
     if not args.city or (len(args.city) == 1 and not args.city[0].strip()):
@@ -47,7 +48,10 @@ def main(argv=None):
         parser.error("Genau eine Stadt angeben; mehrteilige Namen in Anführungszeichen setzen.")
     try:
         location = resolve_city(args.city[0].strip())
-        result = format_weather(location, current_weather(location))
+        if args.morgen:
+            result = format_tomorrow(location, tomorrow_weather(location))
+        else:
+            result = format_weather(location, current_weather(location))
     except WeatherError as error:
         print(f"Fehler: {error}", file=sys.stderr)
         return 1

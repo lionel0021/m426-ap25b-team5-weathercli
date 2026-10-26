@@ -4,7 +4,8 @@ import unittest
 from unittest.mock import patch
 
 from weathercli.client import (FORECAST_URL, GEOCODING_URL, Location, WeatherError,
-                               current_temperature, current_weather, resolve_city)
+                               current_temperature, current_weather, resolve_city,
+                               tomorrow_weather)
 
 
 def place(name, country, population=None, feature_code="PPL", latitude=47.37, longitude=8.55):
@@ -122,6 +123,20 @@ class CurrentTemperatureTests(unittest.TestCase):
         with patch("weathercli.client.request_json", return_value=data):
             with self.assertRaises(WeatherError):
                 current_weather(self.place)
+
+
+class TomorrowWeatherTests(unittest.TestCase):
+    place = Location("Zürich", "Schweiz", 47.36667, 8.55)
+
+    def test_requests_two_days_of_local_daily_forecast(self):
+        response = {"daily": {"time": ["2026-10-26", "2026-10-27"]}}
+        with patch("weathercli.client.request_json", return_value=response) as request:
+            self.assertEqual(tomorrow_weather(self.place), response)
+        request.assert_called_once_with(FORECAST_URL, {
+            "latitude": 47.36667, "longitude": 8.55,
+            "daily": "weather_code,temperature_2m_min,temperature_2m_max,wind_speed_10m_max",
+            "temperature_unit": "celsius", "wind_speed_unit": "kmh",
+            "forecast_days": 2, "timezone": "auto"})
 
 
 if __name__ == "__main__":

@@ -89,6 +89,16 @@ def current_weather(location: Location) -> dict:
     return data
 
 
+def tomorrow_weather(location: Location) -> dict:
+    """Liefert die Vorhersage fuer morgen in der lokalen Zeitzone des Orts."""
+    return request_json(FORECAST_URL, {
+        "latitude": location.latitude, "longitude": location.longitude,
+        "daily": "weather_code,temperature_2m_min,temperature_2m_max,wind_speed_10m_max",
+        "temperature_unit": "celsius", "wind_speed_unit": "kmh",
+        "forecast_days": 2, "timezone": "auto",
+    })
+
+
 def current_temperature(location: Location) -> float:
     """WEA-16: Aktuelle Temperatur am Ort in °C, Einheit von der API bestätigt."""
     return temperature_from_response(current_weather(location))

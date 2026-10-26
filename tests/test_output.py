@@ -1,6 +1,6 @@
 import unittest
 from weathercli.client import Location, WeatherError
-from weathercli.output import format_weather
+from weathercli.output import format_tomorrow, format_weather
 
 
 class OutputTests(unittest.TestCase):
@@ -49,3 +49,22 @@ class OutputTests(unittest.TestCase):
         for data in (None, [], {}, {"current": []}, self.payload(unit="°F")):
             with self.subTest(data=data), self.assertRaises(WeatherError):
                 format_weather(self.place, data)
+
+    def test_tomorrow_forecast_format(self):
+        data = {"daily": {"time": ["2026-10-26", "2026-10-27"],
+                           "temperature_2m_min": [8.0, 6.5],
+                           "temperature_2m_max": [15.0, 13.0],
+                           "weather_code": [0, 61],
+                           "wind_speed_10m_max": [10.0, 18.5]}}
+        self.assertEqual(format_tomorrow(self.place, data),
+                         "New York, USA: Morgen 2026-10-27, Leichter Regen, "
+                         "6.5–13 °C, Wind bis 18.5 km/h")
+
+    def test_incomplete_or_invalid_tomorrow_forecast_is_an_error(self):
+        for data in ({}, {"daily": {"time": ["today"]}},
+                     {"daily": {"time": ["today", "tomorrow"],
+                                 "temperature_2m_min": [1, None],
+                                 "temperature_2m_max": [2, 3], "weather_code": [0, 0],
+                                 "wind_speed_10m_max": [1, 1]}}):
+            with self.subTest(data=data), self.assertRaises(WeatherError):
+                format_tomorrow(self.place, data)
