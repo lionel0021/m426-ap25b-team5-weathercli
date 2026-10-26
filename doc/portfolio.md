@@ -234,6 +234,28 @@ Sprint-2-Inkrements stehen noch aus. Das frühere Berechtigungs-Impediment
 | Lionel | offen | |
 | Nico | offen | |
 
+#### Retrospektive Sprint 2 (26.10.2026)
+
+**Grundlage:** Diese Rückschau stützt sich auf den Repository-Nachweis und den aktuellen YouTrack-Stand. Eine dokumentierte gemeinsame Teamrunde mit persönlichen Einschätzungen liegt nicht vor; die Punkte sind deshalb vorläufig und vom Team zu bestätigen.
+
+**Was lief gut?**
+
+- Das Sprintziel wurde erreicht: Wetterzustand und Windgeschwindigkeit erscheinen gemeinsam mit Ort und Temperatur.
+- Alle sieben Umsetzungs-Tickets WEA-9, WEA-10 und WEA-19 bis WEA-23 stehen in YouTrack auf Done. Der Testnachweis nennt 43 erfolgreiche automatisierte Tests; Live-Abfragen für Zürich, New York und Reykjavík bestätigten die Ausgabe.
+- Die parallele Arbeit an Wetterzustand und Wind wurde erfolgreich in eine gemeinsame Ausgabe integriert. Dabei erkannte Konflikte wurden gelöst und die Tests passend ergänzt.
+- Das Berechtigungsproblem beim Anlegen des Sprints wurde als Impediment erfasst und behoben.
+
+**Was nehmen wir für die nächste Runde mit?**
+
+- Die Integration wird einfacher nachvollziehbar, wenn Feature-Branches aktuell gehalten und Tests direkt mit den Änderungen ergänzt werden.
+- Im Board sollen Review-Ergebnisse und Startbestätigungen vollständig dokumentiert sein. WEA-29 ist weiterhin offen; in der Startprüfung dieses Portfolios fehlen noch die Bestätigungen von Fidan, Lionel und Nico.
+
+**Eine Verbesserungsmassnahme für Sprint 3:**
+
+> Bevor eine User Story auf Done gesetzt wird, prüft das Team ihre Akzeptanzkriterien und alle sechs DoD-Punkte. Review-Ergebnis, Testnachweis und Startbestätigung werden direkt im Ticket festgehalten. Fidan kontrolliert diese Einträge im Sprint Review; erfüllt ist die Massnahme, wenn für jede Sprint-Story alle Nachweise im Board verlinkt sind.
+
+**Offener Abgleich:** WEA-29 bleibt offen, bis das Team die Review-Ergebnisse und die noch fehlenden Startbestätigungen geprüft und in YouTrack dokumentiert hat.
+
 ## 5. Nachweise und offene Abschlussarbeiten
 
 | Anforderung aus Auftrag 4.1 | Stand / Nachweis |
