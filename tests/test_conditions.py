@@ -2,7 +2,7 @@
 
 import unittest
 
-from weathercli.conditions import WMO_CONDITIONS, condition_from_response
+from weathercli.conditions import WMO_CONDITIONS, condition_from_code, condition_from_response
 
 
 def response(code, temperature=15.5):
@@ -30,6 +30,15 @@ class ConditionTests(unittest.TestCase):
         for data in broken:
             with self.subTest(data=data):
                 self.assertIsNone(condition_from_response(data))
+
+    def test_single_code_uses_the_same_rule_as_the_response(self):
+        """condition_from_code wird auch von der Tagesvorhersage genutzt (WEA-33)."""
+        for code, expected in ((0, "Klar"), (45, "Nebel"), (63, "Regen"), (63.0, "Regen")):
+            with self.subTest(code=code):
+                self.assertEqual(condition_from_code(code), expected)
+        for code in (None, 4, "63", True, 2.5, float("nan"), float("inf")):
+            with self.subTest(code=code):
+                self.assertIsNone(condition_from_code(code))
 
     def test_temperature_stays_readable_without_condition(self):
         data = {"current": {"temperature_2m": 15.5}, "current_units": {"temperature_2m": "°C"}}
