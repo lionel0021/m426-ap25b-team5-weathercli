@@ -262,17 +262,24 @@ höchstens 5 Story Points.
 
 | Rang | Eintrag | Ticket | Story Points |
 | ---: | --- | --- | ---: |
-| 1 | US-06 Wetter für morgen sehen | im Board anlegen | Planning Poker |
-| 2 | US-07 Installation und Demo ohne Hilfe | im Board anlegen | Planning Poker |
-| 3 | Task: Stabilisieren | im Board anlegen | – |
-| 4 | Task: Demo vorbereiten | im Board anlegen | – |
-| 5 | Task: Präsentation vorbereiten | im Board anlegen | – |
-| – | US-08 Kurzer Verbindungsfehler wird wiederholt (nur bei freier Kapazität) | im Board anlegen | Planning Poker |
+| 1 | US-06 Wetter für morgen sehen | WEA-31 (Tasks WEA-32 bis WEA-35) | 3 |
+| 2 | US-07 Installation und Demo ohne Hilfe | WEA-36 (Tasks WEA-37, WEA-38) | 2 |
+| 3 | Task: Stabilisieren | WEA-41 | – |
+| 4 | Task: Demo vorbereiten | WEA-42 | – |
+| 5 | Task: Präsentation vorbereiten | WEA-43 | – |
+| – | US-08 Kurzer Verbindungsfehler wird wiederholt (nur bei freier Kapazität) | WEA-39 (Task WEA-40) | 2 |
 
 **Begründung der Auswahl (PO):** US-06 schliesst die grösste Lücke zur Product Vision
 («aktuelle Wetterdaten und Vorhersagen») und ist auf den morgigen Tag geschnitten, damit
 sie an einem Vormittag fertig wird. US-07 macht das Produkt für Demo und Präsentation
 vorführbar. US-08 ist ein Could und kommt nur dazu, wenn beide Stories fertig sind.
+
+Die Story Points sind ein Ausgangswert nach Referenzstory (US-02, US-05, US-03), im
+Planning Poker zu bestätigen. Geplant sind 5 Story Points, US-08 bleibt Reserve.
+
+**Board:** Den Board-Sprint «Sprint 3» konnte Eduart nicht anlegen (HTTP 403, Boards gehören
+dem User admin); Impediment WEA-44. Bis dahin ist der Sprint 3 über die Ticketnummern oben
+nachvollziehbar.
 
 **KI-Reviewpunkt:** Der Pull Request zu US-06 wird zusätzlich von einer KI reviewt;
 Befunde und Entscheidung kommen in Abschnitt 7.
@@ -416,8 +423,12 @@ Entwurf für Refinement und Planung von Sprint 3 zu schreiben.
 
 - **Übernommen:** Ordnung des Backlogs für Sprint 3, Tasks je Story, Fertig-Kriterien
   der drei Pflicht-Tasks, Hinweis auf den ungemergten Commit `b4be608`.
-- **Selbst entschieden:** Story Points schätzt das Team im Planning Poker; die KI nennt
-  nur Referenzstories aus Sprint 1 und 2.
+- **Board:** Anlegen der Tickets WEA-31 bis WEA-44 in YouTrack über die REST-API.
+- **Story Points:** Die KI hat Ausgangswerte nach Referenzstories gesetzt (US-06: 3, US-07: 2,
+  US-08: 2), als Kommentar am Ticket gekennzeichnet. Sie ersetzen kein Planning Poker und
+  werden vom Team bestätigt oder korrigiert.
+- **Selbst entschieden:** Sprintziel, Auswahl und Reihenfolge legt der Product Owner fest;
+  die Tasks werden von den Developers gezogen und nicht von der KI verteilt.
 
 **KI-Reviewpunkt US-06 (Nico, 26.10.2026, PR #16):** Nico hat Claude (Anthropic) über
 Claude Code genutzt, um US-06 (WEA-32 bis WEA-35) nach dem Arbeitsplan umzusetzen, und
