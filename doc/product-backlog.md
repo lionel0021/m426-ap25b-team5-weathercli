@@ -185,6 +185,8 @@ fertig sind. Die Mehrtagesvorhersage bleibt als Folgestory im Backlog (Thema «W
 Akzeptanzkriterien. Die Schätzung erfolgt im Planning Poker; die Referenzstory steht in
 der Tabelle. Alle drei sind kleiner als US-01 und an einem Vormittag machbar.
 
+**Arbeitsplan für die Developer:** [Sprint 3 – Arbeitsplan](sprint-3.md).
+
 ### US-06 – Wetter für morgen sehen
 
 Als Person, die den nächsten Tag plant, möchte ich mit `weather "Zürich" --morgen`

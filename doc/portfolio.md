@@ -189,6 +189,12 @@ Zuordnung im [Sprintplan](sprint-1.md) gilt nur als Vorschlag.
 | Lionel | offen | |
 | Nico | offen | |
 
+**Review-Ergebnis (26.10.2026):** vom PO eintragen – gezeigt: … · Feedback: … · ins Backlog: …
+
+**Retro-Erkenntnis:** vom Scrum Master eintragen
+
+**Verbesserungsmassnahme für Sprint 3 (Prüfung um 11:30):** vom Scrum Master eintragen
+
 ### Sprint 3 (26.10.2026, Modultag 8)
 
 **Sprintziel (Vorschlag PO, im Planning bestätigen):** Das Produkt ist präsentierbar.
@@ -219,7 +225,10 @@ vorführbar. US-08 ist ein Could und kommt nur dazu, wenn beide Stories fertig s
 **KI-Reviewpunkt:** Der Pull Request zu US-06 wird zusätzlich von einer KI reviewt;
 Befunde und Entscheidung kommen in Abschnitt 7.
 
-**Verbesserungsmassnahme aus der Retro vom 26.10.2026:** vom Team eintragen; Prüfung um 11:30.
+**Arbeitsplan für die Developer:** [Sprint 3 – Arbeitsplan](sprint-3.md) mit Schnittstellen,
+Ausgabeformat, Tests und Reihenfolge.
+
+**Verbesserungsmassnahme:** siehe Block Sprint 2.
 
 ## 5. Nachweise und offene Abschlussarbeiten
 
@@ -233,6 +242,19 @@ Befunde und Entscheidung kommen in Abschnitt 7.
 | Portfolio Abschnitte 1–3 gefüllt | Team mit Rollen, Produkt, Vision, Backlog und YouTrack-Link erfasst |
 | Offizielle Portfolio-Vorlage übernommen | Offen: Vorlage/Modulrepo bislang nicht verfügbar; vorliegende Gliederung folgt dem Auftrag |
 | Story-Map-Bild verlinkt | In Abschnitt 3 enthalten |
+
+## 6. Persönliche Kurzreflexion
+
+Jedes Teammitglied trägt seine eigene Zeile ein.
+
+### Sprint 2
+
+| Teammitglied | Beitrag | Wichtigste Erkenntnis | Nächster Lernschritt |
+| --- | --- | --- | --- |
+| Eduart | | | |
+| Fidan | | | |
+| Lionel | | | |
+| Nico | | | |
 
 ## 7. KI-Nutzungsnachweis
 
