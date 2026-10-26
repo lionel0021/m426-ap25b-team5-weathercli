@@ -139,3 +139,87 @@ keine ausgewählten Sprint-2-Stories.
   alle Werte zum selben Ort und Zeitpunkt gehören.
 - Offen im Board: US-02 und US-03 aus Sprint 1 entfernen und Sprint 2 zuordnen;
   Retro-Massnahme aus Sprint 1 als Eintrag im Sprint Backlog anlegen.
+
+
+## Sprint 3 – Vorbereitung (Stand 19.10.2026, PO)
+
+**Sprintziel (Vorschlag):** Das Produkt ist präsentierbar. Eine Person installiert
+WeatherCLI mit wenigen Befehlen, fragt `weather "Zürich"` ab, sieht die Prognose für
+morgen und bekommt bei einem kurzen Verbindungsproblem keinen unnötigen Fehler.
+
+**Story Points:** bewusst leer. Die schätzt das Team im Planning Poker (Tag 8);
+jede Story muss in einem Modultag machbar sein, sonst wird sie vor dem Sprint
+gesplittet. Sprint 3 hat nur einen Modultag, deshalb zuerst die Stories 1 und 2,
+Story 3 nur bei freier Kapazität.
+
+| Rang | Story | Priorität | Story Points | Begründung |
+| ---: | --- | --- | ---: | --- |
+| 1 | US-06 – Wetter für morgen sehen | Should | offen | Grösster fehlender Funktionsbereich der Story Map (Rang 6, Vorhersage), auf einen Tag geschnitten |
+| 2 | US-07 – Installation und Demo ohne Hilfe | Should | offen | Präsentierbarkeit: Das Produkt muss sich an Tag 8 vorführen lassen |
+| 3 | US-08 – Kurzer Verbindungsfehler wird wiederholt | Could | offen | Story Map Rang 12, erhöht die Robustheit der Demo |
+
+Die Wettervorhersage über mehrere Tage ist bewusst nicht in US-06: Sie ist zu
+gross für einen Modultag und bleibt als Folgestory im Backlog.
+
+### US-06 – Wetter für morgen sehen
+
+Als Person, die den nächsten Tag plant, möchte ich mit `weather "Zürich" --morgen`
+Wetterzustand und Temperaturbereich für morgen sehen, damit ich Kleidung und Weg
+im Voraus wählen kann.
+
+**Akzeptanzkriterien**
+
+1. `weather "Zürich" --morgen` zeigt Ort, Land, Wetterzustand auf Deutsch sowie
+   Tiefst- und Höchsttemperatur in °C für den morgigen Tag; der Exit-Code ist 0.
+2. Ohne `--morgen` bleibt die Ausgabe von `weather "Zürich"` unverändert (aktuelle
+   Temperatur, Zustand, Wind).
+3. Fehlen die Vorhersagedaten oder ist der Wettercode unbekannt, erscheint «Vorhersage nicht
+   verfügbar» beziehungsweise «Wetterzustand nicht verfügbar»; die Anwendung stürzt nicht ab
+   und erfindet keine Werte.
+4. `weather --help` nennt die Option `--morgen` mit einem Beispiel.
+
+**Umfang:** Nur der morgige Tag, ein Ort. Keine Mehrtagesvorhersage, keine Stundenwerte.
+**Technischer Hinweis:** Open-Meteo `daily=weather_code,temperature_2m_max,temperature_2m_min`;
+die Wettercode-Übersetzung aus `weathercli/conditions.py` wird wiederverwendet.
+
+### US-07 – Installation und Demo ohne Hilfe
+
+Als neue Person im Team möchte ich WeatherCLI nach der README installieren und die
+Beispielabfragen ausführen können, damit ich das Produkt ohne Rückfrage ausprobieren kann.
+
+**Akzeptanzkriterien**
+
+1. Die README beschreibt in höchstens fünf Schritten Installation (`pip install .`) und den
+   ersten Aufruf `weather "Zürich"`; auf einer frischen virtuellen Umgebung funktionieren
+   die Schritte genau so.
+2. Die README zeigt je ein Beispiel mit einteiligem Namen, mehrteiligem Namen, `--morgen`
+   und `--help` mit der echten Ausgabe.
+3. Die README nennt bekannte Grenzen (nur ein Ort pro Aufruf, Internet nötig, Open-Meteo als
+   Datenquelle).
+4. Eine Person aus dem Team, die den Code nicht geschrieben hat, führt die Schritte aus und
+   bestätigt es im Ticket.
+
+**Umfang:** Dokumentation und Prüfung, kein neuer Code ausser Korrekturen, die beim Prüfen auffallen.
+
+### US-08 – Kurzer Verbindungsfehler wird wiederholt
+
+Als Person mit instabilem WLAN möchte ich, dass `weather "Zürich"` bei einem kurzen
+Verbindungsproblem automatisch noch einmal versucht wird, damit ich nicht selbst neu starten muss.
+
+**Akzeptanzkriterien**
+
+1. Scheitert die erste Abfrage mit Timeout oder DNS-Fehler und die zweite gelingt, zeigt die
+   Anwendung das normale Wetter; der Exit-Code ist 0.
+2. Scheitern beide Versuche, erscheint die bisherige verständliche Fehlermeldung mit Exit-Code
+   ungleich 0; es gibt höchstens einen zweiten Versuch.
+3. Fehler, die ein Wiederholen nicht lösen kann (unbekannter Ort, ungültige Antwort), werden
+   nicht wiederholt.
+
+**Umfang:** Ein automatischer Wiederholversuch, keine Einstellung, kein Dialog.
+
+### Offen vor dem Planning (Tag 8)
+
+- Planning Poker für US-06 bis US-08 im Team durchführen und die Story Points oben eintragen.
+- Issues in YouTrack anlegen, bevor jemand Code schreibt (Retro-Massnahme Sprint 0), und die
+  Tasks im Planning gemeinsam aus den Kriterien ableiten.
+- Ist US-06 grösser als ein Modultag, vorher splitten (zum Beispiel Zustand zuerst, Temperaturbereich danach).
