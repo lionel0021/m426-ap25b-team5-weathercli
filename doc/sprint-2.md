@@ -1,4 +1,4 @@
-# Sprint 2 – Windgeschwindigkeit (US-03)
+# Sprint 2 – Wetterzustand und Windgeschwindigkeit (US-02 und US-03)
 
 ## Umfang
 

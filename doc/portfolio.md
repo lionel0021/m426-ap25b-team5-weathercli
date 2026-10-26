@@ -91,7 +91,16 @@ Die nachfolgenden Sprint-0-Angaben bleiben als historischer Stand erhalten.
 
 | Story / Issue-Link | Issue vor erstem Code-Commit angelegt | Statuswechsel sofort dokumentiert | Prüfergebnis an Modultag 6 |
 | --- | --- | --- | --- |
-| Bei Prüfung ergänzen | offen | offen | offen |
+| [US-01 / WEA-8](https://weathercli.youtrack.cloud/issue/WEA-8) | Ja | Ja | Erfüllt |
+| [US-04 / WEA-11](https://weathercli.youtrack.cloud/issue/WEA-11) | Ja | Ja | Erfüllt |
+| [US-05 / WEA-12](https://weathercli.youtrack.cloud/issue/WEA-12) | Ja | Teilweise | Teilweise erfüllt |
+
+**Prüfnachweis vom 28.09.2026:** Die drei Issues wurden am 07.09.2026
+erstellt und damit vor dem ersten zugehörigen Code-Commit `50f2e05` vom
+21.09.2026. Bei WEA-8 und WEA-11 bildet die Statushistorie den Arbeitsablauf
+nachvollziehbar ab. WEA-12 wurde am 21.09.2026 um 10:43 Uhr auf `To Verify`
+gesetzt, der erste zugehörige Code-Commit folgte um 10:55 Uhr. Ohne weiteren
+Teamnachweis gilt der zeitnahe Statuswechsel deshalb nur als teilweise erfüllt.
 
 #### Definition of Done
 
@@ -103,7 +112,7 @@ Die nachfolgenden Sprint-0-Angaben bleiben als historischer Stand erhalten.
 - DoD gemeinsam prüfen und Änderungen dokumentieren.
 - Übrige Felder des Sprint-0-Blocks anhand der offiziellen Portfolio-Vorlage ergänzen.
 
-### Sprint 1 (Modultag 4 bis 21.09.2026)
+### Sprint 1 (Boardzeitraum 15.09. bis 28.09.2026)
 
 **Sprintziel (Vorschlag des Product Owners, im Team noch nicht bestaetigt):** Eine Person
 kann im Terminal `weather "Zuerich"` eingeben und erhaelt Ort, Land und die aktuelle
@@ -111,13 +120,13 @@ Temperatur - oder eine verstaendliche Meldung, wenn die Stadt nicht gefunden wir
 
 **Sprint Backlog:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/)
 
-| Story | Ticket | Story Points | Bearbeiter | Status am 21.09.2026 |
-| --- | --- | --- | --- | --- |
-| US-01 Aktuelle Temperatur fuer eine Stadt | WEA-8 | nicht geschaetzt | nicht zugewiesen | Open |
-| US-02 Aktuellen Wetterzustand erkennen | WEA-9 | nicht geschaetzt | nicht zugewiesen | Open |
-| US-03 Aktuelle Windgeschwindigkeit | WEA-10 | nicht geschaetzt | nicht zugewiesen | Open |
-| US-04 Mehrteilige Stadtnamen | WEA-11 | nicht geschaetzt | nicht zugewiesen | Open |
-| US-05 Bedienung ohne externe Anleitung | WEA-12 | nicht geschaetzt | nicht zugewiesen | Open |
+| Story | Ticket | Story Points | Bearbeiter | Status am 28.09.2026 |
+| --- | --- | ---: | --- | --- |
+| US-01 Aktuelle Temperatur fuer eine Stadt | WEA-8 | 8 | Lionel | Done |
+| US-02 Aktuellen Wetterzustand erkennen | WEA-9 | 3 | Nico | To Verify; für Sprint 2 vorgesehen |
+| US-03 Aktuelle Windgeschwindigkeit | WEA-10 | 2 | Lionel | Open; für Sprint 2 vorgesehen |
+| US-04 Mehrteilige Stadtnamen | WEA-11 | 3 | Nico | Done |
+| US-05 Bedienung ohne externe Anleitung | WEA-12 | 2 | Lionel | Done |
 
 Unter jeder Story liegen die Arbeitsschritte als Tasks (WEA-13 bis WEA-28).
 
@@ -128,24 +137,60 @@ unter dem Epic WEA-7 gefuehrt und tragen Story-Text und Akzeptanzkriterien aus d
 Product Backlog. Die Karten WEA-2 bis WEA-6 sind als Duplikate geschlossen und mit einem
 Verweis auf die Nachfolge-Story kommentiert.
 
-**Sprintergebnis.** Im Sprint wurde kein Produktinkrement erstellt. Im Repository liegt seit
-dem 07.09.2026 kein Quellcode; kein Ticket wurde aus dem Status Open bewegt. Das Sprintziel
-ist damit nicht erreicht. Planning Poker hat nicht stattgefunden, deshalb tragen die Stories
-keine Schaetzung, und die fuenf Erkenntnisse zum Schaetzen aus Auftrag 4.2 koennen noch
-nicht festgehalten werden.
+**Sprintergebnis.** Mit US-01, US-04 und US-05 liegt ein lauffaehiges
+Produktinkrement auf dem gemeinsamen Hauptbranch vor. Die automatisierte
+Testsuite umfasst 34 erfolgreiche Tests; die Live-Abnahme ist verlinkt. Review
+und Integration sind abgeschlossen. Am 28.09.2026 haben Eduart, Fidan, Lionel
+und Nico bestaetigt, dass sie WeatherCLI anhand der Startanleitung erfolgreich
+starten und ausfuehren koennen. Damit ist auch die Team-Startpruefung aus der
+Definition of Done erfuellt.
 
-**Offen und an Modultag 5 nachzuholen:**
+**Velocity Sprint 1:** 13 Story Points. Gezaehlt werden nur die abgeschlossenen
+Stories US-01 (8 SP), US-04 (3 SP) und US-05 (2 SP). US-02 und US-03 gehoeren
+zu Sprint 2 und werden nicht zur Velocity von Sprint 1 addiert.
 
-- Stories im Team schaetzen und die Story Points in YouTrack eintragen
-- Die fuenf Erkenntnisse zum Schaetzen festhalten
-- Sprintziel im Team bestaetigen und im Board hinterlegen
-- Sprint-1-Retrospective; die Verbesserungsmassnahme aus Sprint 0 ist zu pruefen:
-  Die Stories existierten vor Sprintbeginn als Tickets, wurden aber bei Statuswechseln
-  nicht bewegt, weil keine Arbeit stattfand. Die Massnahme gilt damit als nicht erfuellt.
-- Technische Entscheide des Teams sind festgehalten: Python und Open-Meteo
-  (kein API-Schluessel noetig, Temperatur in Grad Celsius, Wind in km/h)
+#### Retrospektive Sprint 1
 
-### Sprint 2 (28.09.2026 und 19.10.2026, Review und Retro am 26.10.2026)
+**Was lief gut?**
+
+- Die Absprachen im Team funktionierten gut.
+- Die ausgewählten Sprint-1-Stories konnten gemäss der Definition of Done
+  abgeschlossen werden.
+- Die automatisierten Tests liefen erfolgreich und gaben dem Team schnelle
+  Rückmeldung zu den umgesetzten Funktionen.
+- Die gegenseitigen Code-Reviews funktionierten und die Ergebnisse wurden auf
+  dem gemeinsamen Hauptbranch integriert.
+
+**Was lief weniger gut?**
+
+- Einzelne Tickets wurden teilweise zu früh oder verspätet auf einen neuen
+  Status gesetzt.
+- Mehrfach traten Berechtigungsprobleme im Board auf. Der Scrum Master klärte
+  diese Hindernisse, damit das Team weiterarbeiten konnte.
+- Im Sprint Review betrachtete das Team vor allem einzelne Aufgaben und
+  Funktionen. Ob die vollständigen User Stories mit ihren Akzeptanzkriterien
+  abgeschlossen waren, stand zu wenig im Mittelpunkt.
+
+**Genau eine Verbesserungsmassnahme für Sprint 2:**
+
+> Im Sprint Review wird jede User Story einzeln anhand ihrer Akzeptanzkriterien
+> und der Definition of Done geprüft. Das Ergebnis wird als «erfüllt» oder
+> «nicht erfüllt» dokumentiert, bevor die Story als Done gilt.
+
+**Vorbereiteter Eintrag für das Sprint-2-Backlog:**
+
+- **Titel:** Sprint Review storyweise anhand Akzeptanzkriterien und DoD
+  durchführen
+- **Verantwortlich für die Durchführung:** Fidan als Scrum Master
+- **Erfüllt, wenn:** Jede Sprint-2-Story wurde einzeln besprochen,
+  Akzeptanzkriterien und DoD wurden geprüft und das Ergebnis wurde im Board
+  dokumentiert.
+- **Issue-Link:** [WEA-29](https://weathercli.youtrack.cloud/issue/WEA-29)
+
+### Sprint 2 (28.09. bis 26.10.2026)
+
+Modultage sind der 28.09. und 19.10.2026; Review und Retrospektive finden am
+26.10.2026 statt.
 
 **Sprintziel:** Eine Person sieht mit `weather "Zürich"` neben der Temperatur auch
 den aktuellen Wetterzustand auf Deutsch und die Windgeschwindigkeit in km/h; fehlt
@@ -160,14 +205,14 @@ auf «Erledigt»). Sprint 2 hat wie Sprint 1 zwei Modultage.
 | ---: | --- | --- | ---: | --- |
 | 1 | US-02 Aktuellen Wetterzustand erkennen | WEA-9 | 3 | WEA-19 bis WEA-21 |
 | 2 | US-03 Aktuelle Windgeschwindigkeit sehen | WEA-10 | 2 | WEA-22, WEA-23 |
-| 3 | Retro-Massnahme: Story erst auf Done, wenn alle vier die Startprüfung im Ticket bestätigt haben (Vorschlag PO, im Team bestätigen) | WEA-29 | – | Prüfung in der Retro am 26.10.2026 |
+| 3 | Sprint Review storyweise anhand Akzeptanzkriterien und DoD durchführen | [WEA-29](https://weathercli.youtrack.cloud/issue/WEA-29) | – | Fidan prüft US-02 und US-03 im Review |
+| 4 | Retro-Massnahme: Story erst auf Done, wenn alle vier die Startprüfung im Ticket bestätigt haben (Vorschlag PO, im Team bestätigen) | WEA-29 | – | Prüfung in der Retro am 26.10.2026 |
 
 **Begründung der Auswahl (PO):** US-02 und US-03 vervollständigen die aktuelle
 Wetterabfrage und liefern damit den grössten Nutzwert: Regenschutz und Velofahrt
 lassen sich mit einem Aufruf entscheiden. Mit 5 Story Points bleibt der Sprint
-bewusst unter dem Richtwert von 13. Die Differenz ist für die offenen
-DoD-Punkte aus Sprint 1 (Startprüfung bei allen Teammitgliedern) und die
-Retro-Massnahme reserviert: fertig machen vor neu anfangen. Nächster Kandidat,
+bewusst unter dem Richtwert von 13. Die Differenz schafft Raum für Review,
+Team-Abnahme und die Retro-Massnahme. Nächster Kandidat,
 falls Kapazität frei wird, ist die Wettervorhersage (Rang 6); sie muss vorher
 verfeinert und im Planning Poker geschätzt werden.
 
@@ -180,6 +225,13 @@ WEA-29 von Sprint 1 nach Sprint 2 verschoben.
 **Tasks:** Die Tasks werden von den Developers gezogen, nicht verteilt. Die
 Zuordnung im [Sprintplan](sprint-1.md) gilt nur als Vorschlag.
 
+**Board und Umsetzungsstand:** Sprint 1 ist auf beiden Boards archiviert und
+Sprint 2 aktiv. WEA-9, WEA-10 und WEA-19 bis WEA-23 sind Sprint 2 zugeordnet.
+US-02 und US-03 sind umgesetzt und auf `main` integriert; 43 automatisierte
+Tests sind erfolgreich. Review und Team-Abnahme des vollständigen
+Sprint-2-Inkrements stehen noch aus. Das frühere Berechtigungs-Impediment
+[WEA-30](https://weathercli.youtrack.cloud/issue/WEA-30) ist behoben und Done.
+
 **Startprüfung (DoD 4):**
 
 | Teammitglied | Datum | Ergebnis |
@@ -187,7 +239,7 @@ Zuordnung im [Sprintplan](sprint-1.md) gilt nur als Vorschlag.
 | Eduart | 28.09.2026 | 34 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 17.7 °C` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 15 °C` (Exit 0), `weather` ohne Stadt → Fehlermeldung (Exit 2) |
 | Fidan | offen | |
 | Lionel | offen | |
-| Nico | offen | |
+| Nico | 26.10.2026 | 43 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 9.8 °C, Bewölkt, Wind: 1.4 km/h` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 5.7 °C, Klar, Wind: 8.7 km/h` (Exit 0), `weather` ohne Stadt → «Die Stadt fehlt.» (Exit 2) |
 
 **Review-Ergebnis (26.10.2026):** vom PO eintragen – gezeigt: … · Feedback: … · ins Backlog: …
 
@@ -237,6 +289,28 @@ Ausgabeformat, Tests und Reihenfolge.
 
 **Verbesserungsmassnahme:** siehe Block Sprint 2.
 
+#### Retrospektive Sprint 2 (26.10.2026)
+
+**Grundlage:** Diese Rückschau stützt sich auf den Repository-Nachweis und den aktuellen YouTrack-Stand. Eine dokumentierte gemeinsame Teamrunde mit persönlichen Einschätzungen liegt nicht vor; die Punkte sind deshalb vorläufig und vom Team zu bestätigen.
+
+**Was lief gut?**
+
+- Das Sprintziel wurde erreicht: Wetterzustand und Windgeschwindigkeit erscheinen gemeinsam mit Ort und Temperatur.
+- Alle sieben Umsetzungs-Tickets WEA-9, WEA-10 und WEA-19 bis WEA-23 stehen in YouTrack auf Done. Der Testnachweis nennt 43 erfolgreiche automatisierte Tests; Live-Abfragen für Zürich, New York und Reykjavík bestätigten die Ausgabe.
+- Die parallele Arbeit an Wetterzustand und Wind wurde erfolgreich in eine gemeinsame Ausgabe integriert. Dabei erkannte Konflikte wurden gelöst und die Tests passend ergänzt.
+- Das Berechtigungsproblem beim Anlegen des Sprints wurde als Impediment erfasst und behoben.
+
+**Was nehmen wir für die nächste Runde mit?**
+
+- Die Integration wird einfacher nachvollziehbar, wenn Feature-Branches aktuell gehalten und Tests direkt mit den Änderungen ergänzt werden.
+- Im Board sollen Review-Ergebnisse und Startbestätigungen vollständig dokumentiert sein. WEA-29 ist weiterhin offen; in der Startprüfung dieses Portfolios fehlen noch die Bestätigungen von Fidan, Lionel und Nico.
+
+**Eine Verbesserungsmassnahme für Sprint 3:**
+
+> Bevor eine User Story auf Done gesetzt wird, prüft das Team ihre Akzeptanzkriterien und alle sechs DoD-Punkte. Review-Ergebnis, Testnachweis und Startbestätigung werden direkt im Ticket festgehalten. Fidan kontrolliert diese Einträge im Sprint Review; erfüllt ist die Massnahme, wenn für jede Sprint-Story alle Nachweise im Board verlinkt sind.
+
+**Offener Abgleich:** WEA-29 bleibt offen, bis das Team die Review-Ergebnisse und die noch fehlenden Startbestätigungen geprüft und in YouTrack dokumentiert hat.
+
 ## 5. Nachweise und offene Abschlussarbeiten
 
 | Anforderung aus Auftrag 4.1 | Stand / Nachweis |
@@ -244,7 +318,7 @@ Ausgabeformat, Tests und Reihenfolge.
 | Fünf Stories mit Rolle, Nutzen und 2–4 prüfbaren Kriterien | In [product-backlog.md](product-backlog.md) vorbereitet |
 | Keine der fünf Stories ist ein Epic | Enger Umfang beschrieben; Team-Schätzung auf höchstens zwei Modultage ausstehend |
 | Fünf Stories im Board | Erfassung in YouTrack durch Lionel bestätigt; nicht unabhängig geprüft |
-| Eine nachprüfbare Verbesserungsmassnahme | Im Sprint-0-Block mit Prüfung an Modultag 6 dokumentiert; YouTrack als Board bestätigt; Retro-Screenshot verlinkt |
+| Eine nachprüfbare Verbesserungsmassnahme | Im Sprint-0-Block geprüft: WEA-8 und WEA-11 erfüllt, WEA-12 teilweise erfüllt; YouTrack-Historie und Git-Commit dokumentiert |
 | DoD mit 4–6 Kriterien schriftlich abgelegt | [Sechs Kriterien](definition-of-done.md); für Sprint 1 bestätigt |
 | Portfolio Abschnitte 1–3 gefüllt | Team mit Rollen, Produkt, Vision, Backlog und YouTrack-Link erfasst |
 | Offizielle Portfolio-Vorlage übernommen | Offen: Vorlage/Modulrepo bislang nicht verfügbar; vorliegende Gliederung folgt dem Auftrag |
@@ -355,3 +429,17 @@ Entwurf für Refinement und Planung von Sprint 3 zu schreiben.
   werden vom Team bestätigt oder korrigiert.
 - **Selbst entschieden:** Sprintziel, Auswahl und Reihenfolge legt der Product Owner fest;
   die Tasks werden von den Developers gezogen und nicht von der KI verteilt.
+
+**KI-Reviewpunkt US-06 (Nico, 26.10.2026, PR #16):** Nico hat Claude (Anthropic) über
+Claude Code genutzt, um US-06 (WEA-32 bis WEA-35) nach dem Arbeitsplan umzusetzen, und
+den entstandenen Pull Request anschliessend von derselben KI reviewen lassen. Befunde:
+
+| Befund | Entscheidung |
+| --- | --- |
+| Die Prüfung «gültiger WMO-Code» stand doppelt in `conditions.py` und `output.py` | Übernommen: liegt jetzt einmal als `conditions.condition_from_code`, von beiden Wegen genutzt, mit Test |
+| Konstante `TOMORROW` ist ein Listenindex und heisst wie eine Antwort | Übernommen: heisst jetzt `TOMORROW_INDEX` |
+| Vorschlag, zusätzlich zu prüfen, ob Tiefst- ≤ Höchstwert ist | Verworfen: steht in keinem Akzeptanzkriterium, und über Werte zu urteilen, die wir nicht haben, widerspricht AK 3 |
+| Hinweis, eine unbrauchbare Antwort wie bei `format_weather` als `WeatherError` zu melden | Verworfen: der Arbeitsplan verlangt «Vorhersage nicht verfügbar» mit Exit 0 |
+
+Das fachliche Review (DoD 3) macht Lionel; das KI-Review ersetzt es nicht. Die Zeile in
+Abschnitt 6 schreibt jedes Teammitglied selbst, nicht die KI.
