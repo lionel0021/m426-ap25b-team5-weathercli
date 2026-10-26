@@ -4,14 +4,14 @@ Sprint 3, WEA-33: dazu die Vorhersage für morgen.
 Alle Werte stammen aus demselben Datensatz, ohne weitere Abfrage."""
 
 from .client import Location
-from .conditions import WMO_CONDITIONS, condition_from_response
+from .conditions import condition_from_code, condition_from_response
 from .errors import finite_number, temperature_from_response
 
 CONDITION_UNAVAILABLE = "Wetterzustand nicht verfügbar"
 WIND_UNAVAILABLE = "Wind nicht verfügbar"
 FORECAST_UNAVAILABLE = "Vorhersage nicht verfügbar"
 # In der Tagesliste der Antwort steht an Index 0 heute und an Index 1 morgen.
-TOMORROW = 1
+TOMORROW_INDEX = 1
 
 
 def format_weather(location: Location, data: dict) -> str:
@@ -60,16 +60,14 @@ def _tomorrow_temperatures(data: dict):
 
 
 def _tomorrow_condition(data: dict):
-    """Zustand für morgen über WMO_CONDITIONS; None, wenn der Code fehlt.
+    """Zustand für morgen; None, wenn der Code fehlt oder unbekannt ist.
 
     conditions.condition_from_response liest `current` und passt hier nicht:
-    die Tagesvorhersage liefert den Code als Liste unter `daily`.
+    die Tagesvorhersage liefert den Code als Liste unter `daily`. Die Prüfung
+    des Codes selbst übernimmt conditions.condition_from_code.
     """
     daily = _daily(data)
-    code = _tomorrow_value(daily.get("weather_code")) if daily else None
-    if not finite_number(code) or code != int(code):
-        return None
-    return WMO_CONDITIONS.get(int(code))
+    return condition_from_code(_tomorrow_value(daily.get("weather_code")) if daily else None)
 
 
 def _daily(data: dict):
@@ -79,9 +77,9 @@ def _daily(data: dict):
 
 def _tomorrow_value(values):
     """Der Wert für morgen aus einer Tagesliste, sonst None."""
-    if not isinstance(values, list) or len(values) <= TOMORROW:
+    if not isinstance(values, list) or len(values) <= TOMORROW_INDEX:
         return None
-    return values[TOMORROW]
+    return values[TOMORROW_INDEX]
 
 
 def wind_from_response(data: dict) -> str:

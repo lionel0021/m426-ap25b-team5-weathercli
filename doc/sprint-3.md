@@ -114,7 +114,8 @@ Neue Funktion `format_tomorrow(location: Location, data: dict) -> str`:
 
 US-06 (WEA-32 bis WEA-35), ausgeführt am 26.10.2026 von Nico auf Windows 11 mit
 Python 3.13, Branch `feature/US-06-morgen`. `python -m unittest discover -s tests`:
-57 Tests OK (vorher 43, neu 14 für `tomorrow_forecast`, `format_tomorrow` und `--morgen`).
+58 Tests OK (vorher 43, neu 15 für `tomorrow_forecast`, `format_tomorrow`,
+`condition_from_code` und `--morgen`).
 
 | Aufruf | Ausgabe | Exit | Kriterium |
 | --- | --- | --- | --- |
