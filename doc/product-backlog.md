@@ -1,17 +1,30 @@
 # Product Backlog – WeatherCLI
 
-Stand: 28.09.2026, nach Abschluss der Umsetzung von Sprint 1. Quelle:
+Stand: 26.10.2026, Refinement für Sprint 3. Quelle:
 [Story Map](images/StoryBoard.png), Sprintplanung und aktuelles YouTrack-Board.
 
-## Aktuelle Reihenfolge und Planung
+## Offen für Sprint 3
+
+| Rang | Eintrag | Priorität | Story Points | Sprint |
+| ---: | --- | --- | ---: | --- |
+| 1 | US-06 – Wetter für morgen sehen | Should | Planning Poker | Sprint 3 (Vorschlag) |
+| 2 | US-07 – Installation und Demo ohne Hilfe | Should | Planning Poker | Sprint 3 (Vorschlag) |
+| 3 | Stabilisieren (Pflicht-Task) | Must | – | Sprint 3 |
+| 4 | Demo vorbereiten (Pflicht-Task) | Must | – | Sprint 3 |
+| 5 | Präsentation vorbereiten (Pflicht-Task) | Must | – | Sprint 3 |
+| 6 | US-08 – Kurzer Verbindungsfehler wird wiederholt | Could | Planning Poker | bei freier Kapazität |
+
+Details, Akzeptanzkriterien und Tasks: [Sprint 3 – Refinement und Planung](#sprint-3--refinement-und-planung-26102026).
+
+## Bisherige Stories
 
 | Rang | Story | Priorität | Story Points | Sprint | Board-Status |
 | ---: | --- | --- | ---: | --- | --- |
 | 1 | US-01 – Aktuelle Temperatur für eine Stadt | Must | 8 | Sprint 1 | Erledigt |
-| 2 | US-02 – Aktuellen Wetterzustand erkennen | Must | 3 | Sprint 2 | Offen |
+| 2 | US-02 – Aktuellen Wetterzustand erkennen | Must | 3 | Sprint 2 | Auf `main` umgesetzt |
 | 3 | US-04 – Mehrteilige Stadtnamen | Should | 3 | Sprint 1 | Erledigt |
 | 4 | US-05 – Bedienung ohne externe Anleitung | Should | 2 | Sprint 1 | Erledigt |
-| 5 | US-03 – Aktuelle Windgeschwindigkeit sehen | Should | 2 | Sprint 2 | Offen |
+| 5 | US-03 – Aktuelle Windgeschwindigkeit sehen | Should | 2 | Sprint 2 | Auf `main` umgesetzt |
 
 Sprint 1 umfasst US-01, US-04 und US-05. Die zugehörigen Tasks WEA-13 bis
 WEA-18 sowie WEA-24 bis WEA-28 stehen im Board auf «Erledigt». Die Umsetzung
@@ -141,25 +154,36 @@ keine ausgewählten Sprint-2-Stories.
   Retro-Massnahme aus Sprint 1 als Eintrag im Sprint Backlog anlegen.
 
 
-## Sprint 3 – Vorbereitung (Stand 19.10.2026, PO)
+## Sprint 3 – Refinement und Planung (26.10.2026)
 
-**Sprintziel (Vorschlag):** Das Produkt ist präsentierbar. Eine Person installiert
-WeatherCLI mit wenigen Befehlen, fragt `weather "Zürich"` ab, sieht die Prognose für
-morgen und bekommt bei einem kurzen Verbindungsproblem keinen unnötigen Fehler.
+Sprint 3 ist der letzte Sprint und hat einen einzigen Modultag (26.10.2026).
+Jede Story muss an einem Vormittag fertig sein; was grösser ist, wird vorher
+geschnitten. Die Auswahl bestätigt das Team im Planning nach der Pause.
 
-**Story Points:** bewusst leer. Die schätzt das Team im Planning Poker (Tag 8);
-jede Story muss in einem Modultag machbar sein, sonst wird sie vor dem Sprint
-gesplittet. Sprint 3 hat nur einen Modultag, deshalb zuerst die Stories 1 und 2,
-Story 3 nur bei freier Kapazität.
+**Sprintziel (Vorschlag PO):** Das Produkt ist präsentierbar. Eine Person installiert
+WeatherCLI nach der README, fragt `weather "Zürich"` und `weather "Zürich" --morgen`
+ab und sieht das Wetter für heute und für morgen.
 
-| Rang | Story | Priorität | Story Points | Begründung |
-| ---: | --- | --- | ---: | --- |
-| 1 | US-06 – Wetter für morgen sehen | Should | offen | Grösster fehlender Funktionsbereich der Story Map (Rang 6, Vorhersage), auf einen Tag geschnitten |
-| 2 | US-07 – Installation und Demo ohne Hilfe | Should | offen | Präsentierbarkeit: Das Produkt muss sich an Tag 8 vorführen lassen |
-| 3 | US-08 – Kurzer Verbindungsfehler wird wiederholt | Could | offen | Story Map Rang 12, erhöht die Robustheit der Demo |
+**Kapazität:** Sprint 1 lieferte 13 Story Points in zwei Modultagen, Sprint 2 lieferte
+5 Story Points in zwei Modultagen. Für einen Modultag mit drei Pflicht-Tasks planen wir
+höchstens 5 Story Points.
 
-Die Wettervorhersage über mehrere Tage ist bewusst nicht in US-06: Sie ist zu
-gross für einen Modultag und bleibt als Folgestory im Backlog.
+| Rang | Eintrag | Typ | Priorität | Story Points | Referenz für Planning Poker |
+| ---: | --- | --- | --- | ---: | --- |
+| 1 | US-06 – Wetter für morgen sehen | Story | Should | Planning Poker | ähnlich US-02 (3): ein zusätzlicher Teil der Abfrage, Wettercode-Tabelle wird wiederverwendet |
+| 2 | US-07 – Installation und Demo ohne Hilfe | Story | Should | Planning Poker | ähnlich US-05 (2): Dokumentation und Prüfung, kaum Code |
+| 3 | Stabilisieren | Task (Pflicht) | Must | – | – |
+| 4 | Demo vorbereiten | Task (Pflicht) | Must | – | – |
+| 5 | Präsentation vorbereiten | Task (Pflicht) | Must | – | – |
+| 6 | US-08 – Kurzer Verbindungsfehler wird wiederholt | Story | Could | Planning Poker | ähnlich US-03 (2): eine kleine Änderung an einer Stelle |
+
+Die drei Pflicht-Tasks gehören in jedem Fall in Sprint 3; der Rang sagt nur, in
+welcher Reihenfolge gearbeitet wird. US-08 kommt nur dazu, wenn US-06 und US-07
+fertig sind. Die Mehrtagesvorhersage bleibt als Folgestory im Backlog (Thema «Wettervorhersage» unter «Weitere Einträge»).
+
+**Ready-Prüfung:** US-06, US-07 und US-08 haben Rolle, Nutzen und drei bis vier prüfbare
+Akzeptanzkriterien. Die Schätzung erfolgt im Planning Poker; die Referenzstory steht in
+der Tabelle. Alle drei sind kleiner als US-01 und an einem Vormittag machbar.
 
 ### US-06 – Wetter für morgen sehen
 
@@ -179,8 +203,15 @@ im Voraus wählen kann.
 4. `weather --help` nennt die Option `--morgen` mit einem Beispiel.
 
 **Umfang:** Nur der morgige Tag, ein Ort. Keine Mehrtagesvorhersage, keine Stundenwerte.
-**Technischer Hinweis:** Open-Meteo `daily=weather_code,temperature_2m_max,temperature_2m_min`;
-die Wettercode-Übersetzung aus `weathercli/conditions.py` wird wiederverwendet.
+
+**Tasks (Vorschlag, im Planning ziehen):**
+
+- Abfrage: Forecast mit `daily=weather_code,temperature_2m_max,temperature_2m_min`,
+  `timezone=auto` und `forecast_days=2`; Index 1 ist morgen.
+- Ausgabe: Zustand über `conditions.WMO_CONDITIONS` übersetzen, zum Beispiel
+  `Zürich, Schweiz, morgen: Regen, 4.1 bis 9.8 °C`.
+- CLI: Option `--morgen` und Beispiel in der Hilfe.
+- Tests: fehlende Tageswerte, unbekannter Code, Ausgabe ohne `--morgen` unverändert.
 
 ### US-07 – Installation und Demo ohne Hilfe
 
@@ -201,6 +232,13 @@ Beispielabfragen ausführen können, damit ich das Produkt ohne Rückfrage auspr
 
 **Umfang:** Dokumentation und Prüfung, kein neuer Code ausser Korrekturen, die beim Prüfen auffallen.
 
+**Tasks (Vorschlag, im Planning ziehen):**
+
+- Veraltete README-Abschnitte entfernen («Neue Verteilung», «keine Tests ausgeführt»).
+- Installation auf einer frischen virtuellen Umgebung durchspielen und Schritte anpassen.
+- Echte Ausgaben einfügen, sobald US-06 auf `main` ist.
+- Prüfung durch Eduart oder Fidan, Bestätigung im Ticket.
+
 ### US-08 – Kurzer Verbindungsfehler wird wiederholt
 
 Als Person mit instabilem WLAN möchte ich, dass `weather "Zürich"` bei einem kurzen
@@ -217,9 +255,22 @@ Verbindungsproblem automatisch noch einmal versucht wird, damit ich nicht selbst
 
 **Umfang:** Ein automatischer Wiederholversuch, keine Einstellung, kein Dialog.
 
-### Offen vor dem Planning (Tag 8)
+**Tasks (Vorschlag, im Planning ziehen):**
 
-- Planning Poker für US-06 bis US-08 im Team durchführen und die Story Points oben eintragen.
-- Issues in YouTrack anlegen, bevor jemand Code schreibt (Retro-Massnahme Sprint 0), und die
-  Tasks im Planning gemeinsam aus den Kriterien ableiten.
-- Ist US-06 grösser als ein Modultag, vorher splitten (zum Beispiel Zustand zuerst, Temperaturbereich danach).
+- `errors.request_json`: bei `URLError`/`OSError` genau einmal wiederholen, bei
+  `HTTPError` und ungültigem JSON nicht.
+- Tests mit simuliertem erstem Fehlschlag.
+
+### Pflicht-Tasks für Sprint 3 (ohne Story Points)
+
+| Task | Fertig, wenn |
+| --- | --- |
+| Stabilisieren | Alle Tests auf `main` laufen; offene Branches sind gemergt oder gelöscht (u. a. Commit `b4be608` auf `feature/WEA-22-23-wind`); Startprüfung (DoD 4) von allen vier eingetragen; Umlaute im Demo-Terminal geprüft |
+| Demo vorbereiten | Ablauf mit fünf Aufrufen steht fest (`"Zürich"`, `"New York"`, `"Zürich" --morgen`, `"Springfield"` als Fehlerfall, `--help`); auf dem Demo-Gerät einmal komplett durchgespielt; Ersatz bei fehlendem Internet (Screenshot der Ausgaben) liegt bereit |
+| Präsentation vorbereiten | Gliederung (Vision, Inkrement, Scrum-Erfahrung, KI-Nutzung) und Sprechende je Teil festgelegt; einmal mit Zeitmessung geprobt |
+
+### Offen im Board
+
+- Issues für US-06 bis US-08 und die drei Pflicht-Tasks in YouTrack anlegen, bevor jemand
+  Code schreibt (Retro-Massnahme Sprint 0).
+- Board-Sprint «Sprint 3» anlegen; das braucht den User admin (Impediment WEA-30).
