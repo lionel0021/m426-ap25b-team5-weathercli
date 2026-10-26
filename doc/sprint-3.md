@@ -112,6 +112,18 @@ Neue Funktion `format_tomorrow(location: Location, data: dict) -> str`:
 
 ## Prüfnachweis
 
+US-06 (WEA-32 bis WEA-35), ausgeführt am 26.10.2026 von Nico auf Windows 11 mit
+Python 3.13, Branch `feature/US-06-morgen`. `python -m unittest discover -s tests`:
+57 Tests OK (vorher 43, neu 14 für `tomorrow_forecast`, `format_tomorrow` und `--morgen`).
+
 | Aufruf | Ausgabe | Exit | Kriterium |
 | --- | --- | --- | --- |
-| bei Abnahme eintragen | | | |
+| `weather "Zürich" --morgen` | `Zürich, Schweiz, morgen: Bewölkt, 8.1 bis 16.4 °C` | 0 | AK 1 |
+| `weather "New York" --morgen` | `New York City, Vereinigte Staaten, morgen: Bewölkt, 5.9 bis 14.6 °C` | 0 | AK 1, mehrteiliger Name |
+| `weather "Springfield" --morgen` | `Fehler: Der Ort ist mehrdeutig. Bitte eine genauere Ortsangabe eingeben.` | 1 | mehrdeutiger Ort, keine erfundenen Werte |
+| `weather "Zürich"` | `Zürich, Schweiz: 9.8 °C, Bewölkt, Wind: 1.4 km/h` | 0 | AK 2, Ausgabe unverändert |
+| `weather --help` | nennt `--morgen` und das Beispiel `weather "Zürich" --morgen` | 0 | AK 4 |
+| `weather --morgen` ohne Stadt | `Fehler: Die Stadt fehlt.` plus Beispielaufruf | 2 | Eingabefehler bleibt Exit 2 |
+
+Fehlende Vorhersagedaten sind nicht live auslösbar und über Tests abgedeckt
+(`Vorhersage nicht verfügbar` und `Wetterzustand nicht verfügbar`, je Exit 0, AK 3).

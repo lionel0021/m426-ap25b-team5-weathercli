@@ -12,6 +12,10 @@ from weathercli.client import Location, WeatherError
 
 
 PLACE = Location("Zürich", "Schweiz", 47.37, 8.55)
+TOMORROW = {"daily_units": {"weather_code": "wmo code", "temperature_2m_max": "°C",
+                            "temperature_2m_min": "°C"},
+            "daily": {"time": ["2026-10-26", "2026-10-27"], "weather_code": [3, 45],
+                      "temperature_2m_max": [11.7, 16.8], "temperature_2m_min": [6.8, 7.7]}}
 
 
 class CliTests(unittest.TestCase):
@@ -121,6 +125,66 @@ class CliTests(unittest.TestCase):
                     self.assertEqual(main(["Łódź"]), 0)
                 stream.flush()
         self.assertIn(b"Polen: 11 ", stream.buffer.getvalue())
+
+    def run_tomorrow(self, args, data=TOMORROW):
+        out, err = io.StringIO(), io.StringIO()
+        with patch("weathercli.cli.resolve_city", return_value=PLACE):
+            with patch("weathercli.cli.tomorrow_forecast", return_value=data) as forecast:
+                with patch("weathercli.cli.current_weather") as current:
+                    with redirect_stdout(out), redirect_stderr(err):
+                        try:
+                            code = main(args)
+                        except SystemExit as result:
+                            code = result.code
+        return code, out.getvalue(), err.getvalue(), forecast, current
+
+    def test_morgen_shows_condition_and_range_without_current_weather(self):
+        for args in (["Zürich", "--morgen"], ["--morgen", "Zürich"]):
+            with self.subTest(args=args):
+                code, out, err, forecast, current = self.run_tomorrow(args)
+                self.assertEqual(code, 0)
+                self.assertEqual(out, "Zürich, Schweiz, morgen: Nebel, 7.7 bis 16.8 °C\n")
+                self.assertEqual(err, "")
+                forecast.assert_called_once_with(PLACE)
+                current.assert_not_called()
+
+    def test_missing_forecast_is_no_crash_and_exit_zero(self):
+        code, out, err, _, _ = self.run_tomorrow(["Zürich", "--morgen"], {"daily": {}})
+        self.assertEqual(code, 0)
+        self.assertEqual(out, "Zürich, Schweiz, morgen: Vorhersage nicht verfügbar\n")
+        self.assertEqual(err, "")
+
+    def test_without_morgen_the_output_stays_unchanged(self):
+        with patch("weathercli.cli.tomorrow_forecast") as forecast:
+            code, out, _, _, weather = self.run_cli(["Zürich"])
+        self.assertEqual(code, 0)
+        self.assertEqual(out, "Zürich, Schweiz: 21.5 °C, Bewölkt, Wind: 9 km/h\n")
+        forecast.assert_not_called()
+        weather.assert_called_once_with(PLACE)
+
+    def test_morgen_without_city_is_an_input_error(self):
+        code, out, err, forecast, current = self.run_tomorrow(["--morgen"])
+        self.assertEqual(code, 2)
+        self.assertEqual(out, "")
+        self.assertIn("Stadt fehlt", err)
+        forecast.assert_not_called()
+        current.assert_not_called()
+
+    def test_help_names_the_morgen_option_with_an_example(self):
+        code, out, _, _, _ = self.run_tomorrow(["--help"])
+        self.assertEqual(code, 0)
+        self.assertIn("--morgen", out)
+        self.assertIn('weather "Zürich" --morgen', out)
+
+    def test_service_error_with_morgen_is_displayed(self):
+        with patch("weathercli.cli.resolve_city", return_value=PLACE):
+            with patch("weathercli.cli.tomorrow_forecast",
+                       side_effect=WeatherError("Wetterdienst nicht erreichbar")):
+                out, err = io.StringIO(), io.StringIO()
+                with redirect_stdout(out), redirect_stderr(err):
+                    self.assertEqual(main(["Zürich", "--morgen"]), 1)
+                self.assertEqual(out.getvalue(), "")
+                self.assertIn("nicht erreichbar", err.getvalue())
 
     def test_module_process_exit_code(self):
         result = subprocess.run([sys.executable, "-m", "weathercli"], capture_output=True)

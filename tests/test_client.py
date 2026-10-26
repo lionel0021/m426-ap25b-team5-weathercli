@@ -1,10 +1,12 @@
-"""Tests für Nicos API-Anbindung (WEA-15, WEA-16) mit gekürzten echten Open-Meteo-Antworten."""
+"""Tests für Nicos API-Anbindung (WEA-15, WEA-16, WEA-32) mit gekürzten echten
+Open-Meteo-Antworten."""
 
 import unittest
 from unittest.mock import patch
 
 from weathercli.client import (FORECAST_URL, GEOCODING_URL, Location, WeatherError,
-                               current_temperature, current_weather, resolve_city)
+                               current_temperature, current_weather, resolve_city,
+                               tomorrow_forecast)
 
 
 def place(name, country, population=None, feature_code="PPL", latitude=47.37, longitude=8.55):
@@ -122,6 +124,38 @@ class CurrentTemperatureTests(unittest.TestCase):
         with patch("weathercli.client.request_json", return_value=data):
             with self.assertRaises(WeatherError):
                 current_weather(self.place)
+
+
+class TomorrowForecastTests(unittest.TestCase):
+    """WEA-32: Abfrage der Tageswerte; Index 0 ist heute, Index 1 ist morgen."""
+
+    place = Location("Zürich", "Schweiz", 47.36667, 8.55)
+    response = {"timezone": "Europe/Zurich",
+                "daily_units": {"weather_code": "wmo code", "temperature_2m_max": "°C",
+                                "temperature_2m_min": "°C"},
+                "daily": {"time": ["2026-10-26", "2026-10-27"], "weather_code": [3, 45],
+                          "temperature_2m_max": [11.7, 16.8],
+                          "temperature_2m_min": [6.8, 7.7]}}
+
+    def test_query_parameters_and_unchanged_response(self):
+        with patch("weathercli.client.request_json", return_value=self.response) as request:
+            self.assertEqual(tomorrow_forecast(self.place), self.response)
+        request.assert_called_once_with(FORECAST_URL, {
+            "latitude": 47.36667, "longitude": 8.55,
+            "daily": "weather_code,temperature_2m_max,temperature_2m_min",
+            "temperature_unit": "celsius", "timezone": "auto", "forecast_days": 2})
+
+    def test_missing_daily_values_are_no_error_in_the_request(self):
+        """Über fehlende Tageswerte entscheidet die Ausgabe, nicht die Abfrage."""
+        for data in ({}, {"daily": {}}, {"daily": {"time": ["2026-10-26"]}}):
+            with self.subTest(data=data):
+                with patch("weathercli.client.request_json", return_value=data):
+                    self.assertEqual(tomorrow_forecast(self.place), data)
+
+    def test_service_error_is_passed_on(self):
+        with patch("weathercli.client.request_json", side_effect=WeatherError("nicht erreichbar")):
+            with self.assertRaisesRegex(WeatherError, "nicht erreichbar"):
+                tomorrow_forecast(self.place)
 
 
 if __name__ == "__main__":
