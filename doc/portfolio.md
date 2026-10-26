@@ -206,6 +206,7 @@ auf «Erledigt»). Sprint 2 hat wie Sprint 1 zwei Modultage.
 | 1 | US-02 Aktuellen Wetterzustand erkennen | WEA-9 | 3 | WEA-19 bis WEA-21 |
 | 2 | US-03 Aktuelle Windgeschwindigkeit sehen | WEA-10 | 2 | WEA-22, WEA-23 |
 | 3 | Sprint Review storyweise anhand Akzeptanzkriterien und DoD durchführen | [WEA-29](https://weathercli.youtrack.cloud/issue/WEA-29) | – | Fidan prüft US-02 und US-03 im Review |
+| 4 | Retro-Massnahme: Story erst auf Done, wenn alle vier die Startprüfung im Ticket bestätigt haben (Vorschlag PO, im Team bestätigen) | WEA-29 | – | Prüfung in der Retro am 26.10.2026 |
 
 **Begründung der Auswahl (PO):** US-02 und US-03 vervollständigen die aktuelle
 Wetterabfrage und liefern damit den grössten Nutzwert: Regenschutz und Velofahrt
@@ -214,6 +215,12 @@ bewusst unter dem Richtwert von 13. Die Differenz schafft Raum für Review,
 Team-Abnahme und die Retro-Massnahme. Nächster Kandidat,
 falls Kapazität frei wird, ist die Wettervorhersage (Rang 6); sie muss vorher
 verfeinert und im Planning Poker geschätzt werden.
+
+**Board:** Sprintziel und Auswahl sind als Kommentar an WEA-9 und WEA-10 festgehalten.
+Den Board-Sprint «Sprint 2» konnte Eduart nicht anlegen: YouTrack antwortet mit
+HTTP 403, beide Boards gehören dem User admin. Das ist als Impediment WEA-30
+erfasst. Sobald Sprint 2 existiert, werden WEA-9, WEA-10, WEA-19 bis WEA-23 und
+WEA-29 von Sprint 1 nach Sprint 2 verschoben.
 
 **Tasks:** Die Tasks werden von den Developers gezogen, nicht verteilt. Die
 Zuordnung im [Sprintplan](sprint-1.md) gilt nur als Vorschlag.
@@ -232,7 +239,48 @@ Sprint-2-Inkrements stehen noch aus. Das frühere Berechtigungs-Impediment
 | Eduart | 28.09.2026 | 34 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 17.7 °C` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 15 °C` (Exit 0), `weather` ohne Stadt → Fehlermeldung (Exit 2) |
 | Fidan | offen | |
 | Lionel | offen | |
-| Nico | offen | |
+| Nico | 26.10.2026 | 43 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 9.8 °C, Bewölkt, Wind: 1.4 km/h` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 5.7 °C, Klar, Wind: 8.7 km/h` (Exit 0), `weather` ohne Stadt → «Die Stadt fehlt.» (Exit 2) |
+
+**Review-Ergebnis (26.10.2026):** vom PO eintragen – gezeigt: … · Feedback: … · ins Backlog: …
+
+**Retro-Erkenntnis:** vom Scrum Master eintragen
+
+**Verbesserungsmassnahme für Sprint 3 (Prüfung um 11:30):** vom Scrum Master eintragen
+
+### Sprint 3 (26.10.2026, Modultag 8)
+
+**Sprintziel (Vorschlag PO, im Planning bestätigen):** Das Produkt ist präsentierbar.
+Eine Person installiert WeatherCLI nach der README, fragt `weather "Zürich"` und
+`weather "Zürich" --morgen` ab und sieht das Wetter für heute und für morgen.
+
+**Richtwert:** Sprint 1 lieferte 13 Story Points, Sprint 2 lieferte 5 Story Points, je in
+zwei Modultagen. Sprint 3 hat einen Modultag und drei Pflicht-Tasks; geplant werden
+höchstens 5 Story Points.
+
+**Sprint Backlog:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/), Details in
+[Product Backlog, Sprint 3](product-backlog.md#sprint-3--refinement-und-planung-26102026).
+
+| Rang | Eintrag | Ticket | Story Points |
+| ---: | --- | --- | ---: |
+| 1 | US-06 Wetter für morgen sehen | im Board anlegen | Planning Poker |
+| 2 | US-07 Installation und Demo ohne Hilfe | im Board anlegen | Planning Poker |
+| 3 | Task: Stabilisieren | im Board anlegen | – |
+| 4 | Task: Demo vorbereiten | im Board anlegen | – |
+| 5 | Task: Präsentation vorbereiten | im Board anlegen | – |
+| – | US-08 Kurzer Verbindungsfehler wird wiederholt (nur bei freier Kapazität) | im Board anlegen | Planning Poker |
+
+**Begründung der Auswahl (PO):** US-06 schliesst die grösste Lücke zur Product Vision
+(«aktuelle Wetterdaten und Vorhersagen») und ist auf den morgigen Tag geschnitten, damit
+sie an einem Vormittag fertig wird. US-07 macht das Produkt für Demo und Präsentation
+vorführbar. US-08 ist ein Could und kommt nur dazu, wenn beide Stories fertig sind.
+
+**KI-Reviewpunkt:** Der Pull Request zu US-06 wird zusätzlich von einer KI reviewt;
+Befunde und Entscheidung kommen in Abschnitt 7.
+
+**Arbeitsplan für die Developer:** [Sprint 3 – Arbeitsplan](sprint-3.md) mit Schnittstellen,
+Ausgabeformat, Tests und Reihenfolge.
+
+**Verbesserungsmassnahme:** siehe Block Sprint 2.
 
 #### Retrospektive Sprint 2 (26.10.2026)
 
@@ -268,6 +316,19 @@ Sprint-2-Inkrements stehen noch aus. Das frühere Berechtigungs-Impediment
 | Portfolio Abschnitte 1–3 gefüllt | Team mit Rollen, Produkt, Vision, Backlog und YouTrack-Link erfasst |
 | Offizielle Portfolio-Vorlage übernommen | Offen: Vorlage/Modulrepo bislang nicht verfügbar; vorliegende Gliederung folgt dem Auftrag |
 | Story-Map-Bild verlinkt | In Abschnitt 3 enthalten |
+
+## 6. Persönliche Kurzreflexion
+
+Jedes Teammitglied trägt seine eigene Zeile ein.
+
+### Sprint 2
+
+| Teammitglied | Beitrag | Wichtigste Erkenntnis | Nächster Lernschritt |
+| --- | --- | --- | --- |
+| Eduart | | | |
+| Fidan | | | |
+| Lionel | | | |
+| Nico | | | |
 
 ## 7. KI-Nutzungsnachweis
 
@@ -346,3 +407,28 @@ Startprüfung auszuführen.
   `wind_speed_10m` als Refinement-Notiz.
 - **Verworfen:** Retro-Massnahme und Story-Point-Schätzung durch die KI; beides
   legt das Team selbst fest.
+
+### Sprint 3
+
+Am 26.10.2026 hat Eduart Claude (Anthropic) über Claude Code eingesetzt, um den
+Projektstand nach Sprint 2 zu prüfen (Tests und Live-Aufrufe auf `main`) und einen
+Entwurf für Refinement und Planung von Sprint 3 zu schreiben.
+
+- **Übernommen:** Ordnung des Backlogs für Sprint 3, Tasks je Story, Fertig-Kriterien
+  der drei Pflicht-Tasks, Hinweis auf den ungemergten Commit `b4be608`.
+- **Selbst entschieden:** Story Points schätzt das Team im Planning Poker; die KI nennt
+  nur Referenzstories aus Sprint 1 und 2.
+
+**KI-Reviewpunkt US-06 (Nico, 26.10.2026, PR #16):** Nico hat Claude (Anthropic) über
+Claude Code genutzt, um US-06 (WEA-32 bis WEA-35) nach dem Arbeitsplan umzusetzen, und
+den entstandenen Pull Request anschliessend von derselben KI reviewen lassen. Befunde:
+
+| Befund | Entscheidung |
+| --- | --- |
+| Die Prüfung «gültiger WMO-Code» stand doppelt in `conditions.py` und `output.py` | Übernommen: liegt jetzt einmal als `conditions.condition_from_code`, von beiden Wegen genutzt, mit Test |
+| Konstante `TOMORROW` ist ein Listenindex und heisst wie eine Antwort | Übernommen: heisst jetzt `TOMORROW_INDEX` |
+| Vorschlag, zusätzlich zu prüfen, ob Tiefst- ≤ Höchstwert ist | Verworfen: steht in keinem Akzeptanzkriterium, und über Werte zu urteilen, die wir nicht haben, widerspricht AK 3 |
+| Hinweis, eine unbrauchbare Antwort wie bei `format_weather` als `WeatherError` zu melden | Verworfen: der Arbeitsplan verlangt «Vorhersage nicht verfügbar» mit Exit 0 |
+
+Das fachliche Review (DoD 3) macht Lionel; das KI-Review ersetzt es nicht. Die Zeile in
+Abschnitt 6 schreibt jedes Teammitglied selbst, nicht die KI.
