@@ -1,4 +1,4 @@
-"""Ein Aufruf, eine Stadt, eine aktuelle Temperatur."""
+"""Ein Aufruf, eine Stadt, aktueller Temperatur- und Windwert."""
 
 import argparse
 import sys
@@ -35,7 +35,7 @@ def main(argv=None):
     allow_unmappable_characters()
     parser = WeatherParser(
         prog="weather", usage='weather "STADT"', add_help=False,
-        description="Zeigt die aktuelle Temperatur einer Stadt.",
+        description="Zeigt Temperatur, Wetterzustand und Wind einer Stadt.",
         epilog='Beispiele: weather "Zürich" | weather "New York"',
     )
     parser.add_argument("-h", "--help", action="help", help="Hilfe anzeigen und beenden")
