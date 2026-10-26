@@ -52,7 +52,15 @@ def condition_from_response(data: dict):
     current = data.get("current")
     if not isinstance(current, dict):
         return None
-    code = current.get("weather_code")
+    return condition_from_code(current.get("weather_code"))
+
+
+def condition_from_code(code):
+    """Uebersetzt einen einzelnen WMO-Code; None bei ungueltigem Code.
+
+    Die Tagesvorhersage (WEA-33) liefert den Code aus `daily` und nutzt diese
+    Pruefung mit, damit die Regel fuer gueltige Codes nur an einer Stelle steht.
+    """
     if not finite_number(code) or code != int(code):
         return None
     return WMO_CONDITIONS.get(int(code))

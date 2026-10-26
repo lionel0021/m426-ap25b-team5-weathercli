@@ -344,3 +344,17 @@ Entwurf für Refinement und Planung von Sprint 3 zu schreiben.
   der drei Pflicht-Tasks, Hinweis auf den ungemergten Commit `b4be608`.
 - **Selbst entschieden:** Story Points schätzt das Team im Planning Poker; die KI nennt
   nur Referenzstories aus Sprint 1 und 2.
+
+**KI-Reviewpunkt US-06 (Nico, 26.10.2026, PR #16):** Nico hat Claude (Anthropic) über
+Claude Code genutzt, um US-06 (WEA-32 bis WEA-35) nach dem Arbeitsplan umzusetzen, und
+den entstandenen Pull Request anschliessend von derselben KI reviewen lassen. Befunde:
+
+| Befund | Entscheidung |
+| --- | --- |
+| Die Prüfung «gültiger WMO-Code» stand doppelt in `conditions.py` und `output.py` | Übernommen: liegt jetzt einmal als `conditions.condition_from_code`, von beiden Wegen genutzt, mit Test |
+| Konstante `TOMORROW` ist ein Listenindex und heisst wie eine Antwort | Übernommen: heisst jetzt `TOMORROW_INDEX` |
+| Vorschlag, zusätzlich zu prüfen, ob Tiefst- ≤ Höchstwert ist | Verworfen: steht in keinem Akzeptanzkriterium, und über Werte zu urteilen, die wir nicht haben, widerspricht AK 3 |
+| Hinweis, eine unbrauchbare Antwort wie bei `format_weather` als `WeatherError` zu melden | Verworfen: der Arbeitsplan verlangt «Vorhersage nicht verfügbar» mit Exit 0 |
+
+Das fachliche Review (DoD 3) macht Lionel; das KI-Review ersetzt es nicht. Die Zeile in
+Abschnitt 6 schreibt jedes Teammitglied selbst, nicht die KI.
