@@ -9,17 +9,18 @@ Tasks werden gezogen, nicht verteilt.
 
 | Schritt | Eintrag | Vorschlag | Branch |
 | ---: | --- | --- | --- |
-| 1 | US-06 Task 1: Abfrage für morgen | Nico | `feature/US-06-morgen` |
-| 1 | US-06 Task 2 und 3: Ausgabe und Option `--morgen` | Lionel | `feature/US-06-morgen` |
-| 2 | US-06 Task 4: Tests, PR, Review | Lionel und Nico | `feature/US-06-morgen` |
-| 3 | US-07 README und Installation | Lionel oder Nico, Prüfung durch Eduart oder Fidan | `docs/US-07-readme` |
-| 4 | Stabilisieren | Lionel und Nico | direkt über PRs |
-| 4 | Demo vorbereiten | Fidan | – |
-| 4 | Präsentation vorbereiten | Eduart und Fidan | – |
-| 5 | US-08 nur, wenn 1 bis 3 fertig sind | wer frei ist | `feature/US-08-wiederholung` |
+| 1 | US-06 (WEA-31) Task WEA-32: Abfrage für morgen | Nico | `feature/US-06-morgen` |
+| 1 | US-06 Tasks WEA-33 und WEA-34: Ausgabe und Option `--morgen` | Lionel | `feature/US-06-morgen` |
+| 2 | US-06 Task WEA-35: Tests, PR, Review | Lionel und Nico | `feature/US-06-morgen` |
+| 3 | US-07 (WEA-36) README und Installation, WEA-37 und WEA-38 | Lionel oder Nico, Prüfung durch Eduart oder Fidan | `docs/US-07-readme` |
+| 4 | Stabilisieren (WEA-41) | Lionel und Nico | direkt über PRs |
+| 4 | Demo vorbereiten (WEA-42) | Fidan | – |
+| 4 | Präsentation vorbereiten (WEA-43) | Eduart und Fidan | – |
+| 5 | US-08 (WEA-39, Task WEA-40) nur, wenn 1 bis 3 fertig sind | wer frei ist | `feature/US-08-wiederholung` |
 
-Vor dem ersten Commit liegt für jede Story ein Issue in YouTrack (Retro-Massnahme
-Sprint 0). Jeder Branch startet vom aktuellen `main`.
+Alle Issues liegen in YouTrack (WEA-31 bis WEA-43), niemandem zugewiesen: Wer einen
+Task zieht, trägt sich ein und setzt ihn auf «In Arbeit». Jeder Branch startet vom
+aktuellen `main`; Commit-Nachrichten nennen die Ticketnummer, z. B. `WEA-32: ...`.
 
 ## US-06 – Wetter für morgen sehen
 
