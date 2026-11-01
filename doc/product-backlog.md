@@ -7,12 +7,12 @@ Stand: 26.10.2026, Refinement für Sprint 3. Quelle:
 
 | Rang | Eintrag | Priorität | Story Points | Sprint |
 | ---: | --- | --- | ---: | --- |
-| 1 | US-06 – Wetter für morgen sehen | Should | Planning Poker | Sprint 3 (Vorschlag) |
-| 2 | US-07 – Installation und Demo ohne Hilfe | Should | Planning Poker | Sprint 3 (Vorschlag) |
-| 3 | Stabilisieren (Pflicht-Task) | Must | – | Sprint 3 |
-| 4 | Demo vorbereiten (Pflicht-Task) | Must | – | Sprint 3 |
-| 5 | Präsentation vorbereiten (Pflicht-Task) | Must | – | Sprint 3 |
-| 6 | US-08 – Kurzer Verbindungsfehler wird wiederholt | Could | Planning Poker | bei freier Kapazität |
+| 1 | US-06 – Wetter für morgen sehen (WEA-31) | Should | 3 (Vorschlag) | Sprint 3 |
+| 2 | US-07 – Installation und Demo ohne Hilfe (WEA-36) | Should | 2 (Vorschlag) | Sprint 3 |
+| 3 | Stabilisieren (Pflicht-Task, WEA-41) | Must | – | Sprint 3 |
+| 4 | Demo vorbereiten (Pflicht-Task, WEA-42) | Must | – | Sprint 3 |
+| 5 | Präsentation vorbereiten (Pflicht-Task, WEA-43) | Must | – | Sprint 3 |
+| 6 | US-08 – Kurzer Verbindungsfehler wird wiederholt (WEA-39) | Could | 2 (Vorschlag) | bei freier Kapazität |
 
 Details, Akzeptanzkriterien und Tasks: [Sprint 3 – Refinement und Planung](#sprint-3--refinement-und-planung-26102026).
 
@@ -168,22 +168,22 @@ ab und sieht das Wetter für heute und für morgen.
 5 Story Points in zwei Modultagen. Für einen Modultag mit drei Pflicht-Tasks planen wir
 höchstens 5 Story Points.
 
-| Rang | Eintrag | Typ | Priorität | Story Points | Referenz für Planning Poker |
+| Rang | Eintrag | Typ | Priorität | Story Points (Vorschlag) | Referenzstory |
 | ---: | --- | --- | --- | ---: | --- |
-| 1 | US-06 – Wetter für morgen sehen | Story | Should | Planning Poker | ähnlich US-02 (3): ein zusätzlicher Teil der Abfrage, Wettercode-Tabelle wird wiederverwendet |
-| 2 | US-07 – Installation und Demo ohne Hilfe | Story | Should | Planning Poker | ähnlich US-05 (2): Dokumentation und Prüfung, kaum Code |
+| 1 | US-06 – Wetter für morgen sehen | Story | Should | 3 | ähnlich US-02 (3): ein zusätzlicher Teil der Abfrage, Wettercode-Tabelle wird wiederverwendet |
+| 2 | US-07 – Installation und Demo ohne Hilfe | Story | Should | 2 | ähnlich US-05 (2): Dokumentation und Prüfung, kaum Code |
 | 3 | Stabilisieren | Task (Pflicht) | Must | – | – |
 | 4 | Demo vorbereiten | Task (Pflicht) | Must | – | – |
 | 5 | Präsentation vorbereiten | Task (Pflicht) | Must | – | – |
-| 6 | US-08 – Kurzer Verbindungsfehler wird wiederholt | Story | Could | Planning Poker | ähnlich US-03 (2): eine kleine Änderung an einer Stelle |
+| 6 | US-08 – Kurzer Verbindungsfehler wird wiederholt | Story | Could | 2 | ähnlich US-03 (2): eine kleine Änderung an einer Stelle |
 
 Die drei Pflicht-Tasks gehören in jedem Fall in Sprint 3; der Rang sagt nur, in
 welcher Reihenfolge gearbeitet wird. US-08 kommt nur dazu, wenn US-06 und US-07
 fertig sind. Die Mehrtagesvorhersage bleibt als Folgestory im Backlog (Thema «Wettervorhersage» unter «Weitere Einträge»).
 
 **Ready-Prüfung:** US-06, US-07 und US-08 haben Rolle, Nutzen und drei bis vier prüfbare
-Akzeptanzkriterien. Die Schätzung erfolgt im Planning Poker; die Referenzstory steht in
-der Tabelle. Alle drei sind kleiner als US-01 und an einem Vormittag machbar.
+Akzeptanzkriterien. Die Story Points sind ein Ausgangswert nach der Referenzstory in der
+Tabelle und werden im Planning Poker bestätigt oder korrigiert. Alle drei sind kleiner als US-01 und an einem Vormittag machbar.
 
 **Arbeitsplan für die Developer:** [Sprint 3 – Arbeitsplan](sprint-3.md).
 
@@ -273,6 +273,9 @@ Verbindungsproblem automatisch noch einmal versucht wird, damit ich nicht selbst
 
 ### Offen im Board
 
-- Issues für US-06 bis US-08 und die drei Pflicht-Tasks in YouTrack anlegen, bevor jemand
-  Code schreibt (Retro-Massnahme Sprint 0).
-- Board-Sprint «Sprint 3» anlegen; das braucht den User admin (Impediment WEA-30).
+- Angelegt am 26.10.2026: US-06 (WEA-31, Tasks WEA-32 bis WEA-35), US-07 (WEA-36, Tasks
+  WEA-37 und WEA-38), US-08 (WEA-39, Task WEA-40), Pflicht-Tasks WEA-41 bis WEA-43.
+  Story Points als Ausgangswert gesetzt; die Tasks sind niemandem zugewiesen und werden gezogen.
+- Board-Sprint «Sprint 3» lässt sich nicht anlegen (HTTP 403, Boards gehören dem User admin).
+  Impediment WEA-44; sobald Sprint 3 existiert, die Tickets WEA-31 bis WEA-38 und WEA-41 bis
+  WEA-43 zuordnen.
