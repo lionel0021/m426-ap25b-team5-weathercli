@@ -2,7 +2,7 @@
 
 Modul 426 · AP25b · Team 5
 
-**Arbeitsstand:** Teamrollen, Vision, fünf verfeinerte Stories, Retro und DoD sind dokumentiert. Lionel hat am 07.09.2026 die DoD, YouTrack als Aufgabenverwaltung und die Erfassung der fünf Stories bestätigt. Der Abgleich mit der offiziellen Portfolio-Vorlage ist noch offen. Die übrige Sprint-0-Dokumentation wird wie im Auftrag vorgesehen an Modultag 5 vervollständigt.
+**Arbeitsstand (02.11.2026):** Sprint 0 bis 3 sind dokumentiert; offene Abschlussarbeiten stehen in Abschnitt 5. Lionel hat am 07.09.2026 die DoD, YouTrack als Aufgabenverwaltung und die Erfassung der fünf Stories bestätigt. Der Abgleich mit der offiziellen Portfolio-Vorlage ist noch offen.
 
 ## 1. Team und Produkt
 
@@ -54,7 +54,7 @@ Die dokumentierten Projektziele sind: Projektanforderungen erfüllen, Scrum-Zusa
 | 4 | US-04: Mehrteilige Stadtnamen | Should | Macht die Abfrage für weitere Reiseziele nutzbar |
 | 5 | US-05: Hilfe und unbekannte Optionen | Should | Ermöglicht Einstieg ohne externe Anleitung |
 
-Die ursprünglichen technischen Teilschritte der Map wurden in sichtbare Nutzerergebnisse zusammengeführt. Jede der fünf Stories hat Rolle, Nutzen und zwei bis vier beobachtbare Akzeptanzkriterien einschliesslich eines Fehlerfalls. Schätzungen und Sprint-Auswahl sind noch offen; die Reihenfolge ist im Planning mit dem Team abzugleichen.
+Die ursprünglichen technischen Teilschritte der Map wurden in sichtbare Nutzerergebnisse zusammengeführt. Jede der fünf Stories hat Rolle, Nutzen und zwei bis vier beobachtbare Akzeptanzkriterien einschliesslich eines Fehlerfalls. Schätzungen und Sprint-Auswahl stehen in Abschnitt 4.
 
 ## 4. Sprint-Dokumentation
 
@@ -244,9 +244,7 @@ Sprint-2-Inkrements stehen noch aus. Das frühere Berechtigungs-Impediment
 
 **Review-Ergebnis (26.10.2026):** vom PO eintragen – gezeigt: … · Feedback: … · ins Backlog: …
 
-**Retro-Erkenntnis:** vom Scrum Master eintragen
-
-**Verbesserungsmassnahme für Sprint 3 (Prüfung um 11:30):** vom Scrum Master eintragen
+**Retro-Erkenntnis und Verbesserungsmassnahme für Sprint 3:** siehe [Retrospektive Sprint 2](#retrospektive-sprint-2-26102026) (vorläufig, vom Team zu bestätigen).
 
 ### Sprint 3 (26.10.2026, Modultag 8)
 
@@ -290,6 +288,8 @@ Ausgabeformat, Tests und Reihenfolge.
 
 **Verbesserungsmassnahme:** siehe Block Sprint 2.
 
+**Sprintergebnis (Stand 02.11.2026):** US-06 und US-07 sind auf `main` umgesetzt, US-08 blieb Reserve und ist nicht umgesetzt. Geplant waren 5 Story Points. Die Velocity beträgt 5 Story Points, sobald die DoD-Nachweise vorliegen; offen sind vor allem die Startprüfungen von Fidan und Lionel, das dokumentierte Review zu PR #16 und die Bestätigung in WEA-36. Bis dahin ist keine Sprint-3-Story nach DoD abgeschlossen.
+
 **Review-Ergebnis (Abschlusspräsentation):** nach der Präsentation eintragen – Feedback: …
 
 **Retro-Erkenntnis:** siehe [Retrospektive Sprint 3](#retrospektive-sprint-3-entwurf-vom-02112026).
@@ -324,7 +324,7 @@ Ausgabeformat, Tests und Reihenfolge.
 
 **Was lief gut?**
 
-- US-06 ist auf `main`: `weather "Zürich" --morgen` zeigt Zustand und Temperaturbereich für morgen. Die 58 automatisierten Tests laufen erfolgreich.
+- US-06 ist auf `main`: `weather "Zürich" --morgen` zeigt Zustand und Temperaturbereich für morgen. Die 61 automatisierten Tests laufen erfolgreich.
 - Die README-Schritte liefen am 02.11.2026 in einem frischen Klon ohne Änderung durch.
 - Das KI-Review zu PR #16 wurde kritisch genutzt: Zwei Befunde wurden übernommen, zwei begründet verworfen.
 - US-08 blieb wie geplant Reserve; der Sprint konzentrierte sich auf US-06, US-07 und die Pflicht-Tasks.
@@ -500,5 +500,9 @@ Review-Ergebnis und persönliche Reflexion hat die KI nicht geschrieben.
 Eduart. Die übrigen Punkte der Retro und die Überprüfung der Massnahme aus Sprint 2 hat die
 KI als Entwurf aus Repository und Pull Requests zusammengestellt, ebenso den Stand in
 Abschnitt 5. Das Team bestätigt oder korrigiert die Entwürfe.
+
+**Gesamtreview (Eduart, 02.11.2026):** Im Auftrag von Eduart hat die KI Code und
+Dokumentation geprüft, den Merge von `b4be608` samt angepassten Tests durchgeführt und
+veraltete Angaben im Repository korrigiert. Das Programmverhalten blieb unverändert.
 
 

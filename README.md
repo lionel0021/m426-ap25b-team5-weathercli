@@ -76,5 +76,5 @@ Tests:
 python -m unittest discover -s tests -v
 ```
 
-Am 26.10.2026 laufen 58 Tests ohne Live-Abfrage durch. Projektunterlagen,
+Am 02.11.2026 laufen 61 Tests ohne Live-Abfrage durch. Projektunterlagen,
 Sprintpläne und Prüfnachweise liegen in [doc/](doc/README.md).

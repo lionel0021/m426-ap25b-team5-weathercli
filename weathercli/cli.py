@@ -1,4 +1,4 @@
-"""Ein Aufruf, eine Stadt, aktueller Temperatur- und Windwert."""
+"""Ein Aufruf, eine Stadt: aktuelles Wetter oder mit --morgen die Vorhersage."""
 
 import argparse
 import sys

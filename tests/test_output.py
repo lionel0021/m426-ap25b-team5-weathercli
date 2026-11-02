@@ -40,6 +40,12 @@ class OutputTests(unittest.TestCase):
                 self.assertEqual(format_weather(self.place, self.payload(wind=wind, wind_unit=unit)),
                                  "New York, USA: 20 °C, Regen, Wind nicht verfügbar")
 
+    def test_absent_wind_field_keeps_the_other_values(self):
+        data = {"current": {"temperature_2m": 20, "weather_code": 63},
+                "current_units": {"temperature_2m": "°C"}}
+        self.assertEqual(format_weather(self.place, data),
+                         "New York, USA: 20 °C, Regen, Wind nicht verfügbar")
+
     def test_invalid_temperature_rejects_success_output(self):
         for value in (None, "20", True, float("nan"), float("inf")):
             with self.subTest(value=value), self.assertRaises(WeatherError):

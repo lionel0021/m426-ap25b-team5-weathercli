@@ -1,1 +1,1 @@
-"""WeatherCLI: aktuelle Temperatur für einen eindeutig gefundenen Ort."""
+"""WeatherCLI: aktuelles Wetter und Vorhersage für einen eindeutig gefundenen Ort."""

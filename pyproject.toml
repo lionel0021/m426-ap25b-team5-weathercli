@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "weathercli"
 version = "0.1.0"
-description = "Aktuelle Temperatur und Windgeschwindigkeit im Terminal"
+description = "Aktuelles Wetter und Vorhersage für morgen im Terminal"
 requires-python = ">=3.10"
 dependencies = []
 

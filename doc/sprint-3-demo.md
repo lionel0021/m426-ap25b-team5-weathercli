@@ -5,9 +5,7 @@ zeigt ein Akzeptanzkriterium einer umgesetzten Story.
 
 **Voraussetzungen**
 
-- `--morgen` (US-06) ist auf `main`, also PR #16 gemergt. Vorher fehlt Aufruf 3:
-  in der frischen venv von `main` antwortet `weather "Zürich" --morgen` mit
-  `Fehler: unrecognized arguments: --morgen` und Exit 2.
+- `--morgen` (US-06) ist seit PR #16 auf `main`; die Demo braucht den aktuellen Stand.
 - Installation nach README auf einer frischen virtuellen Umgebung
   (`python -m venv .venv`, `pip install .`, danach `weather "Zürich"`).
   Am 26.10.2026 so geprüft und ohne Fehler durchgelaufen.

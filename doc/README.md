@@ -5,6 +5,7 @@ Alle Projektunterlagen liegen in diesem Ordner. Bilder und Screenshots sind unte
 ## Dokumente
 
 - [Sprint 1: Aufteilung und Prüfnachweis](sprint-1.md): Aktueller Umfang für Lionel und Nico, Schnittstelle und Tests.
+- [US-01: Prüfnachweis Temperatur](us-01-validation.md): Live-Abnahme vom 21.09.2026.
 - [US-02: Prüfnachweis Wetterzustand](us-02-validation.md): Live-Abnahme vom 28.09.2026.
 - [Sprint 2: Windanzeige](sprint-2.md): Umsetzung von WEA-22/23 für US-03.
 - [Sprint 3: Arbeitsplan](sprint-3.md): Schnittstellen, Ausgabeformat und Tests für US-06 bis US-08.

@@ -43,15 +43,16 @@ erreichbar ist oder der Ort unbekannt beziehungsweise mehrdeutig ist.
 ## WEA-41: Stabilisierung
 
 - `python -m unittest discover -s tests`: 58 Tests erfolgreich auf `main`
-  (Stand 26.10.2026, nach dem Merge von US-06 und dieser README-Änderung).
+  (Stand 26.10.2026, nach dem Merge von US-06 und dieser README-Änderung);
+  61 Tests am 02.11.2026 nach dem Merge von `b4be608`.
 - Umlaute: in einer UTF-8-Konsole alles korrekt; in einer cp1252-Konsole sind
   `ü`, `ö` und `°` ebenfalls korrekt, nur Zeichen ausserhalb von cp1252 werden
   zu `?` statt zum Abbruch (`weather "Łódź"` → Exit 0). Details im
   [Demo-Ablauf](sprint-3-demo.md).
-- Commit `b4be608` liegt weiterhin nur auf `feature/WEA-22-23-wind`. Er testet
-  den Stand vor US-02 und würde auf dem heutigen `main` fehlschlagen; alle Fälle
-  daraus sind dort abgedeckt. Empfehlung aus dem Review zu PR #11: nicht
-  übernehmen, Branch löschen.
+- Commit `b4be608` von `feature/WEA-22-23-wind` ist am 02.11.2026 in `main`
+  gemergt, entgegen der Empfehlung aus dem Review zu PR #11. Weil er den Stand
+  vor US-02 testet, sind nur die fehlenden Testfälle übernommen und an das
+  heutige Format angepasst; das Verhalten des Programms bleibt unverändert.
 - Startprüfung (DoD 4) im [Portfolio, Sprint 2](portfolio.md): Für Eduart ist
   der Stand `77c21be` am 02.11.2026 nachgetragen, Nico hat am 26.10.2026 den
   Stand vor US-06 geprüft. Fidan und Lionel fehlen ganz. Vor «Done» muss jede der

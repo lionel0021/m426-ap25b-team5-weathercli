@@ -47,3 +47,8 @@ Live am 28.09.2026: `Zürich, Schweiz: 18.3 °C, Klar, Wind: 4.6 km/h`,
 mehrdeutiger Ort und nicht erreichbarer Dienst enden mit Exit-Code 1.
 
 Review durch Lionel und die Team-Abnahme nach DoD stehen noch aus.
+
+**Nachtrag 02.11.2026:** Commit `b4be608` vom Feature-Branch ist jetzt in `main`
+gemergt. Seine Tests prüften den Stand vor US-02. Übernommen sind deshalb nur die
+noch fehlenden Fälle, angepasst an das heutige Ausgabeformat; der übrige Inhalt
+war durch den Merge vom 28.09.2026 überholt.
