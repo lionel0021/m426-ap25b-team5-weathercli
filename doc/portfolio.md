@@ -312,6 +312,28 @@ Ausgabeformat, Tests und Reihenfolge.
 
 **Offener Abgleich:** WEA-29 bleibt offen, bis das Team die Review-Ergebnisse und die noch fehlenden Startbestätigungen geprüft und in YouTrack dokumentiert hat.
 
+#### Retrospektive Sprint 3 (Entwurf vom 02.11.2026)
+
+**Grundlage:** Die Verbesserungsmassnahme stammt von Eduart. Die übrigen Punkte stützen sich auf den Repository-Nachweis und die Pull Requests. Eine dokumentierte gemeinsame Teamrunde liegt nicht vor; der Entwurf ist vom Team zu bestätigen.
+
+**Was lief gut?**
+
+- US-06 ist auf `main`: `weather "Zürich" --morgen` zeigt Zustand und Temperaturbereich für morgen. Die 58 automatisierten Tests laufen erfolgreich.
+- Die README-Schritte liefen am 02.11.2026 in einem frischen Klon ohne Änderung durch.
+- Das KI-Review zu PR #16 wurde kritisch genutzt: Zwei Befunde wurden übernommen, zwei begründet verworfen.
+- US-08 blieb wie geplant Reserve; der Sprint konzentrierte sich auf US-06, US-07 und die Pflicht-Tasks.
+
+**Was lief weniger gut?**
+
+- Commits wurden zu oft nur lokal gemacht und nicht gleich gepusht, sodass der Arbeitsstand für das übrige Team nicht sichtbar war.
+- US-06 entstand doppelt: Der Branch zu PR #18 stand auf einem Stand vor PR #16. Der Konflikt musste von Hand gelöst werden, die zweite Umsetzung wurde nicht übernommen.
+- Nachweise blieben über den Sprint hinaus offen: Startprüfungen von Fidan und Lionel, Review-Ergebnis von Sprint 2, Durchlauf auf dem Demo-Gerät, Sprechende und Probe der Präsentation.
+- Der Board-Sprint liess sich zunächst nicht anlegen (HTTP 403, WEA-44); Sprint 3 war deshalb über die Ticketnummern nachzuvollziehen.
+
+**Eine Verbesserungsmassnahme für das nächste Projekt:**
+
+> Wer committet, pusht den Branch spätestens am Ende desselben Arbeitsblocks auf GitHub. Erfüllt ist die Massnahme, wenn am Ende jedes Modultags bei niemandem im Team Commits nur lokal liegen.
+
 ## 5. Nachweise und offene Abschlussarbeiten
 
 | Anforderung aus Auftrag 4.1 | Stand / Nachweis |
@@ -449,3 +471,5 @@ Abschnitt 6 schreibt jedes Teammitglied selbst, nicht die KI.
 genutzt, um den Projektstand zu prüfen, die README-Schritte auf Stand `77c21be` in einem
 frischen Klon auszuführen (Startprüfung, US-07 AK 4) und diese Nachweise einzutragen.
 Review-Ergebnis und persönliche Reflexion hat die KI nicht geschrieben.
+
+
