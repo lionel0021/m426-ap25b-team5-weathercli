@@ -119,6 +119,20 @@ class CurrentTemperatureTests(unittest.TestCase):
         self.assertEqual(data["current"]["weather_code"], 3)
         self.assertEqual(data["current"]["wind_speed_10m"], 12.4)
 
+    def test_zero_wind_is_a_valid_value(self):
+        response = self.forecast()
+        response["current"]["wind_speed_10m"] = 0
+        with patch("weathercli.client.request_json", return_value=response):
+            self.assertEqual(current_weather(self.place)["current"]["wind_speed_10m"], 0)
+
+    def test_missing_or_invalid_wind_does_not_discard_temperature(self):
+        for wind in (None, "12"):
+            response = self.forecast()
+            response["current"]["wind_speed_10m"] = wind
+            with self.subTest(wind=wind), patch(
+                    "weathercli.client.request_json", return_value=response):
+                self.assertEqual(current_weather(self.place)["current"]["temperature_2m"], 16.3)
+
     def test_missing_temperature_is_an_error_even_with_condition(self):
         data = {"current": {"weather_code": 3}, "current_units": {"weather_code": "wmo code"}}
         with patch("weathercli.client.request_json", return_value=data):

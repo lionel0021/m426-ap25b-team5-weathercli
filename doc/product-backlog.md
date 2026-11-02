@@ -1,18 +1,18 @@
 # Product Backlog – WeatherCLI
 
-Stand: 26.10.2026, Refinement für Sprint 3. Quelle:
-[Story Map](images/StoryBoard.png), Sprintplanung und aktuelles YouTrack-Board.
+Stand: 02.11.2026, Repository-Stand zum Modulabschluss. Das YouTrack-Board ist hier
+nicht abgeglichen. Quelle: [Story Map](images/StoryBoard.png) und Sprintplanung.
 
-## Offen für Sprint 3
+## Sprint 3
 
-| Rang | Eintrag | Priorität | Story Points | Sprint |
-| ---: | --- | --- | ---: | --- |
-| 1 | US-06 – Wetter für morgen sehen (WEA-31) | Should | 3 (Vorschlag) | Sprint 3 |
-| 2 | US-07 – Installation und Demo ohne Hilfe (WEA-36) | Should | 2 (Vorschlag) | Sprint 3 |
-| 3 | Stabilisieren (Pflicht-Task, WEA-41) | Must | – | Sprint 3 |
-| 4 | Demo vorbereiten (Pflicht-Task, WEA-42) | Must | – | Sprint 3 |
-| 5 | Präsentation vorbereiten (Pflicht-Task, WEA-43) | Must | – | Sprint 3 |
-| 6 | US-08 – Kurzer Verbindungsfehler wird wiederholt (WEA-39) | Could | 2 (Vorschlag) | bei freier Kapazität |
+| Rang | Eintrag | Priorität | Story Points | Sprint | Stand im Repository |
+| ---: | --- | --- | ---: | --- | --- |
+| 1 | US-06 – Wetter für morgen sehen (WEA-31) | Should | 3 (Vorschlag) | Sprint 3 | Auf `main` umgesetzt |
+| 2 | US-07 – Installation und Demo ohne Hilfe (WEA-36) | Should | 2 (Vorschlag) | Sprint 3 | README auf `main`, Bestätigung im Ticket offen |
+| 3 | Stabilisieren (Pflicht-Task, WEA-41) | Must | – | Sprint 3 | Startprüfung von Fidan und Lionel offen |
+| 4 | Demo vorbereiten (Pflicht-Task, WEA-42) | Must | – | Sprint 3 | Durchlauf auf dem Demo-Gerät und Screenshot offen |
+| 5 | Präsentation vorbereiten (Pflicht-Task, WEA-43) | Must | – | Sprint 3 | Sprechende und Probe offen |
+| 6 | US-08 – Kurzer Verbindungsfehler wird wiederholt (WEA-39) | Could | 2 (Vorschlag) | bei freier Kapazität | Nicht umgesetzt, bleibt im Backlog |
 
 Details, Akzeptanzkriterien und Tasks: [Sprint 3 – Refinement und Planung](#sprint-3--refinement-und-planung-26102026).
 
@@ -32,11 +32,9 @@ ist auf `main`; der aktuelle Testnachweis und noch offene DoD-Prüfungen stehen
 im [Sprintplan](sprint-1.md).
 
 Die Reihenfolge folgt MoSCoW: zuerst die beiden Must-Stories US-01 und US-02,
-danach die Should-Stories. In Sprint 2 kommt US-02 deshalb vor US-03. WEA-19 bis WEA-21 gehören zu
-US-02, WEA-22 und WEA-23 zu US-03 und sind aktuell offen. US-02 und US-03
-sollen aus Sprint 1 entfernt werden, damit der Sprint-1-Burndown den wirklich
-vereinbarten Umfang zeigt. Termine und Kapazität für Sprint 2 werden im
-nächsten Planning bestätigt.
+danach die Should-Stories. In Sprint 2 kam US-02 deshalb vor US-03. WEA-19 bis WEA-21 gehören zu
+US-02, WEA-22 und WEA-23 zu US-03; alle stehen laut
+[Retrospektive Sprint 2](portfolio.md#retrospektive-sprint-2-26102026) auf Done.
 
 **Aufgabenverwaltung:** [WeatherCLI in YouTrack](https://weathercli.youtrack.cloud/).
 Die fünf Stories und ihre Tasks sind dort erfasst. Der oben dokumentierte
@@ -64,7 +62,7 @@ Als Person, die im Terminal arbeitet, möchte ich die aktuelle Temperatur einer 
 
 ## US-02 – Aktuellen Wetterzustand erkennen
 
-**Priorität:** 2 · Must · **Status:** Sprint 2 ausgewählt · **Schätzung:** 3 Story Points · **Sprint:** 2
+**Priorität:** 2 · Must · **Status:** Auf `main` umgesetzt · **Schätzung:** 3 Story Points · **Sprint:** 2
 
 Als Person, die einen kurzen Weg im Freien plant, möchte ich zusätzlich zur Temperatur den aktuellen Wetterzustand lesen, damit ich entscheiden kann, ob ich einen Regenschutz mitnehme.
 
@@ -78,7 +76,7 @@ Als Person, die einen kurzen Weg im Freien plant, möchte ich zusätzlich zur Te
 
 ## US-03 – Aktuelle Windgeschwindigkeit sehen
 
-**Priorität:** 5 · Should · **Status:** Sprint 2 ausgewählt · **Schätzung:** 2 Story Points · **Sprint:** 2
+**Priorität:** 5 · Should · **Status:** Auf `main` umgesetzt · **Schätzung:** 2 Story Points · **Sprint:** 2
 
 Als Person, die mit dem Velo unterwegs ist, möchte ich die aktuelle Windgeschwindigkeit am abgefragten Ort sehen, damit ich vor der Abfahrt die Bedingungen einschätzen kann.
 

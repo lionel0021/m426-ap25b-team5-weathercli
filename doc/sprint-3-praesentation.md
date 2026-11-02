@@ -32,4 +32,3 @@ Teil 3 von Fidan. Die Spalte «Sprechende» bleibt offen, bis das Team es festle
 
 - Sprechende je Teil festlegen (Team).
 - Einmal mit Zeitmessung proben; Zeiten danach in der Tabelle korrigieren.
-- Teil 2 setzt voraus, dass PR #16 (`--morgen`) gemergt ist.
