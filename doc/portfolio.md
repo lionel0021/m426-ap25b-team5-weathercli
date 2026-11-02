@@ -2,7 +2,7 @@
 
 Modul 426 · AP25b · Team 5
 
-**Arbeitsstand:** Teamrollen, Vision, fünf verfeinerte Stories, Retro und DoD sind dokumentiert. Lionel hat am 07.09.2026 die DoD, YouTrack als Aufgabenverwaltung und die Erfassung der fünf Stories bestätigt. Die offizielle Portfolio-Vorlage liegt noch nicht vor; der Abgleich damit bleibt offen. Die übrige Sprint-0-Dokumentation wird wie im Auftrag vorgesehen an Modultag 5 vervollständigt.
+**Arbeitsstand:** Teamrollen, Vision, fünf verfeinerte Stories, Retro und DoD sind dokumentiert. Lionel hat am 07.09.2026 die DoD, YouTrack als Aufgabenverwaltung und die Erfassung der fünf Stories bestätigt. Der Abgleich mit der offiziellen Portfolio-Vorlage ist noch offen. Die übrige Sprint-0-Dokumentation wird wie im Auftrag vorgesehen an Modultag 5 vervollständigt.
 
 ## 1. Team und Produkt
 
@@ -237,6 +237,7 @@ Sprint-2-Inkrements stehen noch aus. Das frühere Berechtigungs-Impediment
 | Teammitglied | Datum | Ergebnis |
 | --- | --- | --- |
 | Eduart | 28.09.2026 | 34 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 17.7 °C` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 15 °C` (Exit 0), `weather` ohne Stadt → Fehlermeldung (Exit 2) |
+| Eduart | 02.11.2026 (nachgetragen, nach Sprint 3) | Stand `77c21be`, frischer Klon und frische venv nach README, im Auftrag von Eduart mit Claude Code auf Eduarts Rechner ausgeführt; 58 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 3.3 °C, Bewölkt, Wind: 9 km/h` (Exit 0), `weather "Zürich" --morgen` → `Zürich, Schweiz, morgen: Bewölkt, 4.8 bis 7.6 °C` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 7.8 °C, Klar, Wind: 10.7 km/h` (Exit 0), `weather` ohne Stadt → «Die Stadt fehlt.» (Exit 2) |
 | Fidan | offen | |
 | Lionel | offen | |
 | Nico | 26.10.2026 | 43 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 9.8 °C, Bewölkt, Wind: 1.4 km/h` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 5.7 °C, Klar, Wind: 8.7 km/h` (Exit 0), `weather` ohne Stadt → «Die Stadt fehlt.» (Exit 2) |
@@ -289,6 +290,10 @@ Ausgabeformat, Tests und Reihenfolge.
 
 **Verbesserungsmassnahme:** siehe Block Sprint 2.
 
+**Review-Ergebnis (Abschlusspräsentation):** nach der Präsentation eintragen – Feedback: …
+
+**Retro-Erkenntnis:** siehe [Retrospektive Sprint 3](#retrospektive-sprint-3-entwurf-vom-02112026).
+
 #### Retrospektive Sprint 2 (26.10.2026)
 
 **Grundlage:** Diese Rückschau stützt sich auf den Repository-Nachweis und den aktuellen YouTrack-Stand. Eine dokumentierte gemeinsame Teamrunde mit persönlichen Einschätzungen liegt nicht vor; die Punkte sind deshalb vorläufig und vom Team zu bestätigen.
@@ -311,24 +316,66 @@ Ausgabeformat, Tests und Reihenfolge.
 
 **Offener Abgleich:** WEA-29 bleibt offen, bis das Team die Review-Ergebnisse und die noch fehlenden Startbestätigungen geprüft und in YouTrack dokumentiert hat.
 
+#### Retrospektive Sprint 3 (Entwurf vom 02.11.2026)
+
+**Grundlage:** Die Verbesserungsmassnahme stammt von Eduart. Die übrigen Punkte stützen sich auf den Repository-Nachweis und die Pull Requests. Eine dokumentierte gemeinsame Teamrunde liegt nicht vor; der Entwurf ist vom Team zu bestätigen.
+
+**Überprüfung der Massnahme aus Sprint 2 (Entwurf):** Soweit im Repository sichtbar, ist die Massnahme nicht erfüllt. Die Startprüfungen von Fidan und Lionel fehlen, Eduarts Prüfung des aktuellen Stands ist erst am 02.11.2026 nachgetragen. Zu PR #16 ist auf GitHub kein Review-Text von Lionel sichtbar, nur der Merge. WEA-29 ist im Portfolio weiterhin als offen vermerkt. Die Einträge im Board sind damit nicht geprüft; Fidan kontrolliert sie und bestätigt oder korrigiert dieses Ergebnis.
+
+**Was lief gut?**
+
+- US-06 ist auf `main`: `weather "Zürich" --morgen` zeigt Zustand und Temperaturbereich für morgen. Die 58 automatisierten Tests laufen erfolgreich.
+- Die README-Schritte liefen am 02.11.2026 in einem frischen Klon ohne Änderung durch.
+- Das KI-Review zu PR #16 wurde kritisch genutzt: Zwei Befunde wurden übernommen, zwei begründet verworfen.
+- US-08 blieb wie geplant Reserve; der Sprint konzentrierte sich auf US-06, US-07 und die Pflicht-Tasks.
+
+**Was lief weniger gut?**
+
+- Commits wurden zu oft nur lokal gemacht und nicht gleich gepusht, sodass der Arbeitsstand für das übrige Team nicht sichtbar war.
+- US-06 entstand doppelt: Der Branch zu PR #18 stand auf einem Stand vor PR #16. Der Konflikt musste von Hand gelöst werden, die zweite Umsetzung wurde nicht übernommen.
+- Nachweise blieben über den Sprint hinaus offen: Startprüfungen von Fidan und Lionel, Review-Ergebnis von Sprint 2, Durchlauf auf dem Demo-Gerät, Sprechende und Probe der Präsentation.
+- Der Board-Sprint liess sich zunächst nicht anlegen (HTTP 403, WEA-44); Sprint 3 war deshalb über die Ticketnummern nachzuvollziehen.
+
+**Eine Verbesserungsmassnahme für das nächste Projekt:**
+
+> Wer committet, pusht den Branch spätestens am Ende desselben Arbeitsblocks auf GitHub. Erfüllt ist die Massnahme, wenn am Ende jedes Modultags bei niemandem im Team Commits nur lokal liegen.
+
 ## 5. Nachweise und offene Abschlussarbeiten
 
 | Anforderung aus Auftrag 4.1 | Stand / Nachweis |
 | --- | --- |
-| Fünf Stories mit Rolle, Nutzen und 2–4 prüfbaren Kriterien | In [product-backlog.md](product-backlog.md) vorbereitet |
-| Keine der fünf Stories ist ein Epic | Enger Umfang beschrieben; Team-Schätzung auf höchstens zwei Modultage ausstehend |
+| Fünf Stories mit Rolle, Nutzen und 2–4 prüfbaren Kriterien | In [product-backlog.md](product-backlog.md) ausgearbeitet |
+| Keine der fünf Stories ist ein Epic | Enger Umfang beschrieben; Ausgangswerte von 2 bis 8 Story Points stammen von der KI (Abschnitt 7), ein Planning Poker ist hier nicht dokumentiert |
 | Fünf Stories im Board | Erfassung in YouTrack durch Lionel bestätigt; nicht unabhängig geprüft |
 | Eine nachprüfbare Verbesserungsmassnahme | Im Sprint-0-Block geprüft: WEA-8 und WEA-11 erfüllt, WEA-12 teilweise erfüllt; YouTrack-Historie und Git-Commit dokumentiert |
 | DoD mit 4–6 Kriterien schriftlich abgelegt | [Sechs Kriterien](definition-of-done.md); für Sprint 1 bestätigt |
 | Portfolio Abschnitte 1–3 gefüllt | Team mit Rollen, Produkt, Vision, Backlog und YouTrack-Link erfasst |
-| Offizielle Portfolio-Vorlage übernommen | Offen: Vorlage/Modulrepo bislang nicht verfügbar; vorliegende Gliederung folgt dem Auftrag |
+| Offizielle Portfolio-Vorlage übernommen | Offen: Die Vorlage ist in Auftrag 9.1 als Material genannt, der Abgleich steht aus; Abschnitt 8 fehlt noch |
 | Story-Map-Bild verlinkt | In Abschnitt 3 enthalten |
+
+| Abschluss aus Auftrag 9.1 | Stand / Nachweis (02.11.2026) |
+| --- | --- |
+| Retro Sprint 3 durchgeführt, Massnahme aus Sprint 2 überprüft | Offen: Entwurf im Block Sprint 3, vom Team zu bestätigen |
+| Block Sprint 3 vollständig | Offen: Review-Ergebnis folgt nach der Präsentation, Retro-Erkenntnis ist ein Entwurf |
+| Zeile für Sprint 3 in Abschnitt 6 | Offen: Jedes Teammitglied trägt seine Zeile selbst ein |
+| Abschnitt 7 mit Eintrag für Sprint 3 | Vorhanden |
+| Abschnitte 5 und 8 ausgefüllt | Abschnitt 5 aktualisiert, am Tagesende nachführen; Abschnitt 8 offen |
+| Teamgespräch | Offen: in Teil 2 von Auftrag 9.1 |
 
 ## 6. Persönliche Kurzreflexion
 
 Jedes Teammitglied trägt seine eigene Zeile ein.
 
 ### Sprint 2
+
+| Teammitglied | Beitrag | Wichtigste Erkenntnis | Nächster Lernschritt |
+| --- | --- | --- | --- |
+| Eduart | | | |
+| Fidan | | | |
+| Lionel | | | |
+| Nico | | | |
+
+### Sprint 3
 
 | Teammitglied | Beitrag | Wichtigste Erkenntnis | Nächster Lernschritt |
 | --- | --- | --- | --- |
@@ -443,3 +490,15 @@ den entstandenen Pull Request anschliessend von derselben KI reviewen lassen. Be
 
 Das fachliche Review (DoD 3) macht Lionel; das KI-Review ersetzt es nicht. Die Zeile in
 Abschnitt 6 schreibt jedes Teammitglied selbst, nicht die KI.
+
+**Abschlussprüfung (Eduart, 02.11.2026):** Eduart hat Claude (Anthropic) über Claude Code
+genutzt, um den Projektstand zu prüfen, die README-Schritte auf Stand `77c21be` in einem
+frischen Klon auszuführen (Startprüfung, US-07 AK 4) und diese Nachweise einzutragen.
+Review-Ergebnis und persönliche Reflexion hat die KI nicht geschrieben.
+
+**Retrospektive Sprint 3 (Eduart, 02.11.2026):** Die Massnahme «öfter pushen» kommt von
+Eduart. Die übrigen Punkte der Retro und die Überprüfung der Massnahme aus Sprint 2 hat die
+KI als Entwurf aus Repository und Pull Requests zusammengestellt, ebenso den Stand in
+Abschnitt 5. Das Team bestätigt oder korrigiert die Entwürfe.
+
+
