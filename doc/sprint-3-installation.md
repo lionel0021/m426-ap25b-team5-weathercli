@@ -26,6 +26,14 @@ nachgespielt (`python -m venv`, `python -m pip install .`, `weather "Zürich"`):
 läuft ohne Fehler, Exit 0, keine externen Laufzeitpakete. Die Live-Beispiele in
 der [README](../README.md) sind auf diesen Stand aktualisiert.
 
+**US-07, AK 4 (nachgetragen am 02.11.2026, nach Sprint 3):** Auf Stand `77c21be`
+wurden die fünf README-Schritte in einem frischen Klon auf Windows 11 mit
+Python 3.13 ausgeführt. Eduart hat keinen Code geschrieben und hat die Prüfung in
+Auftrag gegeben; ausgeführt hat sie Claude Code auf Eduarts Rechner. Alle Schritte
+liefen ohne Änderung, die Aktivierung über `Activate.ps1` eingeschlossen.
+`weather "Zürich"` und `weather "Zürich" --morgen` endeten mit Exit 0. Die
+Bestätigung im YouTrack-Ticket WEA-36 steht noch aus.
+
 Hinweis zum Verhalten bei fehlenden Daten: Die Vorhersage meldet keinen Fehler,
 wenn Tageswerte fehlen, sondern gibt «Vorhersage nicht verfügbar»
 beziehungsweise «Wetterzustand nicht verfügbar» aus und behält Exit-Code 0
@@ -44,10 +52,10 @@ erreichbar ist oder der Ort unbekannt beziehungsweise mehrdeutig ist.
   den Stand vor US-02 und würde auf dem heutigen `main` fehlschlagen; alle Fälle
   daraus sind dort abgedeckt. Empfehlung aus dem Review zu PR #11: nicht
   übernehmen, Branch löschen.
-- Startprüfung (DoD 4) im [Portfolio, Sprint 2](portfolio.md): Eduart hat am
-  28.09.2026 einen älteren Stand geprüft, Nico am 26.10.2026 den Stand vor
-  US-06. Fidan und Lionel fehlen ganz. Vor «Done» muss jede der vier Personen
-  den aktuellen `main` starten und das Ergebnis dort eintragen.
+- Startprüfung (DoD 4) im [Portfolio, Sprint 2](portfolio.md): Für Eduart ist
+  der Stand `77c21be` am 02.11.2026 nachgetragen, Nico hat am 26.10.2026 den
+  Stand vor US-06 geprüft. Fidan und Lionel fehlen ganz. Vor «Done» muss jede der
+  vier Personen den aktuellen `main` starten und das Ergebnis dort eintragen.
 
 ## WEA-29: Sprint-2-Review
 

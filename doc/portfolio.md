@@ -237,6 +237,7 @@ Sprint-2-Inkrements stehen noch aus. Das frühere Berechtigungs-Impediment
 | Teammitglied | Datum | Ergebnis |
 | --- | --- | --- |
 | Eduart | 28.09.2026 | 34 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 17.7 °C` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 15 °C` (Exit 0), `weather` ohne Stadt → Fehlermeldung (Exit 2) |
+| Eduart | 02.11.2026 (nachgetragen, nach Sprint 3) | Stand `77c21be`, frischer Klon und frische venv nach README, im Auftrag von Eduart mit Claude Code auf Eduarts Rechner ausgeführt; 58 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 3.3 °C, Bewölkt, Wind: 9 km/h` (Exit 0), `weather "Zürich" --morgen` → `Zürich, Schweiz, morgen: Bewölkt, 4.8 bis 7.6 °C` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 7.8 °C, Klar, Wind: 10.7 km/h` (Exit 0), `weather` ohne Stadt → «Die Stadt fehlt.» (Exit 2) |
 | Fidan | offen | |
 | Lionel | offen | |
 | Nico | 26.10.2026 | 43 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 9.8 °C, Bewölkt, Wind: 1.4 km/h` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 5.7 °C, Klar, Wind: 8.7 km/h` (Exit 0), `weather` ohne Stadt → «Die Stadt fehlt.» (Exit 2) |
@@ -443,3 +444,8 @@ den entstandenen Pull Request anschliessend von derselben KI reviewen lassen. Be
 
 Das fachliche Review (DoD 3) macht Lionel; das KI-Review ersetzt es nicht. Die Zeile in
 Abschnitt 6 schreibt jedes Teammitglied selbst, nicht die KI.
+
+**Abschlussprüfung (Eduart, 02.11.2026):** Eduart hat Claude (Anthropic) über Claude Code
+genutzt, um den Projektstand zu prüfen, die README-Schritte auf Stand `77c21be` in einem
+frischen Klon auszuführen (Startprüfung, US-07 AK 4) und diese Nachweise einzutragen.
+Review-Ergebnis und persönliche Reflexion hat die KI nicht geschrieben.
