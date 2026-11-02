@@ -242,8 +242,6 @@ Sprint-2-Inkrements stehen noch aus. Das frühere Berechtigungs-Impediment
 | Lionel | offen | |
 | Nico | 26.10.2026 | 43 Tests OK; `weather "Zürich"` → `Zürich, Schweiz: 9.8 °C, Bewölkt, Wind: 1.4 km/h` (Exit 0), `weather "New York"` → `New York City, Vereinigte Staaten: 5.7 °C, Klar, Wind: 8.7 km/h` (Exit 0), `weather` ohne Stadt → «Die Stadt fehlt.» (Exit 2) |
 
-**Review-Ergebnis (26.10.2026):** vom PO eintragen – gezeigt: … · Feedback: … · ins Backlog: …
-
 **Retro-Erkenntnis und Verbesserungsmassnahme für Sprint 3:** siehe [Retrospektive Sprint 2](#retrospektive-sprint-2-26102026) (vorläufig, vom Team zu bestätigen).
 
 ### Sprint 3 (26.10.2026, Modultag 8)
@@ -288,9 +286,9 @@ Ausgabeformat, Tests und Reihenfolge.
 
 **Verbesserungsmassnahme:** siehe Block Sprint 2.
 
-**Sprintergebnis (Stand 02.11.2026):** US-06 und US-07 sind auf `main` umgesetzt, US-08 blieb Reserve und ist nicht umgesetzt. Geplant waren 5 Story Points. Die Velocity beträgt 5 Story Points, sobald die DoD-Nachweise vorliegen; offen sind vor allem die Startprüfungen von Fidan und Lionel, das dokumentierte Review zu PR #16 und die Bestätigung in WEA-36. Bis dahin ist keine Sprint-3-Story nach DoD abgeschlossen.
+**Sprintergebnis (Stand 02.11.2026):** US-06 und US-07 sind auf `main` umgesetzt, US-08 blieb Reserve und ist nicht umgesetzt. Geplant waren 5 Story Points. Die Velocity beträgt 5 Story Points, sobald die DoD-Nachweise vorliegen; offen sind vor allem die Startprüfungen von Fidan und Lionel, das dokumentierte Review eines Teammitglieds zu PR #16 und die Bestätigung in WEA-36. Bis dahin ist keine Sprint-3-Story nach DoD abgeschlossen.
 
-**Review-Ergebnis (Abschlusspräsentation):** nach der Präsentation eintragen – Feedback: …
+**Review-Ergebnis (Abschlusspräsentation):** Zum Feedback aus der Präsentation liegt keine Notiz vor (Angabe von Eduart).
 
 **Retro-Erkenntnis:** siehe [Retrospektive Sprint 3](#retrospektive-sprint-3-entwurf-vom-02112026).
 
@@ -350,14 +348,14 @@ Ausgabeformat, Tests und Reihenfolge.
 | Eine nachprüfbare Verbesserungsmassnahme | Im Sprint-0-Block geprüft: WEA-8 und WEA-11 erfüllt, WEA-12 teilweise erfüllt; YouTrack-Historie und Git-Commit dokumentiert |
 | DoD mit 4–6 Kriterien schriftlich abgelegt | [Sechs Kriterien](definition-of-done.md); für Sprint 1 bestätigt |
 | Portfolio Abschnitte 1–3 gefüllt | Team mit Rollen, Produkt, Vision, Backlog und YouTrack-Link erfasst |
-| Offizielle Portfolio-Vorlage übernommen | Offen: Die Vorlage ist in Auftrag 9.1 als Material genannt, der Abgleich steht aus; Abschnitt 8 fehlt noch |
+| Offizielle Portfolio-Vorlage übernommen | Offen: Die Vorlage ist in Auftrag 9.1 als Material genannt, liegt dem Team laut Eduart aber nicht vor; Abschnitt 8 ist deshalb nicht angelegt |
 | Story-Map-Bild verlinkt | In Abschnitt 3 enthalten |
 
 | Abschluss aus Auftrag 9.1 | Stand / Nachweis (02.11.2026) |
 | --- | --- |
 | Retro Sprint 3 durchgeführt, Massnahme aus Sprint 2 überprüft | Offen: Entwurf im Block Sprint 3, vom Team zu bestätigen |
-| Block Sprint 3 vollständig | Offen: Review-Ergebnis folgt nach der Präsentation, Retro-Erkenntnis ist ein Entwurf |
-| Zeile für Sprint 3 in Abschnitt 6 | Offen: Jedes Teammitglied trägt seine Zeile selbst ein |
+| Block Sprint 3 vollständig | Teilweise: Zum Feedback liegt keine Notiz vor, die Retro-Erkenntnis ist ein Entwurf |
+| Zeile für Sprint 3 in Abschnitt 6 | Teilweise: Eduart eingetragen, Fidan, Lionel und Nico offen |
 | Abschnitt 7 mit Eintrag für Sprint 3 | Vorhanden |
 | Abschnitte 5 und 8 ausgefüllt | Abschnitt 5 aktualisiert, am Tagesende nachführen; Abschnitt 8 offen |
 | Teamgespräch | Offen: in Teil 2 von Auftrag 9.1 |
@@ -379,7 +377,7 @@ Jedes Teammitglied trägt seine eigene Zeile ein.
 
 | Teammitglied | Beitrag | Wichtigste Erkenntnis | Nächster Lernschritt |
 | --- | --- | --- | --- |
-| Eduart | | | |
+| Eduart | Als Product Owner Backlog, Arbeitsplan und Tickets WEA-31 bis WEA-44 für Sprint 3 vorbereitet | Die Teamarbeit war gut; ich bin insgesamt sehr zufrieden. | Öfter pushen, statt Commits lokal liegen zu lassen |
 | Fidan | | | |
 | Lionel | | | |
 | Nico | | | |
@@ -494,7 +492,7 @@ Abschnitt 6 schreibt jedes Teammitglied selbst, nicht die KI.
 **Abschlussprüfung (Eduart, 02.11.2026):** Eduart hat Claude (Anthropic) über Claude Code
 genutzt, um den Projektstand zu prüfen, die README-Schritte auf Stand `77c21be` in einem
 frischen Klon auszuführen (Startprüfung, US-07 AK 4) und diese Nachweise einzutragen.
-Review-Ergebnis und persönliche Reflexion hat die KI nicht geschrieben.
+Die Zeilen der anderen Teammitglieder in Abschnitt 6 hat die KI nicht geschrieben.
 
 **Retrospektive Sprint 3 (Eduart, 02.11.2026):** Die Massnahme «öfter pushen» kommt von
 Eduart. Die übrigen Punkte der Retro und die Überprüfung der Massnahme aus Sprint 2 hat die
@@ -504,5 +502,11 @@ Abschnitt 5. Das Team bestätigt oder korrigiert die Entwürfe.
 **Gesamtreview (Eduart, 02.11.2026):** Im Auftrag von Eduart hat die KI Code und
 Dokumentation geprüft, den Merge von `b4be608` samt angepassten Tests durchgeführt und
 veraltete Angaben im Repository korrigiert. Das Programmverhalten blieb unverändert.
+
+**KI-Review PR #16 und Demo-Durchlauf (Eduart, 02.11.2026):** Im Auftrag von Eduart hat die
+KI PR #16 gegen die Akzeptanzkriterien von US-06 geprüft (keine blockierenden Befunde,
+Kommentar am PR) und die fünf Demo-Aufrufe ausgeführt. Das Review ersetzt die Prüfung durch
+ein Teammitglied nach DoD 3 nicht. Eduarts Zeile in Abschnitt 6 hat die KI aus Eduarts
+Angaben formuliert; den Beitrag hat sie aus den Commits zusammengestellt.
 
 
