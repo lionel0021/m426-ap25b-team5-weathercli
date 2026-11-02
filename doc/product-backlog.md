@@ -10,7 +10,7 @@ nicht abgeglichen. Quelle: [Story Map](images/StoryBoard.png) und Sprintplanung.
 | 1 | US-06 – Wetter für morgen sehen (WEA-31) | Should | 3 (Vorschlag) | Sprint 3 | Auf `main` umgesetzt |
 | 2 | US-07 – Installation und Demo ohne Hilfe (WEA-36) | Should | 2 (Vorschlag) | Sprint 3 | README auf `main`, Bestätigung im Ticket offen |
 | 3 | Stabilisieren (Pflicht-Task, WEA-41) | Must | – | Sprint 3 | Startprüfung von Fidan und Lionel offen |
-| 4 | Demo vorbereiten (Pflicht-Task, WEA-42) | Must | – | Sprint 3 | Durchlauf auf dem Demo-Gerät und Screenshot offen |
+| 4 | Demo vorbereiten (Pflicht-Task, WEA-42) | Must | – | Sprint 3 | Durchlauf am 02.11.2026 auf Eduarts Laptop, Screenshot offen |
 | 5 | Präsentation vorbereiten (Pflicht-Task, WEA-43) | Must | – | Sprint 3 | Sprechende und Probe offen |
 | 6 | US-08 – Kurzer Verbindungsfehler wird wiederholt (WEA-39) | Could | 2 (Vorschlag) | bei freier Kapazität | Nicht umgesetzt, bleibt im Backlog |
 

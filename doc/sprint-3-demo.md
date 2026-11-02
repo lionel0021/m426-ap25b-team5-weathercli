@@ -49,7 +49,20 @@ Für die Demo genügt also der Standard; die Demo-Orte Zürich und New York sind
 in beiden Fällen lesbar. Trotzdem vorher einmal `weather "Zürich"` im
 Demo-Terminal ausführen und hinschauen.
 
+## Durchlauf vom 02.11.2026
+
+Im Auftrag von Eduart mit Claude Code auf Eduarts Laptop ausgeführt, Stand `50f2bd9`,
+frische venv. Ob dieser Laptop das Demo-Gerät der Präsentation war, ist hier nicht
+festgehalten.
+
+| # | Aufruf | Ausgabe | Exit |
+| ---: | --- | --- | --- |
+| 1 | `weather "Zürich"` | `Zürich, Schweiz: 5.1 °C, Bewölkt, Wind: 9.7 km/h` | 0 |
+| 2 | `weather "New York"` | `New York City, Vereinigte Staaten: 7 °C, Klar, Wind: 8.9 km/h` | 0 |
+| 3 | `weather "Zürich" --morgen` | `Zürich, Schweiz, morgen: Bewölkt, 4.6 bis 7.9 °C` | 0 |
+| 4 | `weather "Springfield"` | `Fehler: Der Ort ist mehrdeutig. Bitte eine genauere Ortsangabe eingeben.` | 1 |
+| 5 | `weather --help` | Hilfetext, beginnt mit `usage: weather "STADT" [--morgen]` | 0 |
+
 ## Offen
 
-- Einmal komplett auf dem Demo-Gerät durchspielen (Nico, vor dem Review).
 - Bildschirmfoto der fünf Ausgaben ablegen.
